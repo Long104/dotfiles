@@ -1,0 +1,121 @@
+# change window focus within space
+alt - j : yabai -m window --focus south 
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
+alt - r : yabai -m window --focus space
+
+
+#change focus between external displays (left and right)
+alt - s: yabai -m display --focus west
+alt - g: yabai -m display --focus east
+
+# resize 
+ctrl + cmd - h : yabai -m window west --resize right:-20:0 2> /dev/null || yabai -m window --resize right:-20:0
+ctrl + cmd - j : yabai -m window north --resize bottom:0:20 2> /dev/null || yabai -m window --resize bottom:0:20
+ctrl + cmd - k : yabai -m window south --resize top:0:-20 2> /dev/null || yabai -m window --resize top:0:-20
+ctrl + cmd - l : yabai -m window east --resize left:20:0 2> /dev/null || yabai -m window --resize left:20:0
+
+# rotate layout clockwise
+shift + alt - r : yabai -m space --rotate 270
+
+# flip along y-axis
+shift + alt - y : yabai -m space --mirror y-axis
+
+# flip along x-axis
+shift + alt - x : yabai -m space --mirror x-axis
+
+# toggle window float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# maximize a window
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
+# balance out tree of windows (resize to occupy same area)
+shift + alt - e : yabai -m space --balance
+
+# swap windows
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
+
+# move window and split
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - l : yabai -m window --warp east
+
+# move window to display left and right
+shift + alt - s : yabai -m window --display west; yabai -m display --focus west;
+shift + alt - g : yabai -m window --display east; yabai -m display --focus east;
+
+
+#move window to prev and next space
+shift + alt - q : yabai -m space --focus recent
+# shift + alt - q : yabai -m window --space recent;
+shift + alt - p : yabai -m window --space prev;
+shift + alt - n : yabai -m window --space next;
+# shift + alt - g : yabai -m space --focus 2
+# cmd - 2 : yabai -m space --focus 2
+
+ctrl + cmd - n : yabai -m space --create
+# Delete focused space and focus first space on display
+ctrl + cmd - d : yabai -m space --destroy
+
+# move window to space #
+shift + alt - 1 : yabai -m window --space 1;
+shift + alt - 2 : yabai -m window --space 2;
+shift + alt - 3 : yabai -m window --space 3;
+shift + alt - 4 : yabai -m window --space 4;
+shift + alt - 5 : yabai -m window --space 5;
+shift + alt - 6 : yabai -m window --space 6;
+shift + alt - 7 : yabai -m window --space 7;
+shift + alt - 7 : yabai -m window --space 8;
+shift + alt - 7 : yabai -m window --space 9;
+
+
+
+# focus next space, or the first space if we are at the end
+cmd + alt - z : yabai -m space --focus next || yabai -m space --focus first
+
+# focus prev space, or the last space if we are at the beginning
+cmd + alt - c : yabai -m space --focus prev || yabai -m space --focus last
+
+ctrl + alt - d : osascript -e 'tell application "System Events" to key code 126 using control down' \
+          -e 'tell application "Mission Control" to launch' \
+          -e 'delay 0.5' \
+          -e 'tell application "System Events"' \
+          -e '    tell list 1 of group 2 of group 1 of group 1 of process "Dock"' \
+          -e '        set countSpaces to count of buttons' \
+          -e '        if countSpaces is greater than 1 then' \
+          -e '            perform action "AXRemoveDesktop" of button countSpaces' \
+          -e '        end if' \
+          -e '    end tell' \
+          -e '    delay 0.25' \
+          -e '    key code 53 --  # Esc key on US English Keyboard' \
+          -e 'end tell' \
+          -e 'tell application "System Events" to key code 126 using control down'
+
+
+
+
+# stop/start/restart yabai
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - r : yabai --restart-service
+
+ctrl + alt - n : osascript -e 'tell application "System Events" to key code 126 using control down' \
+                           -e 'tell application "System Events" to click button 1 of group 2 of group 1 of group 1 of process "Dock"'\
+                           -e 'tell application "System Events" to key code 126 using control down' \
+
+# ctrl + alt - d : yabai -m --window -space close
+# ctrl + alt - d : yabai -m space --close
+
+
+
+# ctrl - n : yabai -m window --focus stack.next
+# ctrl - p : yabai -m window --focus stack.prev
+# cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+# cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+# cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+# cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')ocused app!="^${apps_transparent}$" action="yabai -m config normal_window_opacity 1.0"

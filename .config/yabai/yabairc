@@ -1,0 +1,81 @@
+# bsp, stack or float
+yabai -m config layout bsp yabai -m config window_placement second_child
+
+####
+space=$1
+
+yabai -m display --focus $(yabai -m query --spaces --space $space | jq .display)
+yabai -m space --focus $space
+####
+
+# padding
+# yabai -m config top_padding 4
+yabai -m config top_padding 6
+yabai -m config bottom_padding 4
+yabai -m config left_padding 6
+yabai -m config right_padding 6
+yabai -m config window_gap 5
+# mouse settings
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          autofocus
+# yabai -m config mouse_follows_focus on
+
+yabai -m config mouse_modifier alt
+# left click + drag
+yabai -m config mouse_action1 move # right click + drag
+yabai -m config mouse_action2 resize
+
+yabai -m mouse_drop_action swap
+
+# disable specific apps
+yabai -m rule --add app="^System Settings\$" manage=off
+yabai -m rule --add app="^Calculator\$" manage=off
+yabai -m rule --add app="^Activity\$" manage=off
+
+yabai -m config external_bar all:30:0
+
+# yabai -m config window_animation_duration 0.50
+yabai -m config window_animation_duration 2
+yabai -m config window_opacity_duration 0.25
+yabai -m config window_animation_easing    ease_out_quint
+yabai -m config active_window_opacity       1.0
+yabai -m config normal_window_opacity       9.0
+# yabai -m config split_ratio                 0.50
+# yabai -m config window_animation_frame_rate 120
+
+
+
+# yabai -m rule --add app="^Finder$" space=3
+yabai -m rule --add app="^Alacritty$" space=1
+yabai -m rule --add app="^WezTerm$" space=1 
+yabai -m rule --add app="^Warp$" space=1
+yabai -m rule --add app="^iTerm$" space=1
+# yabai -m rule --add app="^Arc$" space=2
+yabai -m rule --add app="^Google Chrome$" space=2
+yabai -m rule --add app="^Activity Monitor$" space=3
+yabai -m rule --add app="^Discord$" space=3
+yabai -m rule --add app="^WhatsApp$" space=3
+yabai -m rule --add app="^LINE$" space=3
+yabai -m rule --add app="^Safari$" space=2
+yabai -m rule --add app="^Firefox$" space=2
+yabai -m rule --add app="^Spotify$" space=4
+# microsoft 
+yabai -m rule --add app="^Microsoft Word$" space=3
+yabai -m rule --add app="^Microsoft Excel$" space=3
+yabai -m rule --add app="^Microsoft Outlook$" space=3
+yabai -m rule --add app="^Microsoft PowerPoint$" space=3
+# yabai -m rule --add app="^Obsidian$" space=5
+# yabai -m rule --add app!="^(Finder|Safari)$" space=2
+
+
+
+# apps_transparent="(Spotify|Alacritty)"
+# yabai -m signal --add event=window_focused app="^${apps_transparent}$" action="yabai -m config active_window_opacity 0.00001"
+# yabai -m signal --add event=window_focused app="^${apps_transparent}$" action="yabai -m config normal_window_opacity 0.00001"
+
+# When any other app gains focus, reset both active and background window opacity to fully visible
+# yabai -m signal --add event=window_focused app!="^${apps_transparent}$" action="yabai -m config active_window_opacity 1.0"
+# yabai -m signal --add event=window_f# Focus window up/down in stack
+
+# Add the active window  to the window or stack to the {direction}
+# Note that this only works when the active window does *not* already belong to a stack
