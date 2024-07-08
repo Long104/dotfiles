@@ -82,3 +82,4 @@ vim.opt.termguicolors = true
 
 -- turn off swapfile
 -- vim.opt.swapfile = false
+vim.opt.shortmess = a

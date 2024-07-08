@@ -8,7 +8,8 @@
 local wezterm = require("wezterm")
 -- local act = wezterm.acti
 -- local xdg_config_home = os.getenv("xdg_config_home") local dimmer = { brightness = 0.1 }
-local fish_path = "/opt/homebrew/bin/fish"
+-- local fish_path = "/opt/homebrew/bin/fish"
+local fish_path = "/usr/bin/fish"
 
 local config = {}
 -- Use config builder object if possible if wezterm.config_builder then config = wezterm.config_builder()
@@ -16,14 +17,17 @@ local config = {}
 
 local k = require("utils/keys")
 -- config.font = wezterm.font("JetBrains Mono",{weight="Medium",scale=1.5})
+
 config.font = wezterm.font_with_fallback({
 	-- { family = "JetBrains Mono", weight = "Medium" },
 	{ family = "JetBrains Mono", weight = "Bold" },
+	-- { family = "Fira Code", weight = "Bold" },
 	{
 		family = "MesloLGS Nerd Font Mono",
 		weight = "Bold",
 		scale = 1.0,
 	},
+
 	-- { family = "Fira Code", weight = "Regular" },
 	-- { family = "Hack", weight = "Regular" },
 	-- { family = "DejaVu Sans Mono", weight = "Book" },
@@ -35,6 +39,7 @@ config.font = wezterm.font_with_fallback({
 	-- { family = "Terminus", weight = "Bold" },
 	"Noto Color Emoji",
 })
+
 --background
 -- if dimmer.brightness == 1 then
 -- 	config.background = {
@@ -61,8 +66,14 @@ config.font = wezterm.font_with_fallback({
 -- end
 -- config.font = wezterm.font("MesloLGS Nerd Font", { weight = "Regular", italic = false})
 -- config.font = wezterm.font("MesloLGS Nerd Font", { weight = "Classic Console Neue" })
-config.font_size = 12.6
-config.freetype_load_target = "Light"
+config.warn_about_missing_glyphs = false
+config.freetype_load_flags = "NO_HINTING"
+config.enable_wayland = false
+config.font_size = 14.6
+-- config.freetype_load_target = "Light"
+config.freetype_load_target = "HorizontalLcd"
+config.initial_rows = 52
+config.initial_cols = 230
 config.freetype_render_target = "HorizontalLcd"
 config.cell_width = 0.9
 
@@ -70,8 +81,7 @@ config.cell_width = 0.9
 config.default_prog = { fish_path, "-l" }
 
 config.color_scheme = "Tokyo Night"
-config.window_background_opacity = 0.90
--- config.window_background_opacity = 0.9
+config.window_background_opacity = 0.9
 -- config.window_background_image = wezterm.config_dir .. "/wallpaper/images.jpeg"
 -- config.window_background_image = wezterm.config_dir .. "/wallpaper/patapata.gif"
 -- config.window_background_image_hsb = { brightness = 0.01 }
@@ -120,24 +130,24 @@ config.window_close_confirmation = "NeverPrompt"
 -- config.enable_tab_bar = false
 
 config.keys = {
-	k.cmd_to_tmux_prefix("y", "T"),
-	k.cmd_to_tmux_prefix("y", "y"),
-	k.cmd_to_tmux_prefix("K", "T"),
-	k.cmd_to_tmux_prefix("k", "K"),
-	k.cmd_to_tmux_prefix("O", "T"),
-	k.cmd_to_tmux_prefix("o", "O"),
+	-- k.cmd_to_tmux_prefix("y", "T"),
+	-- k.cmd_to_tmux_prefix("y", "y"),
+	-- k.cmd_to_tmux_prefix("K", "T"),
+	-- k.cmd_to_tmux_prefix("k", "K"),
+	-- k.cmd_to_tmux_prefix("O", "T"),
+	-- k.cmd_to_tmux_prefix("o", "O"),
 	k.cmd_to_tmux_prefix("x", "T"),
 	k.cmd_to_tmux_prefix("x", "x"),
-	k.cmd_to_tmux_prefix("c", "T"),
-	k.cmd_to_tmux_prefix("c", "c"),
-	k.cmd_to_tmux_prefix("r", "T"),
-	k.cmd_to_tmux_prefix("r", "r"),
-	k.cmd_to_tmux_prefix("d", "T"),
-	k.cmd_to_tmux_prefix("d", "d"),
-	k.cmd_to_tmux_prefix("s", "T"),
-	k.cmd_to_tmux_prefix("s", "s"),
-	k.cmd_to_tmux_prefix("a", "T"),
-	k.cmd_to_tmux_prefix("a", "w"),
+	-- k.cmd_to_tmux_prefix("c", "T"),
+	-- k.cmd_to_tmux_prefix("c", "c"),
+	-- k.cmd_to_tmux_prefix("r", "T"),
+	-- k.cmd_to_tmux_prefix("r", "r"),
+	-- k.cmd_to_tmux_prefix("d", "T"),
+	-- k.cmd_to_tmux_prefix("d", "d"),
+	-- k.cmd_to_tmux_prefix("s", "T"),
+	-- k.cmd_to_tmux_prefix("s", "s"),
+	-- k.cmd_to_tmux_prefix("a", "T"),
+	-- k.cmd_to_tmux_prefix("a", "w"),
 	k.cmd_to_tmux_prefix("p", "T"),
 	k.cmd_to_tmux_prefix("p", "p"),
 	k.cmd_to_tmux_prefix("n", "T"),
@@ -146,8 +156,8 @@ config.keys = {
 	k.cmd_to_tmux_prefix("u", "u"),
 	k.cmd_to_tmux_prefix("i", "T"),
 	k.cmd_to_tmux_prefix("i", "i"),
-	k.cmd_to_tmux_prefix("e", "T"),
-	k.cmd_to_tmux_prefix("e", "m"),
+	k.cmd_to_tmux_prefix("m", "T"),
+	k.cmd_to_tmux_prefix("m", "m"),
 	k.cmd_to_tmux_prefix("l", "T"),
 	k.cmd_to_tmux_prefix("l", "L"),
 	k.cmd_to_tmux_prefix("j", "T"),

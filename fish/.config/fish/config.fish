@@ -13,6 +13,7 @@ alias fk="thefuck" # alias pc="ps x -o rss,vsz,command | grep Process" alias cha
 alias cn="NVIM_APPNAME=NvChad nvim" 
 alias vn="NVIM_APPNAME=AstroNvim nvim"
 alias n="nvim"
+alias f="nvim -c ':Telescope find_files'"
 alias py-activate="source ~/myenv/bin/activate.fish"
 alias py-deactivate="deactivate"
 
@@ -139,6 +140,7 @@ starship init fish | source
 
 
 
+set -x PATH $PATH /root/.local/share/gem/ruby/3.0.0/bin
 end
 
 

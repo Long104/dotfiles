@@ -27,6 +27,13 @@ return {
       dashboard.button('SPC fs', '  > Find Word', '<cmd>Telescope live_grep<CR>'),
       dashboard.button('SPC tt', ' > play termtyper', '<cmd>:term termtyper<CR>'),
       dashboard.button(
+        'SPC fhy',
+        ' > config hypr',
+        vim.keymap.set('n', '<leader>fhy', function()
+          builtin.find_files { cwd = '~/.config/hypr' }
+        end, { desc = 'config hypr' })
+      ),
+      dashboard.button(
         'SPC fc',
         '  > config neovim',
         vim.keymap.set('n', '<leader>fc', function()

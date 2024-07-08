@@ -145,7 +145,7 @@ return {
     vim.keymap.set('n', '<leader>fp', ':Telescope file_browser path=%:p:h select_buffer=true<cr>', { desc = 'current' })
     vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'fuzzy find files in cwd' })
     vim.keymap.set('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', { desc = 'fuzzy find recent files' })
-    vim.keymap.set('n', '<leader>fl', '<cmd>Telescope live_grep<cr>', { desc = 'find string in cwd' })
+    vim.keymap.set('n', '<leader>fl', '<cmd>Telescope live_grep<cr>', { desc = 'find string in cwd' }, { silent = true })
     vim.keymap.set('n', '<leader>fs', '<cmd>Telescope grep_string<cr>', { desc = 'find string under cursor in cwd' })
     vim.keymap.set('n', '<leader>ftc', '<cmd>TodoTelescope<cr>', { desc = 'find todos' })
     vim.keymap.set('n', '<leader>fr', '<cmd>Telescope registers<cr>', { noremap = true })
