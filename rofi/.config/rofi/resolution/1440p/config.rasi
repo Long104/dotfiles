@@ -5,11 +5,11 @@
 
 /* ---- Configuration ---- */
 configuration {
-	font:	"Fira Code Bold 12";
+	font:	"Fira Code SemiBold 13";
 }
 /* ---- Window ---- */
 window {
-    width:	44%;
+    width:	40%;
 }
 
 /* ---- Entry input ---- */
@@ -19,16 +19,15 @@ entry {
 
 /* ---- Listview ---- */
 listview {
-    /*lines:	8;*/
-    lines:	5;
+    lines:	8;
 }
 
 /* ---- Mode Switcher ---- */
 button {
-    width:	104px;
+    width:	110px;
 }
 
 element-text {
-    font:	"Fira Code SemiBold 14";
+    font:	"Fira Code SemiBold 16";
 }
 

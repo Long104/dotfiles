@@ -5,17 +5,17 @@
 "exclusive": true,
 "passthrough": false,
 "position": "top",
-"spacing": 3,
+// "spacing": 3,
+// "margin-left": 3,
+// "margin-right": 8,
 "fixed-center": true,
 "ipc": true,
 "margin-top": 5,
-"margin-left": 3,
-"margin-right": 8,
 "reload_style_on_change":true,
 
 // "hyprland/window",
 "modules-left": [
-"hyprland/workspaces#kanji",
+"custom/playerctl",
 "tray",
 "group/mobo_drawer",
 "custom/swaync",
@@ -24,7 +24,7 @@
 // "custom/weather",
 // "custom/cava_mviz",
 "modules-center": [
-"custom/playerctl",
+"hyprland/workspaces#kanji",
   ],
 
 	  // "network#speed",

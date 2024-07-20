@@ -66,12 +66,12 @@ return {
         --
         -- side_by_side = true,
         -- layout_strategy = 'vertical',
-        layout_strategy = 'horizontal',
+        -- layout_strategy = 'horizontal',
         -- layout_strategy = 'cursor',
         -- layout_strategy = 'center',
         layout_config = {
           -- preview_height = 0.7,
-          preview_width = 0.57,
+          -- preview_width = 0.57,
           -- prompt_position = 'bottom',
           prompt_position = 'top',
 
@@ -98,12 +98,14 @@ return {
           --     preview_cutoff = 40,
           --     width = 0.8
           --   },
-          -- horizontal = {
-          --   height = 0.9,
-          --   preview_cutoff = 120,
-          --   prompt_position = "bottom",
-          --   width = 0.8
-          -- },
+          horizontal = {
+            -- height = 0.9,
+            -- preview_cutoff = 120,
+            -- prompt_position = 'bottom',
+            prompt_position = 'top',
+            -- width = 0.8,
+            preview_width = 0.57,
+          },
           --   vertical = {
           --     height = 0.9,
           --     preview_cutoff = 40,

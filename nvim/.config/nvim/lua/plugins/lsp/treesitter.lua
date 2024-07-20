@@ -51,6 +51,10 @@ return {
         'vimdoc',
         'c',
         'java',
+        'go',
+        'gomod',
+        'gowork',
+        'gosum',
       },
       incremental_selection = {
         enable = true,

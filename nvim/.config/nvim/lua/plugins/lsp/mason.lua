@@ -33,6 +33,7 @@ return {
         'html',
         'cssls',
         'tailwindcss',
+        'gopls',
         -- "svelte",
         'lua_ls',
         -- "graphql",
@@ -53,6 +54,9 @@ return {
         'eslint_d', -- js linter
         'google-java-format',
         'checkstyle',
+        'goimports-reviser',
+        'gofumpt',
+        'golangci-lint',
       },
     }
   end,

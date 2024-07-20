@@ -18,7 +18,7 @@ alias py-activate="source ~/myenv/bin/activate.fish"
 alias py-deactivate="deactivate"
 
 function nvims
-    set items "default" "NvChad" "AstroNvim" "SnoVim" "NebulaNvim" "javaNvim"
+    set items "default" "neobean" "NvChad" "AstroNvim" "SnoVim" "NebulaNvim" "javaNvim"
     set config (printf "%s\n" $items | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
     
     if test -z "$config"
@@ -135,12 +135,13 @@ if not set -q TMUX
     end
 end
 
+set -gx PATH $PATH /usr/local/go/bin
 
 starship init fish | source
 
+atuin init fish | source
 
-
-set -x PATH $PATH /root/.local/share/gem/ruby/3.0.0/bin
+# set -x PATH $PATH /root/.local/share/gem/ruby/3.0.0/bin
 end
 
 
