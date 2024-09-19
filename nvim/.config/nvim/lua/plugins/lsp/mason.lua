@@ -1,10 +1,18 @@
 return {
   -- event = "BufReadPre",
-  'williamboman/mason.nvim',
+  'WhoIsSethDaniel/mason-tool-installer.nvim',
+  -- event = 'VeryLazy',
+  cmd = { 'Mason', 'MasonInstall', 'MasonUninstall', 'MasonUpdate' },
+  -- event = 'BufReadPre',
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
+
+    'williamboman/mason.nvim',
+    -- test
+    'mfussenegger/nvim-dap',
+    'jay-babu/mason-nvim-dap.nvim',
   },
+
   config = function()
     -- import mason
     local mason = require 'mason'
@@ -23,6 +31,10 @@ return {
           package_uninstalled = '✗',
         },
       },
+      auto_update = true, -- Default: false
+      run_on_start = true, -- Default: true
+      start_delay = 1000, -- 1 second delay ( Default: 0 )
+      debounce_hours = 1, -- at least 1 hour between attempts to install/update
     }
 
     mason_lspconfig.setup {
@@ -40,8 +52,13 @@ return {
         'emmet_ls',
         'prismals',
         'pyright',
+        'marksman',
         -- 'jdtls'
       },
+    }
+
+    require('mason-nvim-dap').setup {
+      ensure_installed = {},
     }
 
     mason_tool_installer.setup {
@@ -51,13 +68,22 @@ return {
         'isort', -- python formatter
         'black', -- python formatter
         'pylint', -- python linter
+        'markdownlint-cli2',
+        'markdown-toc',
         'eslint_d', -- js linter
         'google-java-format',
         'checkstyle',
         'goimports-reviser',
         'gofumpt',
         'golangci-lint',
+        'hlint',
+        'blue',
       },
+
+      auto_update = true, -- Default: false
+      run_on_start = true, -- Default: true
+      start_delay = 1000, -- 1 second delay ( Default: 0 )
+      debounce_hours = 1, -- at least 1 hour between attempts to install/update
     }
   end,
 }

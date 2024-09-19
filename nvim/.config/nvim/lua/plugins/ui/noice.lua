@@ -1,5 +1,10 @@
 return {
   'folke/noice.nvim',
+  --       opt.feedkeys".run(38)
+  --       .feedkeys".run(41)
+  --       n = {
+  --         ignore_cmds = { 'Man', '!' },
+  --       },
   event = 'VeryLazy',
   opts = {
     -- add any options here

@@ -4,7 +4,7 @@ return {
     'CopilotC-Nvim/CopilotChat.nvim',
     branch = 'canary',
     -- lazy = true, -- Load on an autocmd event or command
-    event = 'VeryLazy',
+    event = 'BufReadPre',
     dependencies = {
       { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
       { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper

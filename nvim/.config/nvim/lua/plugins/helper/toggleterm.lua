@@ -74,7 +74,7 @@ return {
     -- keymap.set("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", { desc = "vertical" })
 
     -- Set autocmd to apply mappings for terminal buffers
-    vim.cmd [[autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>]]
+    vim.cmd [[autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe j:count1 . "ToggleTerm"<CR>]]
 
     -- Apply mappings for normal mode and insert mode
     vim.api.nvim_set_keymap('n', '<leader>th', "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>", { silent = true })
@@ -91,5 +91,13 @@ return {
     -- )
 
     vim.api.nvim_set_keymap('n', '<leader>tf', "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>", { silent = true })
+
+    -- Function to run `go run main.go` in ToggleTerm
+    vim.api.nvim_set_keymap(
+      'n',
+      '<leader>ngr',
+      ':ToggleTerm direction=horizontal<CR> nodemon --watch . --ext go --exec go run . --signal SIGTERM <CR>',
+      { noremap = true, silent = true }
+    )
   end,
 }

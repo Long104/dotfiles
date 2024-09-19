@@ -1,5 +1,5 @@
 require 'core'
-
+require 'core.highlights'
 -- lazy plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -12,7 +12,9 @@ require('lazy').setup({ -- { import = "pantorn.plugins" }, { import = 'SnoVim.pl
   { import = 'plugins.coding' },
   { import = 'plugins.lsp' },
   { import = 'plugins.ui' },
-  -- { import = 'SnoVim.plugins.custom' },
+  { import = 'plugins.custom' },
+  { import = 'plugins.note' },
+  { import = 'plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -34,6 +36,8 @@ require('lazy').setup({ -- { import = "pantorn.plugins" }, { import = 'SnoVim.pl
     },
   },
 })
+
+-- vim.cmd [[colorscheme eldritch]]
 
 --[[
 --

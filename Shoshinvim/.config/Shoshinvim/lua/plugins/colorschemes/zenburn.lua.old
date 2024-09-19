@@ -1,0 +1,10 @@
+return {
+  'phha/zenburn.nvim',
+  config = function()
+    require('zenburn').setup {
+      options = {
+        theme = 'zenburn',
+      },
+    }
+  end,
+}

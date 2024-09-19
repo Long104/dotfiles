@@ -7,10 +7,10 @@ space=$1
 yabai -m display --focus $(yabai -m query --spaces --space $space | jq .display)
 yabai -m space --focus $space
 ####
-
+yabai -m config external_bar all:30:0
 # padding
-# yabai -m config top_padding 4
-yabai -m config top_padding 6
+yabai -m config top_padding 4
+# yabai -m config top_padding 6
 yabai -m config bottom_padding 4
 yabai -m config left_padding 6
 yabai -m config right_padding 6
@@ -32,7 +32,6 @@ yabai -m rule --add app="^System Settings\$" manage=off
 yabai -m rule --add app="^Calculator\$" manage=off
 yabai -m rule --add app="^Activity\$" manage=off
 
-yabai -m config external_bar all:30:0
 
 # yabai -m config window_animation_duration 0.50
 yabai -m config window_animation_duration 2
@@ -46,24 +45,24 @@ yabai -m config normal_window_opacity       9.0
 
 
 # yabai -m rule --add app="^Finder$" space=3
-yabai -m rule --add app="^Alacritty$" space=1
-yabai -m rule --add app="^WezTerm$" space=1 
-yabai -m rule --add app="^Warp$" space=1
-yabai -m rule --add app="^iTerm$" space=1
+# yabai -m rule --add app="^Alacritty$" space=1
+# yabai -m rule --add app="^WezTerm$" space=1 
+# yabai -m rule --add app="^Warp$" space=1
+# yabai -m rule --add app="^iTerm$" space=1
 # yabai -m rule --add app="^Arc$" space=2
-yabai -m rule --add app="^Google Chrome$" space=2
-yabai -m rule --add app="^Activity Monitor$" space=3
-yabai -m rule --add app="^Discord$" space=3
-yabai -m rule --add app="^WhatsApp$" space=3
-yabai -m rule --add app="^LINE$" space=3
-yabai -m rule --add app="^Safari$" space=2
-yabai -m rule --add app="^Firefox$" space=2
-yabai -m rule --add app="^Spotify$" space=4
+# yabai -m rule --add app="^Google Chrome$" space=2
+# yabai -m rule --add app="^Activity Monitor$" space=3
+# yabai -m rule --add app="^Discord$" space=3
+# yabai -m rule --add app="^WhatsApp$" space=3
+# yabai -m rule --add app="^LINE$" space=3
+# yabai -m rule --add app="^Safari$" space=2
+# yabai -m rule --add app="^Firefox$" space=2
+# yabai -m rule --add app="^Spotify$" space=4
 # microsoft 
-yabai -m rule --add app="^Microsoft Word$" space=3
-yabai -m rule --add app="^Microsoft Excel$" space=3
-yabai -m rule --add app="^Microsoft Outlook$" space=3
-yabai -m rule --add app="^Microsoft PowerPoint$" space=3
+# yabai -m rule --add app="^Microsoft Word$" space=3
+# yabai -m rule --add app="^Microsoft Excel$" space=3
+# yabai -m rule --add app="^Microsoft Outlook$" space=3
+# yabai -m rule --add app="^Microsoft PowerPoint$" space=3
 # yabai -m rule --add app="^Obsidian$" space=5
 # yabai -m rule --add app!="^(Finder|Safari)$" space=2
 

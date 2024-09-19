@@ -20,9 +20,11 @@ return {
     local open_with_trouble = require('trouble.sources.telescope').open
 
     -- Use this to add more results without clearing the trouble list
+    --
 
     telescope.setup {
       extensions = {
+
         undo = {
           side_by_side = true,
           layout_strategy = 'vertical',
@@ -56,6 +58,7 @@ return {
       },
 
       defaults = {
+
         sorting_strategy = 'ascending',
         prompt_prefix = '  ',
         selection_caret = '  ',

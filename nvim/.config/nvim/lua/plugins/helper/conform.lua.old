@@ -1,0 +1,47 @@
+return {
+  'stevearc/conform.nvim',
+  -- lazy = false,
+  event = 'BufWritePre',
+  keys = {
+    {
+      '<leader>mf',
+      function()
+        require('conform').format { async = true, lsp_fallback = true }
+      end,
+      mode = '',
+      desc = '[F]ormat buffer',
+    },
+  },
+  opt = {
+
+    formatters_by_ft = {
+      markdown = { 'prettier', 'markdownlint-cli2', 'markdown-toc' },
+      lua = { 'stylua' },
+      javascript = { 'prettier' },
+      typescript = { 'prettier' },
+      javascriptreact = { 'prettier' },
+      typescriptreact = { 'prettier' },
+      css = { 'prettier' },
+      html = { 'prettier' },
+      json = { 'prettier' },
+      yaml = { 'prettier' },
+      graphql = { 'prettier' },
+      liquid = { 'prettier' },
+      python = { 'isort', 'black' },
+      java = { 'google-java-format' },
+    },
+    format_on_save = {
+      lsp_fallback = true,
+      async = false,
+      timeout_ms = 500,
+    },
+  },
+
+  --   vim.keymap.set({ "n", "v" }, "<leader>mf", function()
+  --     conform.format({
+  --       lsp_fallback = true,
+  --       async = false,
+  --       timeout_ms = 1000,
+  --     })
+  --   end, { desc = "Format file or range (in visual mode)" })
+}

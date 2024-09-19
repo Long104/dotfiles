@@ -15,7 +15,6 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set('n', '<leader>jc', '<cmd>:make<CR>', { noremap = true, buffer = true, silent = true })
   end,
 })
-
 -- for run in terminal
 vim.cmd [[let @r=":w\<CR>:sp | terminal ./javarun \<CR>i"]]
 vim.keymap.set('n', '<leader>je', '<cmd>:! java %:p<CR>', { desc = '' })
@@ -54,3 +53,31 @@ let dir = substitute(dir, "^.*\/src\/.\\{-}\/", "", "")
   let result = append(4, "}")
 endfunction
   ]]
+
+-- for golang
+
+-- " Save the current file, open a split terminal, and run 'go run main.go'
+vim.cmd [[let @g=":w\<CR>:sp | terminal go run main.go\<CR>i"]]
+-- " Keybinding to trigger the command (using <leader>gr)
+-- delete view
+
+-- Function to permanently delete views created by 'mkview'
+function MyDeleteView()
+  local path = vim.fn.fnamemodify(vim.fn.bufname '%', ':p')
+  -- Vim's odd =~ escaping for /
+  path = vim.fn.substitute(path, '=', '==', 'g')
+  if vim.fn.empty(vim.env.HOME) == 0 then
+    path = vim.fn.substitute(path, '^' .. vim.fn.escape(vim.env.HOME, '/\\'), '~', '')
+  end
+  path = vim.fn.substitute(path, '/', '=+', 'g') .. '='
+  -- View directory
+  path = vim.o.viewdir .. '/' .. path
+  vim.fn.delete(path)
+  print('Deleted: ' .. path)
+end
+
+-- Command Delview (and its abbreviation 'delview')
+vim.api.nvim_create_user_command('Delview', MyDeleteView, {})
+
+-- Lower-case user commands: http://vim.wikia.com/wiki/Replace_a_builtin_command_using_cabbrev
+vim.cmd [[cabbrev delview <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Delview' : 'delview')<CR>]]

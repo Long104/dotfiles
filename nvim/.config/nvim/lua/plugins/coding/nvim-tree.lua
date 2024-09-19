@@ -77,7 +77,8 @@ return {
       -- you can define more keybindings if needed for other actions
     }
 
-    -- set keymaps
+    -- set keymap.feedkeys".run(14)
+    --
     local keymap = vim.keymap -- for conciseness
 
     keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<cr>', { desc = 'toggle file explorer' }) -- toggle file explorer

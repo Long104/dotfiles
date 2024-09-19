@@ -1,5 +1,10 @@
 return {
   'neovim/nvim-lspconfig',
+  opts = {
+    servers = {
+      marksman = {},
+    },
+  },
   event = { 'BufReadPre', 'BufNewFile' },
   dependencies = { 'hrsh7th/cmp-nvim-lsp', { 'antosha417/nvim-lsp-file-operations', config = true }, { 'folke/neodev.nvim', opts = {} } },
   config = function()
@@ -30,7 +35,7 @@ return {
         keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', opts) -- show definition, references
 
         opts.desc = 'Show LSP document ui'
-        keymap.set('n', '<leader>doc', ':lsp-ui-doc', opts) -- show definition, references
+        keymap.set('n', '<leader>do', ':lsp-ui-doc', opts) -- show definition, references
 
         opts.desc = 'Go to declaration'
         keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, opts) -- go to declaration
@@ -54,7 +59,7 @@ return {
         keymap.set('n', '<leader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts) -- show  diagnostics for file
 
         opts.desc = 'Show all diagnostics'
-        keymap.set('n', '<leader>a', '<cmd>Telescope diagnostics<CR>', opts) -- show  diagnostics for file
+        keymap.set('n', '<leader>ad', '<cmd>Telescope diagnostics<CR>', opts) -- show  diagnostics for file
 
         opts.desc = 'Show line diagnostics'
         keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts) -- show diagnostics for line
@@ -75,6 +80,27 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
+    --
+    -- local capabilities = cmp_nvim_lsp.default_capabilities()
+    -- capabilities.workspace = { didChangeWatchedFiles = { dynamicRegistration = true } }
+    --
+    --  local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+    --
+    -- local lsp = require 'lspconfig'
+    -- lsp.util.default_config = vim.tbl_deep_extend('force', lsp.util.default_config, {
+    --   capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    -- })
+    --
+    --     local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+    -- capabilities.textDocument.completion = cmp_capabilities.textDocument.completion
+    --
+    -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+    -- capabilities.textDocument.completion = require('cmp_nvim_lsp').default_capabilities().textDocument.completion
+    --
+    -- local capabilities = vim.tbl_deep_extend('force', vim.lsp.protocol.make_client_capabilities(), require('cmp_nvim_lsp').default_capabilities())
+    --
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)

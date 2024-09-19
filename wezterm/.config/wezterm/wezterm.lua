@@ -8,8 +8,8 @@
 local wezterm = require("wezterm")
 -- local act = wezterm.acti
 -- local xdg_config_home = os.getenv("xdg_config_home") local dimmer = { brightness = 0.1 }
--- local fish_path = "/opt/homebrew/bin/fish"
-local fish_path = "/usr/bin/fish"
+local fish_path = "/opt/homebrew/bin/fish"
+-- local fish_path = "/usr/bin/fish"
 
 local config = {}
 -- Use config builder object if possible if wezterm.config_builder then config = wezterm.config_builder()
@@ -24,7 +24,7 @@ config.font = wezterm.font_with_fallback({
 	-- { family = "Fira Code", weight = "Bold" },
 	{
 		family = "MesloLGS Nerd Font Mono",
-		weight = "Bold",
+		weight = "Thin",
 		scale = 1.0,
 	},
 
@@ -37,7 +37,7 @@ config.font = wezterm.font_with_fallback({
 	-- { family = "Ubuntu Mono", weight = "Regular" },
 	-- { family = "Terminus", weight = "Regular" },
 	-- { family = "Terminus", weight = "Bold" },
-	"Noto Color Emoji",
+	-- "Noto Color Emoji",
 })
 
 --background
@@ -69,22 +69,29 @@ config.font = wezterm.font_with_fallback({
 config.warn_about_missing_glyphs = false
 config.freetype_load_flags = "NO_HINTING"
 config.enable_wayland = false
-config.font_size = 14.6
+config.font_size = 13.5
+config.enable_kitty_graphics = true
+-- config.underline_thickness = "1.5pt"
+-- config.underline_position = "-3.2pt"
 -- config.freetype_load_target = "Light"
 config.freetype_load_target = "HorizontalLcd"
 config.initial_rows = 52
 config.initial_cols = 230
+-- config.scroll_to_bottom_on_input = true
 config.freetype_render_target = "HorizontalLcd"
 config.cell_width = 0.9
-
 -- Settings
 config.default_prog = { fish_path, "-l" }
-
-config.color_scheme = "Tokyo Night"
-config.window_background_opacity = 0.9
+-- config.color_scheme = "Tokyo Night"
+-- config.color_scheme = "Kanagawa Dragon (Gogh)"
+config.color_scheme = "Kanagawa (Gogh)"
+-- config.color_scheme = "kanagawabones"
+config.window_background_opacity = 0.95
+-- config.window_background_opacity = 0.8
 -- config.window_background_image = wezterm.config_dir .. "/wallpaper/images.jpeg"
 -- config.window_background_image = wezterm.config_dir .. "/wallpaper/patapata.gif"
 -- config.window_background_image_hsb = { brightness = 0.01 }
+config.send_composed_key_when_left_alt_is_pressed = true
 config.macos_window_background_blur = 13
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
@@ -132,10 +139,10 @@ config.window_close_confirmation = "NeverPrompt"
 config.keys = {
 	-- k.cmd_to_tmux_prefix("y", "T"),
 	-- k.cmd_to_tmux_prefix("y", "y"),
-	-- k.cmd_to_tmux_prefix("K", "T"),
-	-- k.cmd_to_tmux_prefix("k", "K"),
-	-- k.cmd_to_tmux_prefix("O", "T"),
-	-- k.cmd_to_tmux_prefix("o", "O"),
+	k.cmd_to_tmux_prefix("K", "T"),
+	k.cmd_to_tmux_prefix("k", "K"),
+	k.cmd_to_tmux_prefix("O", "T"),
+	k.cmd_to_tmux_prefix("o", "O"),
 	k.cmd_to_tmux_prefix("x", "T"),
 	k.cmd_to_tmux_prefix("x", "x"),
 	-- k.cmd_to_tmux_prefix("c", "T"),
@@ -162,6 +169,8 @@ config.keys = {
 	k.cmd_to_tmux_prefix("l", "L"),
 	k.cmd_to_tmux_prefix("j", "T"),
 	k.cmd_to_tmux_prefix("j", "j"),
+	k.cmd_to_tmux_prefix("H", "T"),
+	k.cmd_to_tmux_prefix("h", "H"),
 }
 
 -- The art is a bit too bright and colorful to be useful as a backdrop
@@ -176,4 +185,26 @@ config.keys = {
 --   close nvim buffer
 -- else:
 --   close terminal
+wezterm.on("user-var-changed", function(window, pane, name, value)
+	local overrides = window:get_config_overrides() or {}
+	if name == "ZEN_MODE" then
+		local incremental = value:find("+")
+		local number_value = tonumber(value)
+		if incremental ~= nil then
+			while number_value > 0 do
+				window:perform_action(wezterm.action.IncreaseFontSize, pane)
+				number_value = number_value - 1
+			end
+			overrides.enable_tab_bar = false
+		elseif number_value < 0 then
+			window:perform_action(wezterm.action.ResetFontSize, pane)
+			overrides.font_size = nil
+			overrides.enable_tab_bar = true
+		else
+			overrides.font_size = number_value
+			overrides.enable_tab_bar = false
+		end
+	end
+	window:set_config_overrides(overrides)
+end)
 return config
