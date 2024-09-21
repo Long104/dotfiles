@@ -108,7 +108,7 @@ config.window_padding = {
 	left = 10,
 	right = 10,
 	top = 0,
-	bottom = 0,
+	bottom =0,
 }
 
 --[[ Appearance setting for when I need to take pretty screenshots

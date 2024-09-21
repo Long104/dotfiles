@@ -1,47 +1,68 @@
-
 require 'core'
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end ---@diagnostic disable-next-line: undefined-field
+  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath } end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   spec = {
-    -- basic need
+    -- plugin
     { import = 'plugins' },
 
     -- lsp
     { import = 'plugins.lsp' },
-    { import = 'plugins.lsp.golang' },
-    { import = 'plugins.lsp.typescript' },
 
     -- ai
     { import = 'plugins.ai' },
 
     -- ui
     { import = 'plugins.ui' },
-    { import = 'plugins.ui.colorschemes' },
     { import = 'plugins.auto' },
 
-    -- utility
-    -- { import = 'plugins.utility.debug' },
-    -- { import = 'plugins.utility.database' },
-    -- { import = 'plugins.utility.test' },
-    { import = 'plugins.utility' },
+    -- colorschemes
+    -- { import = 'plugins.ui.colorschemes.kanagawa-papaer' },
+    { import = 'plugins.ui.colorschemes.kanagawa' },
+    -- { import = 'plugins.ui.colorschemes.oxocarbon' },
+    -- { import = 'plugins.ui.colorschemes.primepuccin' },
+    -- { import = 'plugins.ui.colorschemes.sakura' },
+    -- { import = 'plugins.ui.colorschemes.tokyo-dark' },
+    -- { import = 'plugins.ui.colorschemes.tokyo-night-custom' },
+    -- { import = 'plugins.ui.colorschemes.tokyo-night' },
 
+    -- utility
+    -- { import = 'plugins.utility.http' },
+    -- { import = 'plugins.utility.likepostman' },
+    -- { import = 'plugins.utility.database' },
+    -- { import = 'plugins.utility.refactor' },
+
+    -- test  
+    -- { import = 'plugins.utility.test' },
+
+    --  debug
+    -- { import = 'plugins.utility.debug' },
+    --
     -- git
     { import = 'plugins.git' },
 
     -- extra storage for plugins
-    -- { import = 'storage.bufferline' },
-    -- { import = 'storage.bufferAndTab' },
-    -- { import = 'storage.oil' },
-    -- { import = 'storage.snipe' },
-    { import = 'storage.flash' },
-    -- { import = 'storage.harpoon' },
-    -- { import = 'storage.todo-comment' },
+    -- { import = 'storage.morePlugin.which' },
+    -- { import = 'storage.morePlugin.bufferline' },
+    -- { import = 'storage.morePlugin.bufferAndTab' },
+    -- { import = 'storage.morePlugin.oil' },
+    -- { import = 'storage.morePlugin.snipe' },
+    -- { import = 'storage.morePlugin.flash' },
+    -- { import = 'storage.morePlugin.harpoon' },
+    -- { import = 'storage.morePlugin.todo-comment' },
+
+    -- extra storage for language
+    -- go
+    -- { import = 'storage.language.go' },
+    -- { import = 'storage.language.go.debug' },
+
+    -- typescript
+    -- { import = 'storage.language.typescript' },
+    -- { import = 'storage.language.typescript.debug' },
   },
   checker = {
     notify = false,
@@ -75,4 +96,4 @@ require('lazy').setup {
 }
 
 -- transparent background
-require 'core.builtin'
+require 'core.transparent'

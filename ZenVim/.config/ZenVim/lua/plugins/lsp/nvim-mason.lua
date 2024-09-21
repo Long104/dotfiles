@@ -14,15 +14,15 @@ return {
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     -- for debug
-    -- 'mfussenegger/nvim-dap',
-    -- { 'jay-babu/mason-nvim-dap.nvim', cmd = { 'DapInstall', 'DapUninstall' } },
+    'mfussenegger/nvim-dap',
+    { 'jay-babu/mason-nvim-dap.nvim', cmd = { 'DapInstall', 'DapUninstall' } },
   },
 
   config = function()
     local mason = require 'mason'
     local mason_lspconfig = require 'mason-lspconfig'
     local mason_tool_installer = require 'mason-tool-installer'
-    -- local mason_nvim_dap = require 'mason-nvim-dap'
+    local mason_nvim_dap = require 'mason-nvim-dap'
 
     -- enable mason and configure icons
     mason.setup {
@@ -52,6 +52,7 @@ return {
         'pyright',
         'lua_ls',
         'ts_ls',
+        -- 'ocamllsp'
       },
     }
 
@@ -78,10 +79,13 @@ return {
       },
     }
 
-    -- mason_nvim_dap.setup {
-    --   ensure_installed = {
-    -- 'go-debug-adapter',
-    -- 'delve',
-    --   },
+    mason_nvim_dap.setup {
+      ensure_installed = {
+        'go-debug-adapter',
+        'delve',
+        'js-debug-adapter',
+      },
+      automatic_installation = false,
+    }
   end,
 }

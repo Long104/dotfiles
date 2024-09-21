@@ -8,8 +8,7 @@ return {
 
       options = {
         -- theme = 'auto',
-        icons_enabled = true,
-        -- component_separators = { left = '', right = '' },
+        icons_enabled = true, -- component_separators = { left = '', right = '' },
         -- section_separators = { left = '', right = '' },
         disabled_filetypes = {
           'NvimTree,NeoTree',

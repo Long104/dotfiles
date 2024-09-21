@@ -9,10 +9,12 @@ local opts = function(desc)
 end
 local keymap = vim.keymap.set
 -- normal
-keymap('i', 'jj', '<Esc>')
+keymap('n', '<CR>', '<Esc>',opts 'exit insert mode')
+keymap('i', 'jj', '<Esc>',opts 'exit insert mode')
 keymap('n', '<Esc>', '<cmd>nohlsearch<CR>', opts 'un select the text')
 keymap('n', 'wd', '<cmd>q!<CR>', opts 'Close current split')
 keymap('n', 'du', '<cmd>q!<CR>', opts 'Close current split')
+keymap('n', 'dl', '<cmd>q!<CR>', opts 'Close current split')
 keymap('n', 'qa', '<cmd>wqa!<CR>', opts 'Close current split')
 keymap('n', 'r', '<C-r>', opts 'Redo')
 keymap('n', 'e', '<cmd>e!<cr>', opts 'Reload')
@@ -22,7 +24,7 @@ keymap('n', '<S-l>', '<cmd>e #<CR>', opts 'Go to previous tab')
 
 -- diagostic
 keymap('n', 'ql', vim.diagnostic.setloclist, opts 'Open diagnostic [Q]uickfix list')
-keymap('n', '<c-i>', function()
+keymap('n', '<leader>h', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { 0 }, { 0 })
 end,opts 'show hint')
 

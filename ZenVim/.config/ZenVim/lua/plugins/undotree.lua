@@ -11,7 +11,7 @@ return {
     position = 'right', -- "right", "bottom"
     ignore_filetype = { 'undotree', 'undotreeDiff', 'qf', 'TelescopePrompt', 'spectre_panel', 'tsplayground' },
     window = {
-      winblend = 3,
+      winblend = 10,
     },
     keymaps = {
       ['j'] = 'move_next',

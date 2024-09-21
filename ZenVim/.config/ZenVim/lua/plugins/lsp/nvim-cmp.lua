@@ -7,6 +7,10 @@ return {
     -- engine
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
 
+    {
+      'folke/lazydev.nvim',
+      opts = {},
+    },
     -- source
     'hrsh7th/cmp-nvim-lsp',
     'saadparwaiz1/cmp_luasnip',
@@ -21,10 +25,13 @@ return {
     { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' } },
 
     -- debug
-    -- 'rcarriga/cmp-dap',
+    'rcarriga/cmp-dap',
 
     -- go
-    { 'Snikimonkd/cmp-go-pkgs', ft = 'go' }, -- for go
+    -- { 'Snikimonkd/cmp-go-pkgs', ft = 'go' }, -- for go
+
+    -- graphql
+    -- 'mistweaverco/kulala-cmp-graphql.nvim',
 
     -- env
     'SergioRibera/cmp-dotenv',
@@ -137,8 +144,17 @@ return {
         -- { name = 'vim-dadbod-completion' },
         -- { name = 'copilot', priority = 300, group_index = 1 },
         -- { name = 'dap', priority = 40, group_index = 6 },
-        -- { name = 'go_pkgs' },
+        { name = 'go_pkgs' },
+        name = 'lazydev',
       },
+
+      -- cmp.setup.filetype("http", {
+      --   sources = cmp.config.sources({
+      --     { name = "kulala-cmp-graphql" },
+      --   }, {
+      --     { name = "buffer" },
+      --   }),
+      -- }),
 
       formatting = {
 

@@ -1,199 +1,89 @@
-
 return {
-  {
-    'mfussenegger/nvim-dap',
-    config = function()
-      local dap = require 'dap'
-      local widgets = require 'dap.ui.widgets'
-      local registry = require 'mason-registry'
+  'mfussenegger/nvim-dap',
+  recommended = true,
+  desc = 'Debugging support. Requires language specific adapters to be configured. (see lang extras)',
 
-      -- dap.set_log_level('TRACE')
-
-      dap.configurations.javascript = {
-        {
-          type = 'pwa-node',
-          request = 'attach',
-          name = 'Attach debugger to existing `node --inspect` process',
-          cwd = '${workspaceFolder}',
-          skipFiles = {
-            '${workspaceFolder}/node_modules/**/*.js',
-            '${workspaceFolder}/packages/**/node_modules/**/*.js',
-            '${workspaceFolder}/packages/**/**/node_modules/**/*.js',
-            '<node_internals>/**',
-            'node_modules/**',
-          },
-          sourceMaps = true,
-          console = 'integratedTerminal',
-          resolveSourceMapLocations = {
-            '${workspaceFolder}/**',
-            '!**/node_modules/**',
-          },
-        },
-        {
-          type = 'pwa-node',
-          request = 'launch',
-          name = 'Launch file',
-          program = '${file}',
-          cwd = '${workspaceFolder}',
-        },
-        {
-          type = 'pwa-chrome',
-          request = 'launch',
-          name = 'Launch browser to debug client side code',
-          url = function()
-            local co = coroutine.running()
-            return coroutine.create(function()
-              vim.ui.input({ prompt = 'Enter URL: ', default = 'http://localhost:5173' }, function(url)
-                if url == nil or url == '' then
-                  return
-                else
-                  coroutine.resume(co, url)
-                end
-              end)
-            end)
-          end,
-          runtimeExecutable = '/usr/bin/brave-browser',
-          -- for TypeScript/Svelte
-          sourceMaps = true,
-          webRoot = '${workspaceFolder}/src',
-          protocol = 'inspector',
-          port = 9222,
-          -- skip files from vite's hmr
-          skipFiles = { '**/node_modules/**/*', '**/@vite/*', '**/src/client/*', '**/src/*' },
-        },
-      }
-
-      dap.adapters.php = {
-        type = 'executable',
-        command = registry.get_package('php-debug-adapter'):get_install_path() .. '/php-debug-adapter',
-      }
-      dap.configurations.php = {
-        {
-          type = 'php',
-          request = 'launch',
-          name = 'Listen for Xdebug in Docker',
-          pathMappings = {
-            ['/var/www/html'] = '${workspaceFolder}',
-          },
-          repl_lang = 'php_only',
-        },
-        {
-          type = 'php',
-          request = 'launch',
-          name = 'Listen for Xdebug locally',
-          repl_lang = 'php_only',
-        },
-      }
-
-      -- map('n', '<F5>', function()
-      --   dap.continue()
-      -- end)
-      -- map('n', '<F10>', function()
-      --   dap.step_over()
-      -- end)
-      -- map('n', '<F11>', function()
-      --   dap.step_into()
-      -- end)
-      -- map('n', '<F12>', function()
-      --   dap.step_out()
-      -- end)
-      -- map('n', '<leader>b', function()
-      --   dap.toggle_breakpoint()
-      -- end)
-      -- map('n', '<leader>B', function()
-      --   dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-      -- end)
-      -- map('n', '<leader>lp', function()
-      --   dap.set_breakpoint(nil, nil, vim.fn.input 'Log point message: ')
-      -- end)
-      -- map('n', '<leader>dr', function()
-      --   dap.repl.open()
-      -- end)
-      -- map('n', '<leader>dl', function()
-      --   dap.run_last()
-      -- end)
-      -- map({ 'n', 'v' }, '<leader>dh', function()
-      --   widgets.hover()
-      -- end)
-      -- map({ 'n', 'v' }, '<leader>dp', function()
-      --   widgets.preview()
-      -- end)
-      -- map('n', '<leader>ds', function()
-      --   widgets.centered_float(widgets.scopes)
-      -- end)
-
-      vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#993939', bg = '' })
-      vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#61afef', bg = '' })
-      vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#98c379', bg = '' })
-
-      vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
-      vim.fn.sign_define('DapBreakpointCondition', { text = 'ﳁ', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
-      vim.fn.sign_define('DapBreakpointRejected', { text = '', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
-      vim.fn.sign_define('DapLogPoint', { text = '', texthl = 'DapLogPoint', linehl = '', numhl = '' })
-      vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = 'debugPC', numhl = '' })
-    end,
-  },
-  {
-    'mxsdev/nvim-dap-vscode-js',
-    opts = {
-      debugger_path = vim.fn.stdpath 'data' .. '/mason/packages/js-debug-adapter',
-      adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
-    },
-    dependencies = { 'mfussenegger/nvim-dap' },
-  },
-  {
+  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  dependencies = {
     'rcarriga/nvim-dap-ui',
-    opts = {},
-    config = function(_, opts)
-      local dap = require 'dap'
-      local dapui = require 'dapui'
+    'nvim-neotest/nvim-nio',
+    -- virtual text for the debugger
 
-      dapui.setup(opts)
-
-      local open = function()
-        dapui.open()
-      end
-
-      local close = function()
-        dapui.close()
-      end
-
-      -- map('n', '<leader>dt', function()
-      --   dapui.toggle()
-      -- end)
-
-      dap.listeners.before.attach.dapui_config = open
-      dap.listeners.before.launch.dapui_config = open
-      dap.listeners.before.disconnect.dapui_config = close
-      dap.listeners.before.event_terminated.dapui_config = close dap.listeners.before.event_exited.dapui_config = close end,
-    dependencies = {
-      'mfussenegger/nvim-dap',
-      'nvim-neotest/nvim-nio',
+    -- 'leoluz/nvim-dap-go',
+    {
+      'theHamsta/nvim-dap-virtual-text',
+      -- opts = {},
+      config = function()
+        require('nvim-dap-virtual-text').setup {
+          -- e.g. 80 to position at column 80, see `:h nvim_buf_set_extmark()`
+        }
+      end,
     },
   },
-  {
-    'theHamsta/nvim-dap-virtual-text',
-    opts = {},
+
+  -- stylua: ignore
+  keys = {
+    { "<leader>d", "", desc = "+debug", mode = {"n", "v"} },
+    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+    { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
+    -- { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
+    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
+    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
+    { "<leader>dj", function() require("dap").down() end, desc = "Down" },
+    { "<leader>dk", function() require("dap").up() end, desc = "Up" },
+    { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
+    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>dv", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
+    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+    { "<leader>ds", function() require("dap").session() end, desc = "Session" }, { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
+    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+    { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
   },
-  {
-    'LiadOz/nvim-dap-repl-highlights',
-    opts = {},
-  },
-  {
-    'nvim-telescope/telescope-dap.nvim',
-    -- init = function()
-    --   local telescope = require 'telescope'
+
+  config = function()
+    vim.keymap.set('n', '<space>?', function()
+      require('dapui').eval(nil, { enter = true })
+    end)
+    -- require('telescope').load_extension('dap')
+    -- vim.keymap.set ( 'n', '<leader>dff', ':Telescope dap frames<cr>', { desc = 'telscope debug' } )
+    -- vim.keymap.set ( 'n', '<leader>dfb', ':Telescope dap list_breakpoint<cr>', { desc = 'telscope debug' } )
+
+    -- load mason-nvim-dap here, after all adapters have been setup
+    require('mason-nvim-dap').setup()
+
+    require('dapui').setup()
+    require('dap-go').setup()
+    local dap, dapui = require 'dap', require 'dapui'
+    dap.listeners.before.attach.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+      dapui.open()
+    end
+    -- dap.listeners.before.event_terminated.dapui_config = function()
+    --   dapui.close()
+    -- end
+    -- dap.listeners.before.event_exited.dapui_config = function()
+    --   dapui.close()
+    -- end
+
+    vim.api.nvim_set_hl(0, 'DapStoppedLine', { default = true, link = 'Visual' })
+
+    vim.g.dap_virtual_text = true
+    -- -- setup dap config by VsCode launch.json file
+    -- local vscode = require("dap.ext.vscode")
+    -- local json = require("plenary.json")
+    -- vscode.json_decode = function(str)
+    --   return vim.json.decode(json.json_strip_comments(str))
+    -- end
     --
-    --   telescope.load_extension 'dap'
-    --   map({ 'n', 'v' }, '<leader>dc', telescope.extensions.dap.commands)
-    --   map({ 'n', 'v' }, '<leader>dC', telescope.extensions.dap.configurations)
-    --   map({ 'n', 'v' }, '<leader>db', telescope.extensions.dap.list_breakpoints)
-    --   map({ 'n', 'v' }, '<leader>dv', telescope.extensions.dap.variables)
-    --   map({ 'n', 'v' }, '<leader>df', telescope.extensions.dap.frames)
-    -- end,
-    dependencies = {
-      'mfussenegger/nvim-dap',
-      'nvim-telescope/telescope.nvim',
-    },
-  },
+    -- -- Extends dap.configurations with entries read from .vscode/launch.json
+    -- if vim.fn.filereadable(".vscode/launch.json") then
+    --   vscode.load_launchjs()
+    -- end
+  end,
 }

@@ -1,6 +1,12 @@
 
 return {
   'aznhe21/actions-preview.nvim',
+  -- keys = { {
+  --   '<leader>ap',
+  --   "<cmd>lua require('actions-preview').code_actions<cr>",
+  --   mode = { 'v', 'n' },
+  --   desc = 'Code actions preview',
+  -- } },
   config = function()
     require('actions-preview').setup {
       -- options for vim.diff(): https://neovim.io/doc/user/lua.html#vim.diff()
@@ -72,7 +78,6 @@ return {
         },
       },
     }
-
-    vim.keymap.set({ 'v', 'n' }, 'gf', require('actions-preview').code_actions)
+    vim.keymap.set({ 'v', 'n' }, '<leader>gz', require('actions-preview').code_actions)
   end,
 }

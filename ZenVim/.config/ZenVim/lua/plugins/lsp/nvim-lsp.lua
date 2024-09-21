@@ -6,6 +6,7 @@ return {
   dependencies = {
     -- file
     { 'antosha417/nvim-lsp-file-operations', config = true },
+      -- 'jubnzv/virtual-types.nvim',
 
     -- debug
     -- { 'jay-babu/mason-nvim-dap.nvim', cmd = { 'DapInstall', 'DapUninstall' } },
@@ -20,6 +21,12 @@ return {
   },
 
   config = function()
+
+-- require('lspconfig').ocamllsp.setup{
+--   on_attach = require'virtualtypes'.on_attach
+-- }
+
+
     local lspconfig = require 'lspconfig'
 
     -- import mason_lspconfig plugin
@@ -28,6 +35,8 @@ return {
     local cmp_nvim_lsp = require 'cmp_nvim_lsp'
 
     local keymap = vim.keymap -- for conciseness
+
+
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -87,6 +96,31 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
     end
 
+-- local on_attach = function(client, bufnr)
+--   --- Only Neovim 0.7
+--   if client.resolved_capabilities.code_lens then
+--     local codelens = vim.api.nvim_create_augroup(
+--       'LSPCodeLens',
+--       { clear = true }
+--     )
+--     vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+--       group = codelens,
+--       callback = function()
+--         vim.lsp.codelens.refresh()
+--       end,
+--       buffer = bufnr,
+--       once = true,
+--     })
+--     vim.api.nvim_create_autocmd({ 'BufWritePost', 'CursorHold' }, {
+--       group = codelens,
+--       callback = function()
+--         vim.lsp.codelens.refresh()
+--       end,
+--       buffer = bufnr,
+--     })
+--   end
+-- end
+
     mason_lspconfig.setup_handlers {
       -- default handler for installed servers
       function(server_name)
@@ -96,6 +130,7 @@ return {
         -- server_name = server_name == 'tsserver' and 'ts_ls' or server_name
         lspconfig[server_name].setup {
           capabilities = capabilities,
+          -- on_attach = on_attach,
         }
       end,
 

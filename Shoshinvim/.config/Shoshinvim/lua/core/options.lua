@@ -39,6 +39,7 @@ vim.opt.encoding = 'utf-8'
 -- vim.opt.insert_final_newline = true
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 25
+
 vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 vim.opt.shiftwidth = 2 -- 2 spaces for indent width
 -- vim.opt.shiftround = true

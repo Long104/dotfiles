@@ -15,6 +15,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 opt.laststatus = 3
+-- opt.laststatus = 0
 opt.showmode = false
 
 opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus'
@@ -95,7 +96,7 @@ opt.wrap = false
 opt.swapfile = false
 opt.backup = false
 opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
-opt.cmdheight = 0
+opt.cmdheight = 1
 
 -- vim.opt.formatoptions:remove { 'r', 'o' }
 opt.breakindent = true

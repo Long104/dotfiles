@@ -15,7 +15,8 @@ return {
       shade_filetypes = {},
       shade_terminals = true,
       shading_factor = 2,
-      start_in_insert = true,
+      -- start_in_insert = true,
+      start_in_insert = false,
       insert_mappings = true,
       persist_size = false,
       direction = 'float',
@@ -25,7 +26,7 @@ return {
       shell = vim.o.shell,
       float_opts = {
         border = 'curved',
-        winblend = 5,
+        winblend = 15,
         highlights = {
           border = 'Normal',
           background = 'Normal',
@@ -77,12 +78,12 @@ return {
     vim.cmd [[autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe j:count1 . "ToggleTerm"<CR>]]
 
     -- Apply mappings for normal mode and insert mode
-    vim.api.nvim_set_keymap('n', '<leader>th', "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>", { silent = true })
+    vim.api.nvim_set_keymap('n', 'th', "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>", { silent = true })
 
-    keymap.set('n', '<leader>tl', '<cmd>lua _LAZYGIT_TOGGLE()<cr>', { desc = 'lazygit' })
+    keymap.set('n', 'tl', '<cmd>lua _LAZYGIT_TOGGLE()<cr>', { desc = 'lazygit' })
     -- vim.api.nvim_set_keymap("n", "<leader>tn", "<Cmd>exe v:count1 . 'lua _NODE_TOGGLE()'<CR>", { silent = true })
     -- vim.api.nvim_set_keymap("n", "<leader>tp", "<Cmd>exe v:count1 . 'lua _PYTHON_TOGGLE()'<CR>", { silent = true })
-    vim.api.nvim_set_keymap('n', '<leader>tv', "<Cmd>exe v:count1 . 'ToggleTerm size=80 direction=vertical'<CR>", { silent = true })
+    vim.api.nvim_set_keymap('n', 'tv', "<Cmd>exe v:count1 . 'ToggleTerm size=80 direction=vertical'<CR>", { silent = true })
     -- vim.api.nvim_set_keymap(
     --   "n",
     --   "<leader>tf",
@@ -90,7 +91,7 @@ return {
     --   { silent = true }
     -- )
 
-    vim.api.nvim_set_keymap('n', '<leader>tf', "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>", { silent = true })
+    vim.api.nvim_set_keymap('n', 'tf', "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>", { silent = true })
 
     -- Function to run `go run main.go` in ToggleTerm
     vim.api.nvim_set_keymap(

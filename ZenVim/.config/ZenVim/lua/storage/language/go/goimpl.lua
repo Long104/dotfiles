@@ -9,6 +9,6 @@ return {
   ft = { 'go' },
   config = function()
     require('telescope').load_extension 'goimpl'
-    vim.keymap.set('n', '<leader>im', [[<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<CR>]], { noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>gop', [[<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<CR>]], { noremap = true, silent = true })
   end,
 }

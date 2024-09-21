@@ -2,7 +2,7 @@ return {
   'leath-dub/snipe.nvim',
   keys = {
     {
-      '<leader>sn',
+      'S',
       function()
         require('snipe').open_buffer_menu()
       end,
@@ -14,7 +14,7 @@ return {
       max_width = -1, -- -1 means dynamic width
       -- Where to place the ui window
       -- Can be any of "topleft", "bottomleft", "topright", "bottomright", "center", "cursor" (sets under the current cursor pos)
-      position = 'center',
+      position = 'cursor',
     },
     hints = {
       -- Charaters to use for hints (NOTE: make sure they don't collide with the navigation keymaps)
