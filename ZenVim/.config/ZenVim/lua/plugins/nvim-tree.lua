@@ -1,15 +1,15 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  dependencies = { {
-    'nvim-tree/nvim-web-devicons',opts = {
+  -- dependencies = { {
+    -- 'nvim-tree/nvim-web-devicons',opts = {
  -- http = {
  --    icon = "🌐",    -- Example icon (use any emoji or custom icon)
  --    color = "#519aba",  -- Choose a hex color for the icon
  --    cterm_color = "67",
  --    name = "http"
  --  }
-}
-  } },
+-- }
+  -- } },
   keys = {
     -- { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'toggle file explorer' }, -- toggle file explorer
     {

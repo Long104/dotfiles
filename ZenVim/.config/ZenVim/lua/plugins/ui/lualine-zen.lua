@@ -1,5 +1,6 @@
 return {
   'hoob3rt/lualine.nvim',
+  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   config = function()
     -- Define highlight groups for separators
 
@@ -8,7 +9,18 @@ return {
 
       options = {
         -- theme = 'auto',
+        -- theme = 'nord',
+        -- theme = 'everforest',
+        -- theme = 'seoul256',
+        -- theme = 'palenight',
+        -- theme = 'modus-vivendi',
+        theme = 'base16',
+        -- theme = 'jellybeans',
+
+        -- horizon
+
         icons_enabled = true, -- component_separators = { left = '', right = '' },
+
         -- section_separators = { left = '', right = '' },
         disabled_filetypes = {
           'NvimTree,NeoTree',
@@ -48,7 +60,6 @@ return {
             separator = { left = '', right = '' },
             -- icon = { '', align = 'left' },
           },
-
         },
         -- lualine_b = { { 'mode', icon = { '', align = 'right', color = { fg = 'green' } } } },
 

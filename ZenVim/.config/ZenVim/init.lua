@@ -22,17 +22,18 @@ require('lazy').setup {
     { import = 'plugins.auto' },
 
     -- colorschemes
-    -- { import = 'plugins.ui.colorschemes.kanagawa-papaer' },
+    -- { import = 'plugins.ui.colorschemes.kanagawa-paper' },
     { import = 'plugins.ui.colorschemes.kanagawa' },
     -- { import = 'plugins.ui.colorschemes.catppuccin' },
-    -- { import = 'plugins.ui.colorschemes.oxocarbon' },
     -- { import = 'plugins.ui.colorschemes.primepuccin' },
+    -- { import = 'plugins.ui.colorschemes.oxocarbon' },
+    -- { import = 'plugins.ui.colorschemes.mini-colors' },
     -- { import = 'plugins.ui.colorschemes.nord' },
     -- { import = 'plugins.ui.colorschemes.sakura' },
+    -- { import = 'plugins.ui.colorschemes.vscode' },
     -- { import = 'plugins.ui.colorschemes.tokyo-dark' },
     -- { import = 'plugins.ui.colorschemes.tokyo-night-custom' },
     -- { import = 'plugins.ui.colorschemes.tokyo-night' },
-    -- { import = 'plugins.ui.colorschemes.vscode' },
 
     -- utility
     -- { import = 'plugins.utility.http' },
@@ -50,11 +51,11 @@ require('lazy').setup {
     -- { import = 'plugins.git' },
 
     -- extra storage for plugins
-    { import = 'storage.morePlugin.oil' },
+    -- { import = 'storage.morePlugin.oil' },
     { import = 'storage.morePlugin.snipe' },
     { import = 'storage.morePlugin.flash' },
     { import = 'storage.morePlugin.grapple' },
-    { import = 'storage.morePlugin.outline' },
+    -- { import = 'storage.morePlugin.outline' },
 
     -- extra storage for language
     -- go
@@ -97,5 +98,4 @@ require('lazy').setup {
 }
 
 -- transparent background
--- require 'core.transparent'
 require 'core.transparent'

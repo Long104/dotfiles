@@ -14,8 +14,8 @@ opt.sessionoptions = { 'terminal', 'buffers', 'curdir', 'tabpages', 'winsize', '
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-opt.laststatus = 3
--- opt.laststatus = 0
+-- opt.laststatus = 3
+opt.laststatus = 0
 opt.showmode = false
 
 opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus'
