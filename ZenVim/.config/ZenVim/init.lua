@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
-  spec = {
+      spec = {
     -- plugin
     { import = 'plugins' },
 
@@ -19,13 +19,12 @@ require('lazy').setup {
 
     -- ui
     { import = 'plugins.ui' },
-    { import = 'plugins.auto' },
 
     -- colorschemes
     -- { import = 'plugins.ui.colorschemes.kanagawa-paper' },
     { import = 'plugins.ui.colorschemes.kanagawa' },
-    -- { import = 'plugins.ui.colorschemes.catppuccin' },
-    -- { import = 'plugins.ui.colorschemes.primepuccin' },
+    -- { import = 'plugins.ui.colorschemes.kanagawaWithTransparent' },
+    -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
     -- { import = 'plugins.ui.colorschemes.oxocarbon' },
     -- { import = 'plugins.ui.colorschemes.mini-colors' },
     -- { import = 'plugins.ui.colorschemes.nord' },
@@ -40,6 +39,7 @@ require('lazy').setup {
     -- { import = 'plugins.utility.likepostman' },
     -- { import = 'plugins.utility.database' },
     -- { import = 'plugins.utility.refactor' },
+    -- { import = 'plugins.utility.docker' },
 
     -- test  
     -- { import = 'plugins.utility.test' },
@@ -56,6 +56,8 @@ require('lazy').setup {
     { import = 'storage.morePlugin.flash' },
     { import = 'storage.morePlugin.grapple' },
     -- { import = 'storage.morePlugin.outline' },
+    -- { import = 'storage.morePlugin.mini-starter' },
+    -- { import = 'storage.morePlugin.glance' },
 
     -- extra storage for language
     -- go

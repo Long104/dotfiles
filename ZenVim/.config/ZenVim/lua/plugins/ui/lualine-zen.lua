@@ -8,6 +8,7 @@ return {
     require('lualine').setup {
 
       options = {
+
         -- theme = 'auto',
         -- theme = 'nord',
         -- theme = 'everforest',
@@ -17,7 +18,7 @@ return {
         theme = 'base16',
         -- theme = 'jellybeans',
 
-        -- horizon
+         -- horizon
 
         icons_enabled = true, -- component_separators = { left = '', right = '' },
 

@@ -7,6 +7,24 @@ vim.api.nvim_create_user_command('GitRefresh', function()
   vim.cmd 'NvimTreeRefresh'
 end, {})
 
+-- delete all session files
+local session_dir = vim.fn.stdpath 'state' .. '/sessions/'
+
+-- Function to delete all session files
+
+vim.keymap.set('n', '<leader>ds', function()
+  if vim.fn.isdirectory(session_dir) == 1 then
+    for _, file in ipairs(vim.fn.readdir(session_dir)) do
+      vim.fn.delete(session_dir .. file)
+    end
+    print 'All session files deleted.'
+  else
+    print 'Session directory does not exist.'
+  end
+end, { noremap = true, silent = true })
+
+-- Call the function
+
 -- hightlihght word under cursor
 -- -- Lua version in init.lua
 -- vim.cmd 'highlight MyHighlightGroup guibg=#00FFFF'

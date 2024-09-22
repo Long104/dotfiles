@@ -6,7 +6,7 @@ return {
   dependencies = {
     -- file
     { 'antosha417/nvim-lsp-file-operations', config = true },
-      -- 'jubnzv/virtual-types.nvim',
+    -- 'jubnzv/virtual-types.nvim',
 
     -- debug
     -- { 'jay-babu/mason-nvim-dap.nvim', cmd = { 'DapInstall', 'DapUninstall' } },
@@ -21,11 +21,9 @@ return {
   },
 
   config = function()
-
--- require('lspconfig').ocamllsp.setup{
---   on_attach = require'virtualtypes'.on_attach
--- }
-
+    -- require('lspconfig').ocamllsp.setup{
+    --   on_attach = require'virtualtypes'.on_attach
+    -- }
 
     local lspconfig = require 'lspconfig'
 
@@ -36,12 +34,14 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
-
-
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev) -- Buffer local mappings.
         local opts = { buffer = ev.buf, silent = true }
+
+        -- keymap.set('n', '<leader>gv', function()
+        --   require('lspconfig').ocamllsp.setup { on_attach = require('virtualtypes').on_attach }
+        -- end, opts) -- lsp references
 
         opts.desc = 'Show LSP references'
         keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', opts) -- lsp references
@@ -96,30 +96,30 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
     end
 
--- local on_attach = function(client, bufnr)
---   --- Only Neovim 0.7
---   if client.resolved_capabilities.code_lens then
---     local codelens = vim.api.nvim_create_augroup(
---       'LSPCodeLens',
---       { clear = true }
---     )
---     vim.api.nvim_create_autocmd({ 'BufEnter' }, {
---       group = codelens,
---       callback = function()
---         vim.lsp.codelens.refresh()
---       end,
---       buffer = bufnr,
---       once = true,
---     })
---     vim.api.nvim_create_autocmd({ 'BufWritePost', 'CursorHold' }, {
---       group = codelens,
---       callback = function()
---         vim.lsp.codelens.refresh()
---       end,
---       buffer = bufnr,
---     })
---   end
--- end
+    -- local on_attach = function(client, bufnr)
+    --   --- Only Neovim 0.7
+    --   if client.resolved_capabilities.code_lens then
+    --     local codelens = vim.api.nvim_create_augroup(
+    --       'LSPCodeLens',
+    --       { clear = true }
+    --     )
+    --     vim.api.nvim_create_autocmd({ 'BufEnter' }, {
+    --       group = codelens,
+    --       callback = function()
+    --         vim.lsp.codelens.refresh()
+    --       end,
+    --       buffer = bufnr,
+    --       once = true,
+    --     })
+    --     vim.api.nvim_create_autocmd({ 'BufWritePost', 'CursorHold' }, {
+    --       group = codelens,
+    --       callback = function()
+    --         vim.lsp.codelens.refresh()
+    --       end,
+    --       buffer = bufnr,
+    --     })
+    --   end
+    -- end
 
     mason_lspconfig.setup_handlers {
       -- default handler for installed servers
@@ -161,21 +161,19 @@ return {
         }
       end,
 
-
       ['nil_ls'] = function()
         -- configure emmet language server
         lspconfig['nil_ls'].setup {
           capabilities = capabilities,
-          settings  = {
+          settings = {
             nil_ls = {
               formatter = {
                 command = 'nixpkgs-fmt',
               },
-            }
-          }
+            },
+          },
         }
       end,
-
 
       -- ['rust_analyzer'] = function()
       --   --     require("rust-tools").setup {}
