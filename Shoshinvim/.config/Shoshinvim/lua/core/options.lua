@@ -115,13 +115,13 @@ vim.opt.fillchars = {
   eob = ' ',
 }
 vim.o.textwidth = 80
+-- vim.opt.colorcolumn = '80'
 -- vim.opts.textwidth = 80
 -- vim.g.autoformat = true
 -- Set format program (optional, adjust as needed)
 
 vim.opt.formatoptions = 'jcroqlnt' -- tcqj
 
--- vim.opt.colorcolumn = '80'
 
 -- vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepformat = '%f:%l:%c:%m'

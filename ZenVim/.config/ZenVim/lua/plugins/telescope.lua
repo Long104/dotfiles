@@ -34,7 +34,7 @@ return {
     { mode = 'n', '<leader>fs', '<cmd>Telescope grep_string<cr>', desc = 'find string under cursor in cwd' },
     { mode = 'n', '<leader>fr', '<cmd>Telescope registers<cr>', noremap = true },
     -- { mode = 'n', '<leader>fm', '<cmd>Telescope marks<cr>', noremap = true },
-    { mode = 'n', '<leader>fgl', '<cmd>lua require("telescope").extensions.lazygit.lazygit()<cr>', desc = 'Frecency' },
+    { mode = 'n', '<leader>fgl', '<cmd>lua require("telescope").extensions.lazygit.lazygit()<cr>', desc = 'lazy git' },
     { mode = 'n', '<leader>fu', '<cmd>Telescope undo<cr>', noremap = true },
     { mode = 'n', '<leader>fgs', '<cmd>Telescope advanced_git_search<cr>', desc = 'serach treesitter' },
     { mode = 'n', '<leader>fgc', '<cmd>Telescope advanced_git_search checkout_reflog<cr>', noremap = true },
@@ -67,7 +67,7 @@ return {
     -- require('telescope').load_extension('dap')
     require('telescope').load_extension 'frecency'
     -- require('telescope').load_extension 'media_files'
-    require('telescope').load_extension 'lazygit'
+    -- require('telescope').load_extension 'lazygit'
     -- telescope.load_extension 'fzf'
 
     telescope.setup {
@@ -223,6 +223,16 @@ return {
     vim.keymap.set('n', '<leader>fc', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[S]earch [N]eovim files' })
+
+
+    vim.keymap.set('n', '<leader>fn', function()
+      builtin.find_files { cwd = '~/obsedian/NGNl/' }
+    end, { desc = 'find file note' })
+
+
+    vim.keymap.set('n', '<leader>fq', function()
+      builtin.find_files { cwd = '~/obsedian/' }
+    end, { desc = 'find file obsedian' })
 
     -- vim.keymap.set('n', '<leader>fz', function()
     --   builtin.find_files { cwd = '~/' }

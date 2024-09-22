@@ -20,4 +20,5 @@ vim.cmd(string.format([[highlight @markup.heading.3.markdown cterm=bold gui=bold
 vim.cmd(string.format([[highlight @markup.heading.4.markdown cterm=bold gui=bold guifg=%s guibg=%s]], color_fg, color4_bg))
 vim.cmd(string.format([[highlight @markup.heading.5.markdown cterm=bold gui=bold guifg=%s guibg=%s]], color_fg, color5_bg))
 vim.cmd(string.format([[highlight @markup.heading.6.markdown cterm=bold gui=bold guifg=%s guibg=%s]], color_fg, color6_bg))
+
 -- return vim.cmd [[colorscheme eldritch]]

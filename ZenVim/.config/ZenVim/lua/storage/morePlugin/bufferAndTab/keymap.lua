@@ -8,7 +8,6 @@ local keymap = vim.keymap.set
 keymap('n', 'ta', '<cmd>tabonly<cr>', opts 'close all tab')
 keymap('n', 'X', '<cmd>tabclose<cr>', opts 'tab close')
 keymap('n', 't', '<cmd>tabedit<cr>', opts 'create')
-keymap('n', 'tl', '<cmd>tabs<cr>', opts 'view all tab')
 keymap('n', '<S-k>', '<cmd>tabn<cr>', opts 'tabnext')
 keymap('n', '<S-j>', '<cmd>tabp<cr>', opts 'tabprev')
 

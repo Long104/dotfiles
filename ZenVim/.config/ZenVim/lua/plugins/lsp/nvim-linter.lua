@@ -12,7 +12,7 @@ return {
         print(linter)
       end
     end
-    vim.keymap.set('n', '<leader>lintdebug', function()
+    vim.keymap.set('n', '<leader>ls', function()
       print_available_linters()
     end, { noremap = true, silent = true, desc = 'Print available linters' })
 

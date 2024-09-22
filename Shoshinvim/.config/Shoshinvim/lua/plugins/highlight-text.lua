@@ -4,21 +4,21 @@ return {
     {
 
       mode = 'x',
-      '<leader>hrm',
-      ':<c-u>HSRmHighlight<CR>',
+      '<leader>hr',
+      ':<c-u>HSRmHighlight<cr>',
     },
     {
 
       mode = 'x',
-      '<leader>hi',
-      ':<c-u>HSHighlight 1<CR>',
+      '<leader>hl',
+      ':<c-u>HSHighlight ',
       noremap = true,
       silent = true,
     },
     {
 
       mode = 'n',
-      '<leader>hr',
+      '<leader>hi',
       ':HSImport<CR>',
       noremap = true,
       silent = true,
@@ -26,7 +26,7 @@ return {
     {
 
       mode = 'n',
-      '<leader>hk',
+      '<leader>he',
       ':HSExport<CR>',
       noremap = true,
       silent = true,

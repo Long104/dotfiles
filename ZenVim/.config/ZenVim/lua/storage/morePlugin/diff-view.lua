@@ -1,3 +1,4 @@
+
 return  { "sindrets/diffview.nvim",
 cmd = "Diff",
 config = function ()

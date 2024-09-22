@@ -161,6 +161,22 @@ return {
         }
       end,
 
+
+      ['nil_ls'] = function()
+        -- configure emmet language server
+        lspconfig['nil_ls'].setup {
+          capabilities = capabilities,
+          settings  = {
+            nil_ls = {
+              formatter = {
+                command = 'nixpkgs-fmt',
+              },
+            }
+          }
+        }
+      end,
+
+
       -- ['rust_analyzer'] = function()
       --   --     require("rust-tools").setup {}
       --   require('lspconfig').rust_analyzer.setup {

@@ -49,6 +49,7 @@ return {
         -- 'rust',
         -- 'c',
         -- 'java',
+        'nix',
         'blade',
         'python',
         'json',

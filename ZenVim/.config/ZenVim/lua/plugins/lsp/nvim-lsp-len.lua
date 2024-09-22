@@ -1,6 +1,8 @@
 return {
   'VidocqH/lsp-lens.nvim',
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  -- cmd = { 'Len' },
+  -- ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact', 'rust', 'python', 'go' ,'php'},
   config = function()
     local SymbolKind = vim.lsp.protocol.SymbolKind
 

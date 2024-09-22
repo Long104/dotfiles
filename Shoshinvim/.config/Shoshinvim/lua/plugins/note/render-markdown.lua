@@ -78,39 +78,39 @@ return {
       right_pad = 2,
 
       -- for nord
-      backgrounds = {
-        'Headline1',
-        'Headline2',
-        'Headline3',
-        'Headline4',
-        'Headline5',
-        'Headline6',
-      },
-      foregrounds = {
-        'Headline1',
-        'Headline2',
-        'Headline3',
-        'Headline4',
-        'Headline5',
-        'Headline6',
-      },
-
       -- backgrounds = {
-      --   'Headline1Bg',
-      --   'Headline2Bg',
-      --   'Headline3Bg',
-      --   'Headline4Bg',
-      --   'Headline5Bg',
-      --   'Headline6Bg',
+      --   'Headline1',
+      --   'Headline2',
+      --   'Headline3',
+      --   'Headline4',
+      --   'Headline5',
+      --   'Headline6',
       -- },
       -- foregrounds = {
-      --   'Headline1Fg',
-      --   'Headline2Fg',
-      --   'Headline3Fg',
-      --   'Headline4Fg',
-      --   'Headline5Fg',
-      --   'Headline6Fg',
+      --   'Headline1',
+      --   'Headline2',
+      --   'Headline3',
+      --   'Headline4',
+      --   'Headline5',
+      --   'Headline6',
       -- },
+
+      backgrounds = {
+        'Headline1Bg',
+        'Headline2Bg',
+        'Headline3Bg',
+        'Headline4Bg',
+        'Headline5Bg',
+        'Headline6Bg',
+      },
+      foregrounds = {
+        'Headline1Fg',
+        'Headline2Fg',
+        'Headline3Fg',
+        'Headline4Fg',
+        'Headline5Fg',
+        'Headline6Fg',
+      },
     },
     dash = {
       -- Turn on / off thematic break rendering

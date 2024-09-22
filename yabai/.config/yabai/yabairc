@@ -11,7 +11,7 @@ yabai -m signal --add event=window_title_changed action="sketchybar --trigger ti
 
 
 # disable opacity for certain apps
-# yabai -m rule --add app="^Google Chrome$" opacity=0.5
+yabai -m rule --add app="^Google Chrome$" opacity=0.3
 # yabai -m rule --add app="^Figma$" opacity=1.0
 
 

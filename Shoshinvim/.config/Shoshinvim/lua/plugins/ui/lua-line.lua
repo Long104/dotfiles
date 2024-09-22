@@ -18,6 +18,9 @@ return {
 
     -- Initialize opts.sections if it is nil
     opts.sections = opts.sections or {}
+    -- opts.sections.lualine_a = {
+    --
+    --   }
     -- opts.sections.lualine_c = {
     --   {
     --     'diagnostics',

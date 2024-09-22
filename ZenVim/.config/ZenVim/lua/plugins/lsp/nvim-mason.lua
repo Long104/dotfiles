@@ -52,6 +52,7 @@ return {
         'pyright',
         'lua_ls',
         'ts_ls',
+        'nil_ls',
         -- 'ocamllsp'
       },
     }
@@ -68,6 +69,7 @@ return {
         'black',
         'pylint',
         'eslint_d',
+        -- 'nixpkgs-fmt',
         -- 'google-java-format',
         -- 'checkstyle',
         -- 'goimports-reviser',

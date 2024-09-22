@@ -35,8 +35,6 @@ return {
             color = { gui = 'bold' },
             -- icon = { '', align = 'left' },
           },
--- 'grapple'
-
         },
         lualine_b = {
           { 'branch', separator = { left = '', right = '' } },
@@ -44,11 +42,13 @@ return {
         },
         -- lualine_b = { { 'branch', separator = { left = '', right = '' } }, { 'diagnostics', separator = { left = '', right = '' } } },
         lualine_c = {
+          {
+            'grapple',
+            -- separator = { left = '', right = '' },
+            separator = { left = '', right = '' },
+            -- icon = { '', align = 'left' },
+          },
 
-          -- {
-          --   'filename',
-          --   separator = { left = '', right = '' },
-          -- },
         },
         -- lualine_b = { { 'mode', icon = { '', align = 'right', color = { fg = 'green' } } } },
 

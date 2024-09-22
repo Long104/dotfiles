@@ -20,6 +20,7 @@ return {
         graphql = { 'prettier' },
         lua = { 'stylua' },
         python = { 'isort', 'black' },
+        nix = { 'alejandra' },
       },
       -- format_on_save = {
       --   lsp_fallback = true,
@@ -29,7 +30,7 @@ return {
     }
 
     -- vim.keymap.set({ 'n', 'v' }, '<leader>fm', function()
-    vim.keymap.set({ 'n', 'v' },  'm', function()
+    vim.keymap.set({ 'n', 'v' }, 'm', function()
       conform.format {
         lsp_fallback = true,
         async = false,

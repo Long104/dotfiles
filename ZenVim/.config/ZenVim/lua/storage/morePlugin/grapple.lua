@@ -1,3 +1,4 @@
+
 return {
   'cbochs/grapple.nvim',
   opts = {
@@ -8,6 +9,7 @@ return {
   keys = {
     { '<CR>', false, normap = true },
     { '<C-a>', '<cmd>Grapple toggle<cr>', desc = 'Tag a file' },
+    { '<C-r>', '<cmd>Grapple reset<cr>', desc = 'reset' },
     { '<C-p>', '<cmd>Grapple toggle_tags<cr>', desc = 'Toggle tags menu' },
 
     { '<leader>1', '<cmd>Grapple select index=1<cr>', desc = 'Select first tag' },

@@ -10,7 +10,7 @@ require('lazy').setup({
   spec = {
     { import = 'plugins' },
     { import = 'plugins.ai' },
-    { import = 'plugins.game' },
+    -- { import = 'plugins.game' },
     { import = 'plugins.auto' },
     { import = 'plugins.colorschemes' },
     { import = 'plugins.lsp' },
@@ -76,4 +76,5 @@ require('lazy').setup({
 })
 
 require 'core.keymaptest'
--- require 'core.highlight'
+require 'core.highlight'
+-- require 'core.transparent'

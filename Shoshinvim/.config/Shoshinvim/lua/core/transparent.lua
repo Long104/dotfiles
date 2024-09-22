@@ -40,4 +40,3 @@ vim.g.loaded_netrwSettings = 1
     vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#808080', bg = 'none' })
     vim.api.nvim_set_hl(0, 'WinBar', { fg = '#808080', bg = 'none' })
     vim.api.nvim_set_hl(0, 'WinSeparator', { fg = '#808080', bg = 'none' })
-    -- vim.api.nvim_set_hl(0, 'CursorLine', { fg = 'none', bg = 'none' })
