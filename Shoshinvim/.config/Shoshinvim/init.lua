@@ -77,4 +77,4 @@ require('lazy').setup({
 
 require 'core.keymaptest'
 require 'core.highlight'
--- require 'core.transparent'
+require 'core.transparent'

@@ -51,6 +51,8 @@ return {
         'prismals',
         'pyright',
         'lua_ls',
+        'docker_compose_language_service',
+        'dockerls',
         -- 'ts_ls',
         'nil_ls',
         -- 'ocamllsp'
@@ -69,6 +71,7 @@ return {
         'black',
         'pylint',
         'eslint_d',
+        'hadolint',
         -- 'nixpkgs-fmt',
         -- 'google-java-format',
         -- 'checkstyle',

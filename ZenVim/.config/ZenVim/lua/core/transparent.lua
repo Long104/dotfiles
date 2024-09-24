@@ -35,7 +35,8 @@ vim.g.loaded_netrwSettings = 1
     -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
     vim.api.nvim_set_hl(0, 'NormalSB', { fg = 'none', bg = 'none' })
     -- vim.api.nvim_set_hl(0, 'Terminal', { fg = 'none', bg = 'none' })
-    vim.api.nvim_set_hl(0, 'EndOfBuffer', { fg = 'none', bg = 'none' })
+    -- problem with 3rd/image
+    -- vim.api.nvim_set_hl(0, 'EndOfBuffer', { fg = 'none', bg = 'none' })
     vim.api.nvim_set_hl(0, 'FoldColumn', { fg = 'none', bg = 'none' })
     vim.api.nvim_set_hl(0, 'Folded', { fg = 'none', bg = 'none' })
     vim.api.nvim_set_hl(0, 'Conceal', { fg = 'none', bg = 'none' })

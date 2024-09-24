@@ -8,7 +8,8 @@ return {
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   config = function()
     require('kanagawa').setup {
-      compile = false, -- enable compiling the colorscheme undercurl = true, -- enable undercurls
+      compile = false, -- enable compiling the colorscheme
+      undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
       keywordStyle = { italic = true },
@@ -77,14 +78,14 @@ return {
 
           SignColumn = { fg = 'none', bg = 'none' },
           -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-          EndOfBuffer = { fg = 'none', bg = 'none' },
-          FoldColumn = { fg = 'none', bg = 'none' },
-          ColorColumn = { fg = '#808080', bg = 'none' },
+          -- EndOfBuffer = { fg = 'none', bg = 'none' },
+          -- FoldColumn = { fg = 'none', bg = 'none' },
+          -- ColorColumn = { fg = '#808080', bg = 'none' },
           WinSeparator = { fg = '#282833', bg = 'none' },
           -- WinSeparator =  { fg ='#2A2A38', bg = 'none' },
           LineNr = { fg = '#808080', bg = 'none' },
-          Folded = { fg = 'none', bg = 'none' },
-          Conceal = { fg = 'none', bg = 'none' },
+          -- Folded = { fg = 'none', bg = 'none' },
+          -- Conceal = { fg = 'none', bg = 'none' },
 
 
           WinBar = { fg = '#808080', bg = 'none' },

@@ -175,6 +175,24 @@ return {
         }
       end,
 
+      ['docker_compose_language_service'] = function()
+        -- configure emmet language server
+        local function set_filetype(pattern, filetype)
+          vim.api.nvim_create_autocmd({ 'BufEnter', 'BufReadPost', 'BufRead', 'BufNewFile' }, {
+            pattern = pattern,
+            command = 'set filetype=' .. filetype,
+          })
+        end
+
+        set_filetype({ 'docker-compose.yml', 'docker-compose.yaml' }, 'yaml.docker-compose')
+
+        lspconfig['docker_compose_language_service'].setup {
+          capabilities = capabilities,
+          filetypes = { 'yaml.docker-compose' },
+          -- filetypes = { 'yml', 'yaml' },
+        }
+      end,
+
       -- ['rust_analyzer'] = function()
       --   --     require("rust-tools").setup {}
       --   require('lspconfig').rust_analyzer.setup {
@@ -257,5 +275,12 @@ return {
         }
       end,
     }
+
+    local function clear_lsp_group()
+      vim.diagnostic.reset()
+      vim.lsp.buf.clear_references()
+    end
+
+    vim.keymap.set('n', '<leader>cl', clear_lsp_group, { desc = 'Clear LSP group', silent = true })
   end,
 }

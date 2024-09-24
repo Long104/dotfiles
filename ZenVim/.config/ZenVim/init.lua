@@ -58,12 +58,16 @@ require('lazy').setup {
     { import = 'storage.morePlugin.grapple' },
     { import = 'storage.morePlugin.zen-mode' },
     { import = 'storage.morePlugin.yazi' },
+    { import = 'storage.morePlugin.image' },
+    { import = 'storage.morePlugin.image-clip' },
+    -- { import = 'storage.morePlugin.auto-save' },
     -- { import = 'storage.morePlugin.ollama' },
     -- { import = 'storage.morePlugin.twilight' },
     -- { import = 'storage.morePlugin.outline' },
     -- { import = 'storage.morePlugin.glance' },
     -- { import = 'storage.morePlugin.mini-indent' },
     -- { import = 'storage.morePlugin.neo-clip' },
+    -- { import = 'storage.morePlugin.schemastore' },
 
     -- extra storage for language
     -- go

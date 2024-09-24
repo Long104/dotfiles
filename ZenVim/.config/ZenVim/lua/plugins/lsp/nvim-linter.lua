@@ -23,6 +23,7 @@ return {
       typescriptreact = { 'eslint_d' },
       python = { 'pylint' },
       go = { 'golangcilint' },
+      dockerfile = { 'hadolint' },
     }
 
     lint.linters = {

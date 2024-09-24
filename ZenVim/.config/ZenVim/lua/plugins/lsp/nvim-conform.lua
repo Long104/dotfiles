@@ -17,11 +17,13 @@ return {
         html = { 'prettier' },
         json = { 'prettier' },
         yaml = { 'prettier' },
+        yml = { 'prettier' },
         graphql = { 'prettier' },
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         nix = { 'alejandra' },
       },
+      -- on save
       -- format_on_save = {
       --   lsp_fallback = true,
       --   async = false,

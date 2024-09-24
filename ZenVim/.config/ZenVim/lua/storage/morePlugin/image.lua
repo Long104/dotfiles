@@ -7,20 +7,24 @@ return {
     -- https://github.com/vhyrro/luarocks.nvim
     'vhyrro/luarocks.nvim',
     -- this plugin needs to run before anything else
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    priority = 1001,
+    -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+    cmd = "Image",
+    -- priority = 1001,
     opts = {
       rocks = { 'magick' },
     },
   },
-  {
+ {
     '3rd/image.nvim',
     dependencies = { 'luarocks.nvim' },
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+    -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+    cmd = "Image",
+    -- cmd = "Image",
     config = function()
       require('image').setup {
         backend = 'kitty',
+        -- backend = 'wezterm',
         kitty_method = 'normal',
         integrations = {
           -- Notice these are the settings for markdown files
