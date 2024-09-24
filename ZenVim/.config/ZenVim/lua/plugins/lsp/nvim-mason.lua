@@ -51,7 +51,7 @@ return {
         'prismals',
         'pyright',
         'lua_ls',
-        'ts_ls',
+        -- 'ts_ls',
         'nil_ls',
         -- 'ocamllsp'
       },

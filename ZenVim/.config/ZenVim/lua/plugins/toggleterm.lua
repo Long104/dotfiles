@@ -1,7 +1,36 @@
 return {
   'akinsho/toggleterm.nvim',
 
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+
+  keys = {
+    {
+      mode = 'n',
+      'tl',
+      '<cmd>lua _LAZYGIT_TOGGLE()<cr>',
+      desc = 'lazygit',
+    },
+    {
+
+      mode = 'n',
+      'th',
+      "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>",
+      silent = true,
+    },
+    {
+      mode = 'n',
+      'tv',
+      "<Cmd>exe v:count1 . 'ToggleTerm size=80 direction=vertical'<CR>",
+      silent = true,
+    },
+    {
+
+      mode = 'n',
+      'tf',
+      "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>",
+      silent = true,
+    },
+  },
   config = function()
     local status_ok, toggleterm = pcall(require, 'toggleterm')
     if not status_ok then
@@ -78,20 +107,15 @@ return {
     vim.cmd [[autocmd TermEnter term://*toggleterm#* tnoremap <silent><c-t> <Cmd>exe j:count1 . "ToggleTerm"<CR>]]
 
     -- Apply mappings for normal mode and insert mode
-    vim.api.nvim_set_keymap('n', 'th', "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>", { silent = true })
 
-    keymap.set('n', 'tl', '<cmd>lua _LAZYGIT_TOGGLE()<cr>', { desc = 'lazygit' })
     -- vim.api.nvim_set_keymap("n", "<leader>tn", "<Cmd>exe v:count1 . 'lua _NODE_TOGGLE()'<CR>", { silent = true })
     -- vim.api.nvim_set_keymap("n", "<leader>tp", "<Cmd>exe v:count1 . 'lua _PYTHON_TOGGLE()'<CR>", { silent = true })
-    vim.api.nvim_set_keymap('n', 'tv', "<Cmd>exe v:count1 . 'ToggleTerm size=80 direction=vertical'<CR>", { silent = true })
     -- vim.api.nvim_set_keymap(
     --   "n",
     --   "<leader>tf",
     --   "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>",
     --   { silent = true }
     -- )
-
-    vim.api.nvim_set_keymap('n', 'tf', "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>", { silent = true })
 
     -- Function to run `go run main.go` in ToggleTerm
     vim.api.nvim_set_keymap(

@@ -138,8 +138,8 @@ return {
       },
 
       sources = cmp.config.sources {
-        { name = 'luasnip', priority = 150, group_index = 1 },
-        { name = 'nvim_lsp', priority = 200, group_index = 1 },
+        { name = 'nvim_lsp', priority = 50, group_index = 1 },
+        { name = 'luasnip', priority = 100, group_index = 1 },
         { name = 'buffer', priority = 180, group_index = 4 },
         { name = 'path', group_index = 5 },
         -- { name = 'vim-dadbod-completion' },

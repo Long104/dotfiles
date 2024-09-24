@@ -3,7 +3,6 @@ return {
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'BufReadPre' },
   config = function()
     local lint = require 'lint'
-
     vim.keymap.set('n', '<leader>lintinfo', '<cmd>lua print(vim.inspect(require("lint").linters_by_ft))<CR>', { noremap = true, silent = true })
 
     local function print_available_linters()
@@ -25,10 +24,26 @@ return {
       python = { 'pylint' },
       go = { 'golangcilint' },
     }
-    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
 
+    lint.linters = {
+      ---@diagnostic disable-next-line: missing-fields
+      eslint_d = {
+        args = {
+          '--no-warn-ignored', -- <-- this is the key argument
+          '--format',
+          'json',
+          '--stdin',
+          '--stdin-filename',
+          function()
+            return vim.api.nvim_buf_get_name(0)
+          end,
+        },
+      },
+    }
+
+    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
     -- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave', 'BufReadPost' }, {
-    vim.api.nvim_create_autocmd({'BufWritePost', 'InsertLeave', 'BufReadPost' }, {
+    vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave', 'BufReadPost' }, {
       group = lint_augroup,
       callback = function()
         lint.try_lint()

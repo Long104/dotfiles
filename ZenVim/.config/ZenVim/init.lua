@@ -71,7 +71,7 @@ require('lazy').setup {
     -- { import = 'storage.language.go.debug' },
 
     -- typescript
-    -- { import = 'storage.language.typescript' },
+    { import = 'storage.language.typescript' },
     -- { import = 'storage.language.typescript.debug' },
   },
   checker = {
