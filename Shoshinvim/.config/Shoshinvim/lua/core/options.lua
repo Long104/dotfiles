@@ -28,8 +28,12 @@ vim.opt.spelllang = 'en_us'
 vim.opt.smoothscroll = true
 -- vim.opt.spelllang = { 'en' }
 
+vim.opt.backup = false
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+vim.opt.cmdheight = 1
+
 vim.opt.signcolumn = 'yes'
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
 -- vim.opt.cmdheight=2
 vim.opt.smarttab = true
 -- vim.opt.charset = 'utf-8'
@@ -80,8 +84,8 @@ vim.opt.updatetime = 300
 -- vim.opt.whichwrap:append '<>[]hl'
 vim.opt.mouse = 'a'
 vim.opt.statusline = '2'
+vim.opt.laststatus = 0
 -- vim.opt.laststatus = 3
-vim.opt.laststatus = 3
 -- highlight winsepartor guibg = none
 vim.opt.linebreak = true
 -- vim.opt.list = true
@@ -121,7 +125,6 @@ vim.o.textwidth = 80
 -- Set format program (optional, adjust as needed)
 
 vim.opt.formatoptions = 'jcroqlnt' -- tcqj
-
 
 -- vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepformat = '%f:%l:%c:%m'

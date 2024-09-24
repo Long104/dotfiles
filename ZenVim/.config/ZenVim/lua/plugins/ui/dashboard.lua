@@ -3,7 +3,10 @@ return {
   event = 'VimEnter',
   config = function() -- General
     -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#a1b88d', bold = true })
-    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#c3d3b2', bold = true })
+    -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#c3d3b2', bold = true })
+    -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#708e9c', bold = true })
+    -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#5d7987', bold = true })
+    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#638191', bold = true })
     -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#dad2ba', bold = true })
     -- vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#FFFFFF', bg = '#000000', italic = true })
 

@@ -1,6 +1,9 @@
 return {
   'sho-87/kanagawa-paper.nvim',
-  lazy = false,
+  keys = {{
+    "<leader>ff","<cmd>Telescope find_files<cr>"
+  }},
+  ft = {'NvimTree'},
   priority = 1000,
   -- opts = {},
   config = function()
@@ -12,7 +15,7 @@ return {
       undercurl = true,
       transparent = false,
       gutter = false,
-      dimInactive = true, -- disabled when transparent
+      dimInactive = false, -- disabled when transparent
       terminalColors = true,
       commentStyle = { italic = true },
       functionStyle = { italic = false },

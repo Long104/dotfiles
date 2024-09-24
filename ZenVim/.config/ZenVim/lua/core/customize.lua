@@ -21,7 +21,7 @@ vim.keymap.set('n', '<leader>ds', function()
   else
     print 'Session directory does not exist.'
   end
-end, { noremap = true, silent = true })
+end, { desc = "delete all session", noremap = true, silent = true })
 
 -- Call the function
 

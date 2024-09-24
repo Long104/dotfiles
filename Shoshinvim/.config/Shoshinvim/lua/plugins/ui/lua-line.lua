@@ -9,10 +9,9 @@
 return {
   'nvim-lualine/lualine.nvim',
   -- { 'jcdickinson/wpm.nvim' },
-
   -- event = 'BufEnte',
-  event = 'VeryLazy',
-  -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  -- event = 'VeryLazy',
+  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   opts = function(_, opts)
     local fg_color = '#212337' -- Foreground color for the text
 

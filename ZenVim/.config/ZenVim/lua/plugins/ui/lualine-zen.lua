@@ -8,17 +8,45 @@ return {
     require('lualine').setup {
 
       options = {
+        theme = {
+             normal = {
+               a = { fg = '#16161E', bg = '#C8B185' },  -- white text on red background
+               b = { fg = '#C8B185', bg = '#21212C' },  -- black text on green background
+               -- c = { fg = '#DCA561', bg = '#1F1F28' },  -- blue text on white background
+               c = { fg = '#DCA561', bg = '#2A2A38' },  -- blue text on white background
+             },
+             insert = {
+               a = { fg = '#1F1F29', bg = '#D16F6B' },  -- white text on blue background
+               b = { fg = '#D16F6B', bg = '#21212C' },  -- black text on green background
+             },
+             visual = {
+               a = { fg = '#1F202A', bg = '#958AAC' },  -- white text on magenta background
+               b = { fg = '#958AAC', bg = '#21212C' },  -- black text on green background
+             },
+             replace = {
+               a = { fg = '#1F1F29', bg = '#D16F6B' },  -- white text on blue background
+               b = {  fg = '#D16F6B',bg = '#1F1F29' },  -- white text on blue background
+             },
+             inactive = {
+               a = { fg = '#16161E', bg = '#C8B185' },  -- white text on red background
+               b = { fg = '#C8B185', bg = '#21212C' },  -- black text on green background
+               -- c = { fg = '#DCA561', bg = '#1F1F28' },  -- blue text on white background
+               c = { fg = '#DCA561', bg = '#2A2A38' },  -- blue text on white background
+             }
+           },
 
+        -- theme = 'auto',
         -- theme = 'auto',
         -- theme = 'nord',
         -- theme = 'everforest',
         -- theme = 'seoul256',
         -- theme = 'palenight',
         -- theme = 'modus-vivendi',
-        theme = 'base16',
+        -- theme = 'base16',
         -- theme = 'jellybeans',
+        -- theme = 'kanagawa_paper',
 
-         -- horizon
+        -- horizon
 
         icons_enabled = true, -- component_separators = { left = '', right = '' },
 

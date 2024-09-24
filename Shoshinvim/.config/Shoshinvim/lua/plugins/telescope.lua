@@ -184,6 +184,14 @@ return {
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[S]earch [N]eovim files' })
 
+    vim.keymap.set('n', '<leader>fnw', function()
+      builtin.find_files { cwd = '~/obsedian/NGNl/' }
+    end, { desc = 'find file note' })
+
+    vim.keymap.set('n', '<leader>fns', function()
+      builtin.find_files { cwd = '~/obsedian/NGNl/' }
+    end, { desc = 'find file note' })
+
     -- vim.keymap.set('n', '<leader>fz', function()
     --   builtin.find_files { cwd = '~/' }
     -- end, { desc = '[S]earch [N]eovim files' })

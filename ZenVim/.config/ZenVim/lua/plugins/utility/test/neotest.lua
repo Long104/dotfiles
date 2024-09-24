@@ -1,12 +1,13 @@
 return {
   'nvim-neotest/neotest',
 
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   dependencies = {
     'nvim-neotest/nvim-nio',
     'fredrikaverpil/neotest-golang',
     'marilari88/neotest-vitest',
     'nvim-neotest/neotest-jest',
+-- "zidhuss/neotest-minitest",
   },
 
   keys = {
@@ -105,11 +106,14 @@ return {
             return vim.fn.getcwd()
           end,
         },
+        -- adapters = {
+        --   require 'neotest-minitest',
+        -- },
       },
       ---@diagnostic disable-next-line: missing-fields
-discovery = {
-		enabled = false,
-	},
+      discovery = {
+        enabled = false,
+      },
       ---@diagnostic disable-next-line: missing-fields
       status = { virtual_text = true },
       ---@diagnostic disable-next-line: missing-fields
@@ -124,6 +128,14 @@ discovery = {
       "<cmd>lua require('neotest').run.run({ vim.fn.expand('%'), vitestCommand = 'vitest --watch' })<cr>",
       { desc = 'Run Watch File' }
     )
+ -- test_cmd = function()
+ --    return vim.tbl_flatten({
+ --      "bundle",
+ --      "exec",
+ --      "rails",
+ --      "test",
+    -- })
+  -- end
   end,
   -- stylua: ignore
 }

@@ -8,14 +8,13 @@ return {
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   config = function()
     require('kanagawa').setup {
-      compile = false, -- enable compiling the colorscheme
-      undercurl = true, -- enable undercurls
+      compile = false, -- enable compiling the colorscheme undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = {},
-      -- transparent = true, -- do not set background color
+      transparent = true, -- do not set background color
       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
       -- dimInactive = true,         -- dim inactive window `:h hl-NormalNC`
       terminalColors = true, -- define vim.g.terminal_color_{0,17}
@@ -44,6 +43,10 @@ return {
           NormalFloat = { bg = 'none' },
           FloatBorder = { bg = 'none' },
           FloatTitle = { bg = 'none' },
+
+          -- NormalFloat = { bg = '#2A2A39' },
+          -- FloatBorder = { bg = '#2A2A39' },
+          -- FloatTitle = { bg = '#2A2A39' },
           -- { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
 
           -- Save an hlgroup with dark background and dimmed foreground
@@ -59,24 +62,32 @@ return {
           TelescopeTitle = { fg = theme.ui.special, bold = true },
           TelescopePromptNormal = { bg = theme.ui.bg_p1 },
           TelescopePromptBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 },
-          TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
+          -- TelescopeResultsNormal = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m1 },
           TelescopeResultsBorder = { fg = theme.ui.bg_m1, bg = theme.ui.bg_m1 },
-          TelescopePreviewNormal = { bg = theme.ui.bg_dim },
+          -- TelescopePreviewNormal = { bg = theme.ui.bg_dim },
           TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
 
+          -- TelescopeTitle = { fg = "none", bold = true },
+          -- TelescopePromptNormal = { bg = "none" },
+          -- TelescopePromptBorder = { fg = "none", bg = "none" },
+          -- TelescopeResultsNormal = { fg = "none", bg = "none"},
+          -- TelescopeResultsBorder = { fg = "none", bg = "none"},
+          -- TelescopePreviewNormal = { bg = "none" },
+          -- TelescopePreviewBorder = { bg = "none", fg = "none"},
 
-          -- for cool
-          --  SignColumn = { fg = 'none', bg = 'none' },
-          -- -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-          -- EndOfBuffer= { fg = 'none', bg = 'none' },
-          -- FoldColumn = { fg = 'none', bg = 'none' },
-          -- ColorColumn = { fg = '#808080', bg = 'none' },
+          SignColumn = { fg = 'none', bg = 'none' },
+          -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
+          EndOfBuffer = { fg = 'none', bg = 'none' },
+          FoldColumn = { fg = 'none', bg = 'none' },
+          ColorColumn = { fg = '#808080', bg = 'none' },
+          WinSeparator = { fg = '#282833', bg = 'none' },
           -- WinSeparator =  { fg ='#2A2A38', bg = 'none' },
-          -- LineNr ={ fg = '#808080', bg = 'none' },
-          -- Folded ={ fg = 'none', bg = 'none' },
-          -- Conceal ={ fg = 'none', bg = 'none' },
-          --
-          -- WinBar = { fg = '#808080', bg = 'none' },
+          LineNr = { fg = '#808080', bg = 'none' },
+          Folded = { fg = 'none', bg = 'none' },
+          Conceal = { fg = 'none', bg = 'none' },
+
+
+          WinBar = { fg = '#808080', bg = 'none' },
           -- pop up
           Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
           PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },

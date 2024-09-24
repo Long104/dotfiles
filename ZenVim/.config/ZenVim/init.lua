@@ -2,11 +2,12 @@ require 'core'
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath } end ---@diagnostic disable-next-line: undefined-field
+  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
-      spec = {
+  spec = {
     -- plugin
     { import = 'plugins' },
 
@@ -22,8 +23,8 @@ require('lazy').setup {
 
     -- colorschemes
     -- { import = 'plugins.ui.colorschemes.kanagawa-paper' },
-    { import = 'plugins.ui.colorschemes.kanagawa' },
-    -- { import = 'plugins.ui.colorschemes.kanagawaWithTransparent' },
+    -- { import = 'plugins.ui.colorschemes.kanagawa' },
+    { import = 'plugins.ui.colorschemes.kanagawa-transparent' },
     -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
     -- { import = 'plugins.ui.colorschemes.oxocarbon' },
     -- { import = 'plugins.ui.colorschemes.mini-colors' },
@@ -41,7 +42,7 @@ require('lazy').setup {
     -- { import = 'plugins.utility.refactor' },
     -- { import = 'plugins.utility.docker' },
 
-    -- test  
+    -- test
     -- { import = 'plugins.utility.test' },
 
     --  debug
@@ -55,9 +56,14 @@ require('lazy').setup {
     { import = 'storage.morePlugin.snipe' },
     { import = 'storage.morePlugin.flash' },
     { import = 'storage.morePlugin.grapple' },
+    { import = 'storage.morePlugin.zen-mode' },
+    { import = 'storage.morePlugin.yazi' },
+    -- { import = 'storage.morePlugin.ollama' },
+    -- { import = 'storage.morePlugin.twilight' },
     -- { import = 'storage.morePlugin.outline' },
-    -- { import = 'storage.morePlugin.mini-starter' },
     -- { import = 'storage.morePlugin.glance' },
+    -- { import = 'storage.morePlugin.mini-indent' },
+    -- { import = 'storage.morePlugin.neo-clip' },
 
     -- extra storage for language
     -- go

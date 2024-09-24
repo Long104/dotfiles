@@ -12,6 +12,7 @@ mode ='v', '<leader>]', ':Gen Enhance_Grammar_Spelling<CR>'
     
   },
     opts = {
+        -- model = "wizardlm2", -- The default model to use.
         model = "mistral", -- The default model to use.
         quit_map = "q", -- set keymap for close the response window
         retry_map = "<c-r>", -- set keymap to re-send the current prompt

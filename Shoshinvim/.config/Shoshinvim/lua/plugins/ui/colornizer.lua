@@ -11,6 +11,7 @@
 return {
   'brenoprata10/nvim-highlight-colors',
 
+    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
 -- #ffffff
   config = function()
     require('nvim-highlight-colors').setup {
