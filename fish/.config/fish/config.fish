@@ -2,23 +2,30 @@ if status is-interactive
     # Commands to run in interactive sessions can go here alias n='nvim'
 alias cd='z'
 alias ls="eza --color=always --icons=always" 
+alias lt="eza --color=always --icons=always -T " 
 # alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions" 
 alias nf="clear && neofetch" 
 alias apprun="osascript -e 'tell application \"System Events\" to return name of processes whose background only is false'"
 alias psrun='ps ux -p $(osascript -e "tell application \"System Events\" to return unix id of processes whose background only is false")'
+alias convert='~/dotfiles/script/.config/script/350-image-to-all.sh'
 
 alias git-bare="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias fuck="thefuck"
 alias fk="thefuck" # alias pc="ps x -o rss,vsz,command | grep Process" alias chad="NVIM_APPNAME=nvim-nvchad nvim"
-alias cn="NVIM_APPNAME=NvChad nvim" 
-alias vn="NVIM_APPNAME=AstroNvim nvim"
 alias n="nvim"
 alias f="nvim -c ':Telescope find_files'"
 alias py-activate="source ~/myenv/bin/activate.fish"
 alias py-deactivate="deactivate"
+alias cn="NVIM_APPNAME=NvChad nvim" 
+alias xen="NVIM_APPNAME=xen nvim"
+alias s="NVIM_APPNAME=Shoshinvim nvim"
+alias zen="NVIM_APPNAME=ZenVim nvim"
+alias v="NVIM_APPNAME=ZenVim nvim"
+alias znvim="NVIM_APPNAME=ZenVim nvim"
+
 
 function nvims
-    set items "default" "neobean" "NvChad" "AstroNvim" "SnoVim" "NebulaNvim" "javaNvim"
+    set items "ZenVim" "default" "Shoshinvim" "neobean" "zenzen" "NvChad" "SnoVim" "NebulaNvim" "javaNvim" "xen" "nvimBlade" "laravelNvim"
     set config (printf "%s\n" $items | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
     
     if test -z "$config"
@@ -135,12 +142,14 @@ if not set -q TMUX
     end
 end
 
-set -gx PATH $PATH /usr/local/go/bin
 
 starship init fish | source
 
-atuin init fish | source
 
+
+set -gx PATH $PATH $GOPATH/bin
+set -gx PATH $PATH /path/to/golangci-lint
+set -gx PATH $HOME/go/bin $PATH
 # set -x PATH $PATH /root/.local/share/gem/ruby/3.0.0/bin
 end
 
