@@ -5,27 +5,27 @@ return {
 
   keys = {
     {
-      mode = 'n',
+      mode = {'n','t'},
       'tl',
       '<cmd>lua _LAZYGIT_TOGGLE()<cr>',
       desc = 'lazygit',
     },
     {
 
-      mode = 'n',
+      mode = {'n','t'},
       'th',
       "<Cmd>exe v:count1 . 'ToggleTerm size=9 direction=horizontal'<CR>",
       silent = true,
     },
     {
-      mode = 'n',
+      mode = {'n','t'},
       'tv',
       "<Cmd>exe v:count1 . 'ToggleTerm size=80 direction=vertical'<CR>",
       silent = true,
     },
     {
 
-      mode = 'n',
+      mode = {'n','t'},
       'tf',
       "<Cmd>exe v:count1 . 'ToggleTerm direction=float'<CR>",
       silent = true,

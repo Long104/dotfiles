@@ -6,6 +6,8 @@ local opt = vim.opt
 -- vim.g.loaded_perl_provider = 0
 -- vim.g.loaded_ruby_provider = 0
 -- vim.opt.shadafile = "NONE"
+opt.conceallevel=2
+opt.concealcursor=''
 opt.hidden = true
 -- customize
 opt.sessionoptions = { 'terminal', 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }

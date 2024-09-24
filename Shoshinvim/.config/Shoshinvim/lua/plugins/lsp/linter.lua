@@ -7,7 +7,7 @@ return {
     local lint = require 'lint'
 
     lint.linters_by_ft = {
-      markdown = { 'markdownlint-cli2' },
+      -- markdown = { 'markdownlint-cli2' },
     }
     
 

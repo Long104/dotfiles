@@ -54,17 +54,17 @@ return {
         'marksman',
         'lua_ls',
         'ts_ls',
+        'grammarly',
       },
     }
 
     mason_tool_installer.setup {
       ensure_installed = {
-        ' eslint_d',
+        'eslint_d',
         'markdownlint-cli2',
         'markdown-toc',
         'stylua',
         'shfmt',
-        'tsserver',
         'prettier',
         'biome',
       },

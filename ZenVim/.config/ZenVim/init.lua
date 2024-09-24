@@ -16,7 +16,10 @@ require('lazy').setup {
 
     -- ai
     { import = 'plugins.ai' },
+    -- { import = 'storage.morePlugin.futago' },
     -- { import = 'storage.morePlugin.gen' },
+    -- { import = 'storage.morePlugin.gemini' },
+    -- { import = 'storage.morePlugin.backseat' },
 
     -- ui
     { import = 'plugins.ui' },

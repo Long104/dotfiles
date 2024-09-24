@@ -90,8 +90,8 @@ config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "nordfox"
 -- config.color_scheme = 'Nord (Gogh)'
 -- config.color_scheme = 'Nord (base16)'
-config.window_background_opacity = 0.95
--- config.window_background_opacity = 0.8
+-- config.window_background_opacity = 0.95
+config.window_background_opacity = 0.9
 -- config.window_background_image = wezterm.config_dir .. "/wallpaper/images.jpeg"
 -- config.window_background_image = wezterm.config_dir .. "/wallpaper/patapata.gif"
 -- config.window_background_image_hsb = { brightness = 0.01 }

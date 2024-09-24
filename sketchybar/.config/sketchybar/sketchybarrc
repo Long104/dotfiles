@@ -41,6 +41,7 @@ defaults=(
   label.drawing=on
   label.color="$WHITE"
   popup.background.color="$BLUE"
+  # popup.background.color="$WHITE"
   popup.background.corner_radius=10
   popup.background.border_width=3
   popup.background.border_color="$PURPLE"

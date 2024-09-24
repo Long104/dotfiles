@@ -22,11 +22,8 @@ keymap('n', '<leader>qa', '<cmd>wqa!<cr>', opts 'close everything')
 keymap('n', '<leader>dm', '<cmd>delm! | delm A-Z0-9<CR>', opts 'delete mark')
 keymap('n', '<S-l>', '<cmd>e #<CR>', opts 'Go to previous tab')
 
--- move
-keymap({ 'n', 'x', 'i' }, '<C-h>', '<C-w>h', { desc = 'Go to Left Window', remap = true })
-keymap({ 'n', 'x', 'i' }, '<C-j>', '<C-w>j', { desc = 'Go to Lower Window', remap = true })
-keymap({ 'n', 'x', 'i' }, '<C-k>', '<C-w>k', { desc = 'Go to Upper Window', remap = true })
-keymap({ 'n', 'x', 'i' }, '<C-l>', '<C-w>l', { desc = 'Go to Right Window', remap = true })
+vim.api.nvim_set_keymap('x', '<leader>ci', 'c/*<C-r>"*/<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ci', 'I/* <Esc>A */<Esc>', { noremap = true, silent = true })
 
 -- diagostic
 keymap('n', 'ql', vim.diagnostic.setloclist, opts 'Open diagnostic [Q]uickfix list')

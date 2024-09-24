@@ -82,7 +82,7 @@ return {
           -- FoldColumn = { fg = 'none', bg = 'none' },
           -- ColorColumn = { fg = '#808080', bg = 'none' },
           WinSeparator = { fg = '#282833', bg = 'none' },
-          -- WinSeparator =  { fg ='#2A2A38', bg = 'none' },
+          -- WinSeparator =  { fg ='#2A2A38', bg = '#2A2A38' },
           LineNr = { fg = '#808080', bg = 'none' },
           -- Folded = { fg = 'none', bg = 'none' },
           -- Conceal = { fg = 'none', bg = 'none' },

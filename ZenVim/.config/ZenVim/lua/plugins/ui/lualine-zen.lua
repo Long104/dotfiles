@@ -143,5 +143,6 @@ return {
         },
       },
     }
+-- vim.opt.laststatus = 3
   end,
 }

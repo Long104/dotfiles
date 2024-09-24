@@ -2,7 +2,8 @@ return {
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
   config = function() -- General
-    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#d69cbc', bold = true })
+    -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#d69cbc', bold = true })
+    vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#708e9c', bold = true })
     -- vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#FFFFFF', bg = '#000000', italic = true })
     --
     -- -- Hyper theme

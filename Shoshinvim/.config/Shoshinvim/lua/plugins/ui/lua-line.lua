@@ -9,12 +9,15 @@
 return {
   'nvim-lualine/lualine.nvim',
   -- { 'jcdickinson/wpm.nvim' },
+
   -- event = 'BufEnte',
   -- event = 'VeryLazy',
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  priority = 900,
   opts = function(_, opts)
     local fg_color = '#212337' -- Foreground color for the text
 
+       opts.theme = "catppuccin"
     -- Initialize opts.sections if it is nil
     opts.sections = opts.sections or {}
     -- opts.sections.lualine_a = {
@@ -86,12 +89,12 @@ return {
     local bg_color = decide_color()
 
     opts.sections.lualine_x = opts.sections.lualine_x or {}
-    -- table.insert(opts.sections.lualine_x, 1, {
-    --   'hostname',
-    --   color = { fg = fg_color, bg = bg_color, gui = 'bold' },
-    --   separator = { left = '█', right = '' },
-    --   padding = 0,
-    -- })
+    table.insert(opts.sections.lualine_x, 1, {
+      'hostname',
+      color = { fg = fg_color, bg = bg_color, gui = 'bold' },
+      separator = { left = '█', right = '' },
+      padding = 0,
+    })
 
     table.insert(opts.sections.lualine_x, 1, {
       function()
@@ -187,5 +190,7 @@ return {
     --   separator = { left = '', right = '█ ' },
     --   padding = 0,
     -- })
+    --
+vim.opt.laststatus = 3
   end,
 }

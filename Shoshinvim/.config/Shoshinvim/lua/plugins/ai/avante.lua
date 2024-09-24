@@ -13,10 +13,10 @@ return {
     version = false, -- set this if you want to always pull the latest change
     opts = { -- add any opts here
       ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-      provider = 'copilot', -- Recommend using Claude
-      auto_suggestions_provider = 'copilot', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-      -- provider = 'gemini', -- Recommend using Claude
-      -- auto_suggestions_provider = 'gemini', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+      -- provider = 'copilot', -- Recommend using Claude
+      -- auto_suggestions_provider = 'copilot', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+      provider = 'gemini', -- Recommend using Claude
+      auto_suggestions_provider = 'gemini', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       -- provider = 'openai', -- Recommend using Claude
       -- auto_suggestions_provider = 'openai', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       -- openai = {
@@ -25,16 +25,16 @@ return {
       --   temperature = 0,
       --   max_tokens = 4096,
       -- },
-      -- gimini = {
-      --   api_key_name = 'AIzaSyDFRfF4xtR3sZU_lOIElMRz0j9kAZ2xzpE',
-      --   endpoint = 'aiplatform.googleapis.com',
-      --   temperature = 0,
-      --   max_tokens = 4096,
-      --   -- generationConfig = {
-      --   --   stopSequences = { 'test' },
-      --   -- },
-      --   -- model = 'Gemini-1.0-Pro',
-      -- },
+      gimini = {
+        api_key_name = 'AIzaSyDFRfF4xtR3sZU_lOIElMRz0j9kAZ2xzpE',
+        endpoint = 'aiplatform.googleapis.com',
+        temperature = 0,
+        max_tokens = 4096,
+        -- generationConfig = {
+        --   stopSequences = { 'test' },
+        -- },
+        -- model = 'Gemini-1.0-Pro',
+      },
       -- claude = {
       --   endpoint = 'https://api.anthropic.com',
       --   model = 'claude-3-5-sonnet-20240620',
