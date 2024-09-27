@@ -1,0 +1,9 @@
+[22:51:03 2024-09-26] FETCHING Version 2.38.3
+[22:51:03 2024-09-26] CREATING /Users/pantorn/.spicetify
+[22:51:03 2024-09-26] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.38.3/spicetify-2.38.3-darwin-arm64.tar.gz
+[22:51:06 2024-09-26] EXTRACTING /Users/pantorn/.spicetify/spicetify.tar.gz
+[22:51:06 2024-09-26] SETTING EXECUTABLE PERMISSIONS TO /Users/pantorn/.spicetify/spicetify
+[22:51:06 2024-09-26] REMOVING /Users/pantorn/.spicetify/spicetify.tar.gz
+[22:51:06 2024-09-26] APPENDING /Users/pantorn/.spicetify to PATH in /Users/pantorn/.config/fish/config.fish
+[22:51:06 2024-09-26] spicetify v2.38.3 was installed successfully to /Users/pantorn/.spicetify
+[22:51:06 2024-09-26] Run 'spicetify --help' to get started

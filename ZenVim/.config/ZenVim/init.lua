@@ -16,6 +16,7 @@ require('lazy').setup {
 
     -- ai
     { import = 'plugins.ai' },
+    -- { import = 'storage.morePlugin.ollama' },
     -- { import = 'storage.morePlugin.futago' },
     -- { import = 'storage.morePlugin.gen' },
     -- { import = 'storage.morePlugin.gemini' },
@@ -27,8 +28,7 @@ require('lazy').setup {
     -- colorschemes
     -- { import = 'plugins.ui.colorschemes.kanagawa-paper' },
     -- { import = 'plugins.ui.colorschemes.kanagawa' },
-    { import = 'plugins.ui.colorschemes.kanagawa-transparent' },
-    -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
+    { import = 'plugins.ui.colorschemes.kanagawa-transparent' }, -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
     -- { import = 'plugins.ui.colorschemes.oxocarbon' },
     -- { import = 'plugins.ui.colorschemes.mini-colors' },
     -- { import = 'plugins.ui.colorschemes.nord' },
@@ -41,7 +41,7 @@ require('lazy').setup {
     -- utility
     -- { import = 'plugins.utility.http' },
     -- { import = 'plugins.utility.likepostman' },
-    -- { import = 'plugins.utility.database' },
+    { import = 'plugins.utility.database' },
     -- { import = 'plugins.utility.refactor' },
     -- { import = 'plugins.utility.docker' },
 
@@ -55,7 +55,7 @@ require('lazy').setup {
     -- { import = 'plugins.git' },
 
     -- extra storage for plugins
-    -- { import = 'storage.morePlugin.oil' },
+    { import = 'storage.morePlugin.oil' },
     { import = 'storage.morePlugin.snipe' },
     { import = 'storage.morePlugin.flash' },
     { import = 'storage.morePlugin.grapple' },
@@ -63,13 +63,14 @@ require('lazy').setup {
     { import = 'storage.morePlugin.yazi' },
     { import = 'storage.morePlugin.image' },
     { import = 'storage.morePlugin.image-clip' },
+    { import = 'storage.morePlugin.telescope-diff' },
+    { import = 'storage.morePlugin.treesj' },
     -- { import = 'storage.morePlugin.auto-save' },
-    -- { import = 'storage.morePlugin.ollama' },
     -- { import = 'storage.morePlugin.twilight' },
     -- { import = 'storage.morePlugin.outline' },
     -- { import = 'storage.morePlugin.glance' },
     -- { import = 'storage.morePlugin.mini-indent' },
-    -- { import = 'storage.morePlugin.neo-clip' },
+    { import = 'storage.morePlugin.neo-clip' },
     -- { import = 'storage.morePlugin.schemastore' },
 
     -- extra storage for language

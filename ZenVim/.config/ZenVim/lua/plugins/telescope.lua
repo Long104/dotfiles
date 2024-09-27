@@ -31,7 +31,7 @@ return {
     { mode = 'n', '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'fuzzy find files in cwd' },
     { mode = 'n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', desc = 'fuzzy find recent files' },
     { mode = 'n', '<leader>fl', '<cmd>Telescope live_grep<cr>', desc = 'find string in cwd', silent = true },
-    { mode = 'n', '<leader>fs', '<cmd>Telescope grep_string<cr>', desc = 'find string under cursor in cwd' },
+    { mode = {"n","x"}, '<leader>fs', '<cmd>Telescope grep_string<cr>', desc = 'find string under cursor in cwd' },
     { mode = 'n', '<leader>fr', '<cmd>Telescope registers<cr>', noremap = true },
     -- { mode = 'n', '<leader>fm', '<cmd>Telescope marks<cr>', noremap = true },
     { mode = 'n', '<leader>fgl', '<cmd>lua require("telescope").extensions.lazygit.lazygit()<cr>', desc = 'lazy git' },

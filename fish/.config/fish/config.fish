@@ -9,6 +9,12 @@ alias apprun="osascript -e 'tell application \"System Events\" to return name of
 alias psrun='ps ux -p $(osascript -e "tell application \"System Events\" to return unix id of processes whose background only is false")'
 alias convert='~/dotfiles/script/.config/script/350-image-to-all.sh'
 
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+# docker kill $(docker ps -q)
+# docker_clean_ps
+# docker rmi $(docker images -a -q)
+
 alias git-bare="git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias fuck="thefuck"
 alias fk="thefuck" # alias pc="ps x -o rss,vsz,command | grep Process" alias chad="NVIM_APPNAME=nvim-nvchad nvim"
@@ -148,7 +154,7 @@ starship init fish | source
 
 
 set -gx PATH $PATH $GOPATH/bin
-set -gx PATH $PATH /path/to/golangci-lint
+set -gx PATH /Users/pantorn/.local/share/ZenVim/mason/bin $PATH
 set -gx PATH $HOME/go/bin $PATH
 # set -x PATH $PATH /root/.local/share/gem/ruby/3.0.0/bin
 end
@@ -156,3 +162,5 @@ end
 
 
 thefuck --alias | source
+
+fish_add_path /Users/pantorn/.spicetify

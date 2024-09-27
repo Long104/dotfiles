@@ -1,6 +1,6 @@
 return {
   'catppuccin/nvim',
-  event = { 'BufReadPre', 'BufWritePost', 'BufNewFile' },
+  -- event = { 'BufReadPre', 'BufWritePost', 'BufNewFile' },
   name = 'catppuccin',
   priority = 1000,
   config = function()

@@ -27,6 +27,7 @@ return {
     }
 
     lint.linters = {
+      -- typescript
       ---@diagnostic disable-next-line: missing-fields
       eslint_d = {
         args = {
@@ -40,7 +41,22 @@ return {
           end,
         },
       },
+
+      -- golang
+      ---@diagnostic disable-next-line: missing-fields
+      golangcilint = {
+        cmd = '/Users/pantorn/.local/share/ZenVim/mason/bin/golangci-lint', -- use the full path
+        stdin = true,
+        args = {}, -- add any necessary arguments if needed
+      },
     }
+
+    ------@diagnostic disable-next-line: missing-fields
+    ---lint.linters.golangcilint = {
+    ---  cmd = '/Users/pantorn/.local/share/ZenVim/mason/bin/golangci-lint', -- use the full path
+    ---  stdin = true,
+    ---  args = {}, -- add any necessary arguments if needed
+    ---}
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
     -- vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave', 'BufReadPost' }, {
