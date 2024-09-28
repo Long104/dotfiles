@@ -1,0 +1,11 @@
+Name:               [1malejandra[0m
+Store paths:        /nix/store/zm8l2ly32x4lk5ylqw8mjpib8hpivnrg-alejandra-3.0.0
+
+Name:               [1mlibressl[0m
+Store paths:        /nix/store/kqy0pvg9kd6vv42hqnqsmiiva0is04a6-libressl-3.9.2-bin
+
+Name:               [1myazi[0m
+Flake attribute:    legacyPackages.aarch64-darwin.yazi
+Original flake URL: flake:nixpkgs
+Locked flake URL:   github:NixOS/nixpkgs/a1d92660c6b3b7c26fb883500a80ea9d33321be2?narHash=sha256-V5LpfdHyQkUF7RfOaDPrZDP%2Boqz88lTJrMT1%2BstXNwo%3D
+Store paths:        /nix/store/7ybr0jq1b3dqlq87k53pscv84fvz0889-yazi-0.3.3

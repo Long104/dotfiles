@@ -1,0 +1,33 @@
+
+♔ ❯ brew list                                                                                                                                                   11:28:31
+==> Formulae
+aichat                  fish                    imath                   libtiff                 mpdecimal               powerlevel10k           tcl-tk
+aom                     fontconfig              jasper                  libtool                 msgpack                 presenterm              thefuck
+apr                     freetds                 jbig2dec                libunistring            mycli                   pycparser               tidy-html5
+apr-util                freetype                jpeg-turbo              libuv                   ncurses                 python-cryptography     timewarrior
+argon2                  fribidi                 jpeg-xl                 libvmaf                 neofetch                python-setuptools       tlrc
+aspell                  fzf                     jq                      libvterm                neovide                 python-tk@3.12          tmux
+atac                    gd                      krb5                    libx11                  neovim                  python@3.11             trash
+autoconf                gdk-pixbuf              lazygit                 libxau                  node                    python@3.12             tree
+bat                     gettext                 libavif                 libxcb                  nowplaying-cli          readline                tree-sitter
+bdw-gc                  gh                      libde265                libxdmcp                oh-my-posh              ripgrep                 typst
+bitwise                 ghostscript             libevent                libxext                 oniguruma               rtmpdump                unibilium
+brotli                  giflib                  libgit2                 libxml2                 opam                    rust                    unixodbc
+c-ares                  git                     libgit2@1.7             libxrender              openexr                 screenresolution        utf8proc
+ca-certificates         git-delta               libheif                 libzip                  openjdk                 sesh                    w3m
+cairo                   glib                    libidn                  little-cms2             openjpeg                shared-mime-info        webp
+cffi                    glow                    libidn2                 llvm                    openldap                silicon                 wget
+chafa                   gmp                     liblqr                  lpeg                    openssl@3               sketchybar              x265
+coder                   gotop                   libnghttp2              lua                     pandoc                  skhd                    xmlstarlet
+composer                gpatch                  libomp                  luajit                  pango                   spicetify-cli           xorgproto
+cryptography            graphite2               libpng                  luarocks                pcre2                   sqlite                  xz
+curl                    gum                     libpq                   luv                     php                     sss_code                yabai
+duf                     harfbuzz                libraw                  lz4                     pipx                    starship                z3
+eza                     highway                 librsvg                 lzo                     pixman                  stow                    zoxide
+fastfetch               icu4c                   libsodium               m4                      pkg-config              switchaudio-osx         zstd
+fd                      imagemagick             libssh2                 maven                   pngpaste                task
+
+==> Casks
+alacritty                               font-meslo-lg-nerd-font                 font-sf-mono-nerd-font-ligaturized      sf-symbols
+font-commit-mono                        font-monocraft                          font-sf-pro                             warp
+font-hack-nerd-font                     font-monocraft-nerd-font                iterm2                                  wezterm
