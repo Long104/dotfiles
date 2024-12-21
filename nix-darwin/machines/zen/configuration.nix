@@ -49,7 +49,7 @@
       pkgs.curl
       pkgs.eza
       pkgs.fzf
-      pkgs.nodejs_22
+      # pkgs.nodejs_22
       pkgs.go
       pkgs.bat
       pkgs.python3
@@ -57,7 +57,6 @@
       pkgs.pam-reattach
       pkgs.tmux
       pkgs.htop
-      pkgs.jdk23
     ];
     pathsToLink = ["/Applications"];
   };

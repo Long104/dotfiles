@@ -75,6 +75,8 @@ require("lazy").setup {
     { import = "storage.morePlugin.neo-clip" },
     -- { import = "storage.morePlugin.doing" },
     -- { import = 'storage.morePlugin.schemastore' },
+    { import = "storage.morePlugin.my-note" },
+    { import = "storage.morePlugin.render-markdown" },
 
     -- extra storage for language
     -- go
@@ -86,8 +88,8 @@ require("lazy").setup {
     -- { import = 'storage.language.typescript.debug' },
 
     { import = "storage.morePlugin.nvzone.minty" },
-    { import = "storage.morePlugin.nvzone.typr" },
-    { import = "storage.morePlugin.nvzone.showkey" },
+    -- { import = "storage.morePlugin.nvzone.typr" },
+    -- { import = "storage.morePlugin.nvzone.showkey" },
     { import = "storage.morePlugin.nvzone.timerly" },
   },
   checker = {
