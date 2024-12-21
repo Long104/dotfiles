@@ -1,0 +1,1 @@
+bash stow.sh

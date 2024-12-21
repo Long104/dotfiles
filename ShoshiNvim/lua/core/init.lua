@@ -1,0 +1,7 @@
+require 'core.options'
+require 'core.keymaps'
+require 'core.keymaptest'
+require 'core.custom'
+require 'core.markdown'
+require 'core.mac_os'
+require 'core.workflows'
