@@ -19,7 +19,7 @@
       pkgs.bun
       pkgs.deno
       # rust
-      pkgs.cargo
+      # pkgs.cargo
       pkgs.rustc
       #
       pkgs.atuin
@@ -50,6 +50,7 @@
       pkgs.eza
       pkgs.fzf
       # pkgs.nodejs_22
+      pkgs.zig
       pkgs.go
       pkgs.bat
       pkgs.python3
