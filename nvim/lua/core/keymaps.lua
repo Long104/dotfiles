@@ -29,7 +29,6 @@ vim.api.nvim_set_keymap("n", "<leader>ci", "I/* <Esc>A */<Esc>", { noremap = tru
 vim.api.nvim_set_keymap("x", "<leader>cr", 'c{/*<C-r>"*/}<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>cr", "I{/* <Esc>A */}<Esc>", { noremap = true, silent = true })
 
-
 -- diagostic
 keymap("n", "ql", vim.diagnostic.setloclist, opts "Open diagnostic [Q]uickfix list")
 -- git
@@ -88,3 +87,16 @@ end, { desc = "[P]Delete newlines in selected text (join)" })
 -- open file
 vim.keymap.set("n", "<leader>pr", "<cmd>!open -a 'preview' %:p<cr>")
 vim.keymap.set("n", "<leader>goi", "oif err != nil {<CR>}<Esc>Oreturn err<cr>")
+
+-- execute lua
+vim.keymap.set("n", "<leader><leader>lx", "<cmd>source %<cr>")
+vim.keymap.set("n", "<leader>lx", ":.lua<cr>")
+vim.keymap.set("v", "<leader>lx", ":lua<cr>")
+
+-- run bun
+
+vim.keymap.set("n", "<leader><leader>jx", "<cmd>!bun %<cr>")
+
+-- go
+vim.keymap.set("n", "<leader><leader>gx", "<cmd>!go run .<cr>")
+vim.keymap.set("n", "<leader><leader>gox", "<cmd>!go run %<cr>")

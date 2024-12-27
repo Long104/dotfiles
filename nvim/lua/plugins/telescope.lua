@@ -1,77 +1,128 @@
 return {
-  'nvim-telescope/telescope.nvim',
+  "nvim-telescope/telescope.nvim",
   -- <C-x>	Go to file selection as a split
   -- <C-v>	Go to file selection as a vsplit
   dependencies = {
     -- image
     -- 'nvim-telescope/telescope-media-files.nvim',
-    'nvim-lua/popup.nvim',
-    'debugloop/telescope-undo.nvim',
-    'nvim-telescope/telescope-frecency.nvim',
-    'nvim-lua/plenary.nvim',
-    'BurntSushi/ripgrep',
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    "nvim-telescope/telescope-project.nvim",
+    "nvim-lua/popup.nvim",
+    "debugloop/telescope-undo.nvim",
+    "nvim-telescope/telescope-frecency.nvim",
+    "nvim-lua/plenary.nvim",
+    "BurntSushi/ripgrep",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     -- 'nvim-tree/nvim-web-devicons',
-    { 'nvim-telescope/telescope-ui-select.nvim' },
-    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    { "nvim-telescope/telescope-ui-select.nvim" },
+    { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     -- 'nvim-telescope/telescope-file-browser.nvim',
     -- 'folke/todo-comments.nvim',
   },
   keys = {
-    { mode = 'n', '<leader>fz', '<cmd>Telescope frecency<cr>', desc = 'Frecency' },
-    { mode = 'n', '<leader>fk', '<cmd>Telescope keymaps<cr>', desc = '[S]earch [K]eymaps' },
-    { mode = 'n', '<leader>ftl', '<cmd>Telescope builtin<cr>', desc = '[S]earch [S]elect Telescope' },
-    { mode = 'n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', desc = '[S]earch [D]iagnostics' },
-    { mode = 'n', '<leader>fh', '<cmd>Telescope treesitter<cr>', desc = 'serach treesitter' },
-    { mode = 'n', '<leader>fha', 'Telescope help_tags', desc = '[S]earch [H]elp' },
-    { mode = 'n', '<leader>ft', '<cmd>Telescope buffers<cr>', desc = 'find buffer' },
+    { mode = "n", "<leader>fz", "<cmd>Telescope frecency<cr>", desc = "Frecency" },
+    { mode = "n", "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "[S]earch [K]eymaps" },
+    { mode = "n", "<leader>ftl", "<cmd>Telescope builtin<cr>", desc = "[S]earch [S]elect Telescope" },
+    { mode = "n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", desc = "[S]earch [D]iagnostics" },
+    { mode = "n", "<leader>fh", "<cmd>Telescope treesitter<cr>", desc = "serach treesitter" },
+    { mode = "n", "<leader>fha", "Telescope help_tags", desc = "[S]earch [H]elp" },
+    { mode = "n", "<leader>ft", "<cmd>Telescope buffers<cr>", desc = "find buffer" },
     -- { mode = 'n', '<leader><leader>', 'Telescope resume', desc = '[S]earch [R]esume' },
     -- { mode = 'n', '<leader>fb', ':Telescope file_browser<cr>', desc = 'in path' },
     -- { mode = 'n', '<leader>fp', ':Telescope file_browser path=%:p:h select_buffer=true<cr>', desc = 'current' },
-    { mode = 'n', '<leader>ff', '<cmd>Telescope find_files<cr>', desc = 'fuzzy find files in cwd' },
-    { mode = 'n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', desc = 'fuzzy find recent files' },
-    { mode = 'n', '<leader>fl', '<cmd>Telescope live_grep<cr>', desc = 'find string in cwd', silent = true },
-    { mode = {"n","x"}, '<leader>fs', '<cmd>Telescope grep_string<cr>', desc = 'find string under cursor in cwd' },
-    { mode = 'n', '<leader>fr', '<cmd>Telescope registers<cr>', noremap = true },
+    { mode = "n", "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "fuzzy find files in cwd" },
+    { mode = "n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "fuzzy find recent files" },
+    { mode = "n", "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "find string in cwd", silent = true },
+    { mode = { "n", "x" }, "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "find string under cursor in cwd" },
+    { mode = "n", "<leader>fr", "<cmd>Telescope registers<cr>", noremap = true },
     -- { mode = 'n', '<leader>fm', '<cmd>Telescope marks<cr>', noremap = true },
-    { mode = 'n', '<leader>fgl', '<cmd>lua require("telescope").extensions.lazygit.lazygit()<cr>', desc = 'lazy git' },
-    { mode = 'n', '<leader>fu', '<cmd>Telescope undo<cr>', noremap = true },
-    { mode = 'n', '<leader>fgc', '<cmd>Telescope advanced_git_search checkout_reflog<cr>', desc = "checkout reflog" },
-    { mode = 'n', '<leader>fgdb', '<cmd>Telescope advanced_git_search diff_branch_file<cr>', desc = "diff branch file" },
-    { mode = 'n', '<leader>fgdc', '<cmd>Telescope advanced_git_search diff_commit_file<cr>', desc = "diff commit file" },
-    { mode = 'n', '<leader>fgb', '<cmd>Telescope advanced_git_search changed_on_branch<cr>', desc = "change on branch"},
-    { mode = 'n', '<leader>fgsc', '<cmd>Telescope advanced_git_search search_log_content<cr>', desc = "seach log content" },
+    { mode = "n", "<leader>fgl", '<cmd>lua require("telescope").extensions.lazygit.lazygit()<cr>', desc = "lazy git" },
+    { mode = "n", "<leader>fu", "<cmd>Telescope undo<cr>", noremap = true },
+    { mode = "n", "<leader>fgc", "<cmd>Telescope advanced_git_search checkout_reflog<cr>", desc = "checkout reflog" },
+    { mode = "n", "<leader>fgdb", "<cmd>Telescope advanced_git_search diff_branch_file<cr>", desc = "diff branch file" },
+    { mode = "n", "<leader>fgdc", "<cmd>Telescope advanced_git_search diff_commit_file<cr>", desc = "diff commit file" },
+    { mode = "n", "<leader>fgb", "<cmd>Telescope advanced_git_search changed_on_branch<cr>", desc = "change on branch" },
+    { mode = "n", "<leader>fgsc", "<cmd>Telescope advanced_git_search search_log_content<cr>", desc = "seach log content" },
+    { mode = "n", "<leader>fp", ":lua require'telescope'.extensions.project.project{display_type='full'}<CR>", desc = "telescope project" },
   },
-  cmd = 'Telescope',
-  branch = '0.1.x',
+  cmd = "Telescope",
+  branch = "0.1.x",
   version = false,
   config = function()
     local focus_preview = function(prompt_bufnr)
-      local action_state = require 'telescope.actions.state'
+      local action_state = require "telescope.actions.state"
       local picker = action_state.get_current_picker(prompt_bufnr)
       local prompt_win = picker.prompt_win
       local previewer = picker.previewer
       local winid = previewer.state.winid
       local bufnr = previewer.state.bufnr
-      vim.keymap.set('n', '<Tab>', function()
-        vim.cmd(string.format('noautocmd lua vim.api.nvim_set_current_win(%s)', prompt_win))
+      vim.keymap.set("n", "<Tab>", function()
+        vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win))
       end, { buffer = bufnr })
-      vim.cmd(string.format('noautocmd lua vim.api.nvim_set_current_win(%s)', winid))
+      vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", winid))
       -- api.nvim_set_current_win(winid)
     end
 
-    local telescope = require 'telescope'
-    local actions = require 'telescope.actions'
+    local telescope = require "telescope"
+    local actions = require "telescope.actions"
 
--- require("telescope").load_extension("noice")
+    -- require("telescope").load_extension("noice")
     -- require('telescope').load_extension('dap')
-    require('telescope').load_extension 'frecency'
+    require("telescope").load_extension "frecency"
+    require("telescope").load_extension "project"
     -- require('telescope').load_extension 'media_files'
     -- require('telescope').load_extension 'lazygit'
     -- telescope.load_extension 'fzf'
 
+    local project_actions = require "telescope._extensions.project.actions"
     telescope.setup {
       extensions = {
+        project = {
+          base_dirs = {
+            -- "~/satori/project/code_geass",
+            -- { "~/satori/note" },
+            -- { "~/satori/project/portfolio", max_depth = 4 },
+            -- { path = "~/satori/project/CashWise" },
+            -- { path = "~/satori/project/notion-clone-youtube", max_depth = 2 },
+          },
+          hidden_files = true, -- default: false
+          theme = "dropdown",
+          order_by = "asc",
+          search_by = "title",
+          sync_with_nvim_tree = true, -- default false
+          -- default for on_project_selected = find project files
+          on_project_selected = function(prompt_bufnr)
+            -- Do anything you want in here. For example:
+            project_actions.change_working_directory(prompt_bufnr, false)
+            require("harpoon.ui").nav_file(1)
+          end,
+          mappings = {
+            n = {
+              ["d"] = project_actions.delete_project,
+              ["r"] = project_actions.rename_project,
+              ["c"] = project_actions.add_project,
+              ["C"] = project_actions.add_project_cwd,
+              ["f"] = project_actions.find_project_files,
+              ["b"] = project_actions.browse_project_files,
+              ["s"] = project_actions.search_in_project_files,
+              ["R"] = project_actions.recent_project_files,
+              ["w"] = project_actions.change_working_directory,
+              ["o"] = project_actions.next_cd_scope,
+            },
+            i = {
+              ["<c-d>"] = project_actions.delete_project,
+              ["<c-v>"] = project_actions.rename_project,
+              ["<c-a>"] = project_actions.add_project,
+              ["<c-A>"] = project_actions.add_project_cwd,
+              ["<c-f>"] = project_actions.find_project_files,
+              ["<c-b>"] = project_actions.browse_project_files,
+              ["<c-s>"] = project_actions.search_in_project_files,
+              ["<c-r>"] = project_actions.recent_project_files,
+              ["<c-l>"] = project_actions.change_working_directory,
+              ["<c-o>"] = project_actions.next_cd_scope,
+              ["<c-w>"] = project_actions.change_workspace,
+            },
+          },
+        },
 
         frecency = {
           show_scores = true, -- Default: false
@@ -99,7 +150,7 @@ return {
 
         undo = {
           side_by_side = true,
-          layout_strategy = 'vertical',
+          layout_strategy = "vertical",
           -- layout_strategy = "horizontal",
           layout_config = {
             preview_height = 0.7,
@@ -114,16 +165,16 @@ return {
 
           -- See Config
         },
-        ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown(),
         },
       },
 
       defaults = {
 
-        sorting_strategy = 'ascending',
-        prompt_prefix = '  ',
-        selection_caret = '  ',
+        sorting_strategy = "ascending",
+        prompt_prefix = "  ",
+        selection_caret = "  ",
         border = true,
         hl_result_eol = true,
         results_title = false,
@@ -138,7 +189,7 @@ return {
           -- preview_height = 0.7,
           -- preview_width = 0.57,
           -- prompt_position = 'bottom',
-          prompt_position = 'top',
+          prompt_position = "top",
 
           -- center = {
           --   anchor = 'S',
@@ -167,7 +218,7 @@ return {
             -- height = 0.9,
             -- preview_cutoff = 120,
             -- prompt_position = 'bottom',
-            prompt_position = 'top',
+            prompt_position = "top",
             -- width = 0.8,
             preview_width = 0.57,
           },
@@ -180,16 +231,16 @@ return {
           -- },
         },
 
-        path_display = { 'smart' },
+        path_display = { "smart" },
         mappings = {
           n = {
-            ['<Tab>'] = focus_preview,
+            ["<Tab>"] = focus_preview,
           },
           i = {
-            ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-            ['<C-j>'] = actions.move_selection_next, -- move to next result
-            ['<C-b>'] = actions.send_selected_to_qflist + actions.open_qflist,
-            ['<Tab>'] = focus_preview,
+            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
+            ["<C-j>"] = actions.move_selection_next, -- move to next result
+            ["<C-b>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<Tab>"] = focus_preview,
             -- will open
             -- ['<c-;>'] = open_with_trouble,
           },
@@ -201,38 +252,36 @@ return {
       },
     }
 
-    local builtin = require 'telescope.builtin'
-    vim.keymap.set('n', '<leader>/', function()
+    local builtin = require "telescope.builtin"
+    vim.keymap.set("n", "<leader>/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-      builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown {
         winblend = 10,
         previewer = true,
       })
-    end, { desc = '[/] Fuzzily search in current buffer' })
+    end, { desc = "[/] Fuzzily search in current buffer" })
 
     -- It's also possible to pass additional configuration options.
     --  See `:help telescope.builtin.live_grep()` for information about particular keys
-    vim.keymap.set('n', '<leader>f/', function()
+    vim.keymap.set("n", "<leader>f/", function()
       builtin.live_grep {
         grep_open_files = true,
-        prompt_title = 'Live Grep in Open Files',
+        prompt_title = "Live Grep in Open Files",
       }
-    end, { desc = '[S]earch [/] in Open Files' })
+    end, { desc = "[S]earch [/] in Open Files" })
 
     -- Shortcut for searching your Neovim configuration files
-    vim.keymap.set('n', '<leader>fc', function()
-      builtin.find_files { cwd = vim.fn.stdpath 'config' }
-    end, { desc = '[S]earch [N]eovim files' })
+    vim.keymap.set("n", "<leader>fc", function()
+      builtin.find_files { cwd = vim.fn.stdpath "config" }
+    end, { desc = "[S]earch [N]eovim files" })
 
+    vim.keymap.set("n", "<leader>fn", function()
+      builtin.find_files { cwd = "~/obsedian/NGNl/" }
+    end, { desc = "find file note" })
 
-    vim.keymap.set('n', '<leader>fn', function()
-      builtin.find_files { cwd = '~/obsedian/NGNl/' }
-    end, { desc = 'find file note' })
-
-
-    vim.keymap.set('n', '<leader>fq', function()
-      builtin.find_files { cwd = '~/obsedian/' }
-    end, { desc = 'find file obsedian' })
+    vim.keymap.set("n", "<leader>fq", function()
+      builtin.find_files { cwd = "~/obsedian/" }
+    end, { desc = "find file obsedian" })
 
     -- vim.keymap.set('n', '<leader>fz', function()
     --   builtin.find_files { cwd = '~/' }

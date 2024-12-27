@@ -19,9 +19,7 @@ export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.spicetify:$PATH"
 export PATH="/Users/pantornchuavallee/.cargo/bin:$PATH"
 
-export JAVA_HOME="/nix/store/19g7p8djz3dqq5s7727cpv1dy45y66c9-zulu-ca-jdk-23.0.0/zulu-23.jdk/Contents/Home"
-export PATH="$JAVA_HOME/bin:$PATH"
-
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/23.0.1/libexec/openjdk.jdk/Contents/Home"
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -104,6 +102,7 @@ setopt hist_find_no_dups
 
 
 # Aliases
+alias own="sudo chown -R pantornchuavallee:staff ."
 alias ff="clear;wezterm imgcat ~/dotfiles/fastfetch/logos/zen.png --width 26 --height 10 --position 0,9 | fastfetch --raw - --logo-width 20 --logo-height 8"
 alias ls='ls --color'
 alias vim='nvim'

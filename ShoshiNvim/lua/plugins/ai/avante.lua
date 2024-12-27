@@ -26,8 +26,8 @@ return {
       --   max_tokens = 4096,
       -- },
       gemini = {
-        api_key_name = os.getenv 'GEMINI_API_KEY',
-        endpoint = 'aiplatform.googleapis.com',
+        api_key_name = 'GEMINI_API_KEY',
+        -- endpoint = 'aiplatform.googleapis.com',
         temperature = 0,
         max_tokens = 4096,
         -- generationConfig = {
@@ -42,7 +42,7 @@ return {
       --   max_tokens = 4096,
       -- },
       behaviour = {
-        auto_suggestions = false, -- Experimental stage
+        auto_suggestions = true, -- Experimental stage
         auto_set_highlight_group = true,
         auto_set_keymaps = true,
         auto_apply_diff_after_generation = false,

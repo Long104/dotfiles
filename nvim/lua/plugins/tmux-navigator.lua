@@ -13,6 +13,7 @@ return {
       { mode = { 'n' }, '<c-j>', '<ESC><cmd><C-U>TmuxNavigateDown<cr>' },
       { mode = { 'n' }, '<c-k>', '<ESC><cmd><C-U>TmuxNavigateUp<cr>' },
       { mode = { 'n' }, '<c-l>', '<ESC><cmd><C-U>TmuxNavigateRight<cr>' },
+      { mode = { 'n' }, '<c-\\>', '<cmd>TmuxNavigatePrevious<cr>' },
       -- { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },

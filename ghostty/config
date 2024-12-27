@@ -1,9 +1,79 @@
-theme = catppuccin-mocha
-font-size = 19
+# theme = catppuccin-mocha
+theme = Kanagawa Wave
 background-blur-radius = 20
 mouse-hide-while-typing = true
 window-decoration = true
-keybind = global:cmd+/=toggle_quick_terminal
 macos-option-as-alt = true
-# background-opacity = 0.7
+background-opacity = 0.95
 # background-blur-radius = 20 
+
+#window-padding-y = 6,0
+config-file = ghostty-theme
+
+# Some shaders can be found in this repo, they're usually uploaded to discord
+# https://github.com/hackrmomo/ghostty-shaders
+# custom-shader = shaders/animated-gradient-shader.glsl
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/crt.glsl
+# custom-shader = shaders/cubes.glsl
+# custom-shader = shaders/gradient-background.glsl
+# custom-shader = shaders/just-snow.glsl
+# custom-shader = shaders/starfield-colors.glsl
+# custom-shader = shaders/starfield.glsl
+
+# custom-shader-animation = true
+# command = zsh --login -c "if command -v tmux >/dev/null 2>&1; then tmux attach || tmux; else zsh; fi"
+
+
+font-family = JetBrainsMono Nerd Font
+# font-family = FiraCode Nerd Font
+# font-family-bold = FiraCode Nerd Font
+font-size = 13.5
+# bold-is-bright= true 
+bold-is-bright= false
+font-style = Regular
+# font-style = Bold
+font-thicken = true
+
+
+# macos-titlebar-proxy-icon = visible
+macos-titlebar-style = hidden
+# macos-titlebar-style = transparent
+macos-window-shadow = true
+
+#
+# keybind = global:cmd+s=toggle_quick_terminal
+
+
+
+
+# This doesn't work when in tmux, if outside tmux the regular ctrl+l works
+# keybind = super+k=clear_screen
+confirm-close-surface = false
+
+
+image-storage-limit = 320000000
+
+# keybind
+keybind = global:cmd+s=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.02
+keybind = super+/=inspector:toggle
+keybind = super+r=reload_config
+
+# tmux key bindings
+keybind = super+i=text:\x01i
+keybind = super+u=text:\x01u
+keybind = super+x=text:\x01x
+keybind = super+k=text:\x01K
+keybind = super+m=text:\x01m
+keybind = super+o=text:\x01O
+keybind = super+j=text:\x01j
+keybind = super+l=text:\x01L
+keybind = super+h=text:\x01H
+keybind = super+r=text:\x01$

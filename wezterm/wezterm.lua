@@ -7,7 +7,8 @@
 --
 local wezterm = require("wezterm")
 -- local act = wezterm.acti
--- local xdg_config_home = os.getenv("xdg_config_home") local dimmer = { brightness = 0.1 }
+-- local xdg_config_home = os.getenv("xdg_config_home")
+local dimmer = { brightness = 0.1 }
 -- local fish_path = "/opt/homebrew/bin/fish"
 -- local fish_path = "/Users/zen/.nix-profile/bin/fish"
 
@@ -19,6 +20,7 @@ local config = {}
 -- Use config builder object if possible if wezterm.config_builder then config = wezterm.config_builder()
 -- end
 
+local commands = require("commands")
 local k = require("utils/keys")
 -- config.font = wezterm.font("JetBrains Mono",{weight="Medium",scale=1.5})
 
@@ -70,6 +72,8 @@ config.font = wezterm.font_with_fallback({
 -- end
 -- config.font = wezterm.font("MesloLGS Nerd Font", { weight = "Regular", italic = false})
 -- config.font = wezterm.font("MesloLGS Nerd Font", { weight = "Classic Console Neue" })
+config.max_fps = 120
+config.prefer_egl = true
 config.warn_about_missing_glyphs = false
 config.freetype_load_flags = "NO_HINTING"
 config.enable_wayland = false
@@ -161,18 +165,14 @@ config.keys = {
 	-- k.cmd_to_tmux_prefix("d", "d"),
 	-- k.cmd_to_tmux_prefix("s", "T"),
 	-- k.cmd_to_tmux_prefix("s", "s"),
-	k.cmd_to_tmux_prefix("a", "T"),
-	k.cmd_to_tmux_prefix("a", "m"),
-	k.cmd_to_tmux_prefix("p", "T"),
-	k.cmd_to_tmux_prefix("p", "p"),
-	k.cmd_to_tmux_prefix("n", "T"),
-	k.cmd_to_tmux_prefix("n", "n"),
+	-- k.cmd_to_tmux_prefix("a", "T"),
+	-- k.cmd_to_tmux_prefix("a", "m"),
+	k.cmd_to_tmux_prefix("m", "T"),
+	k.cmd_to_tmux_prefix("m", "m"),
 	k.cmd_to_tmux_prefix("u", "T"),
 	k.cmd_to_tmux_prefix("u", "u"),
 	k.cmd_to_tmux_prefix("i", "T"),
 	k.cmd_to_tmux_prefix("i", "i"),
-	k.cmd_to_tmux_prefix("m", "T"),
-	k.cmd_to_tmux_prefix("m", "m"),
 	k.cmd_to_tmux_prefix("l", "T"),
 	k.cmd_to_tmux_prefix("l", "L"),
 	k.cmd_to_tmux_prefix("j", "T"),
@@ -217,4 +217,10 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 	end
 	window:set_config_overrides(overrides)
 end)
+
+-- Custom commands
+wezterm.on("augment-command-palette", function()
+	return commands
+end)
+
 return config

@@ -188,26 +188,6 @@ return {
         }
       end,
 
-      -- ['rust_analyzer'] = function()
-      --   --     require("rust-tools").setup {}
-      --   require('lspconfig').rust_analyzer.setup {
-      --     settings = {
-      --       ['rust-analyzer'] = {
-      --         inlayHints = {
-      --           chainingHints = true,
-      --           typeHints = true,
-      --           parameterHints = true,
-      --           maxLength = 25,
-      --           enumVariant = true,
-      --           -- parameterHints = {
-      --           --   mode = "PlainText",
-      --           -- },
-      --         },
-      --       },
-      --     },
-      --   }
-      -- end,
-
       ["ts_ls"] = function()
         require("lspconfig").ts_ls.setup {
           capabilities = capabilities,
@@ -346,11 +326,13 @@ return {
           filetypes = { "sh", "zsh", "bash" },
         }
       end,
-
-      ["rust_analyzer"] = function() lspconfig[" rust_analyzer "].setup {
-        capabilities = capabilities,
-        filetypes = { "rust" },
-      } end,
+      --
+      -- ["rust_analyzer"] = function()
+      --   lspconfig["rust_analyzer"].setup {
+      --     capabilities = capabilities,
+      --     filetypes = { "rust" },
+      --   }
+      -- end,
 
       ["helm_ls"] = function()
         lspconfig["helm_ls"].setup {

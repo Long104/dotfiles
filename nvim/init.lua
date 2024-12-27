@@ -88,7 +88,7 @@ require("lazy").setup {
     -- { import = 'storage.language.typescript.debug' },
 
     { import = "storage.morePlugin.nvzone.minty" },
-    -- { import = "storage.morePlugin.nvzone.typr" },
+    { import = "storage.morePlugin.nvzone.typr" },
     -- { import = "storage.morePlugin.nvzone.showkey" },
     { import = "storage.morePlugin.nvzone.timerly" },
   },

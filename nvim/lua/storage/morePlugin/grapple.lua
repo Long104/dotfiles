@@ -11,7 +11,6 @@ return {
     { '<C-a>', '<cmd>Grapple toggle<cr>', desc = 'Tag a file' },
     { '<C-r>', '<cmd>Grapple reset<cr>', desc = 'reset' },
     { '<C-p>', '<cmd>Grapple toggle_tags<cr>', desc = 'Toggle tags menu' },
-
     { '<leader>1', '<cmd>Grapple select index=1<cr>', desc = 'Select first tag' },
     { '<leader>2', '<cmd>Grapple select index=2<cr>', desc = 'Select second tag' },
     { '<leader>3', '<cmd>Grapple select index=3<cr>', desc = 'Select third tag' },
