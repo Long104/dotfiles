@@ -20,7 +20,7 @@
       pkgs.deno
       # rust
       # pkgs.cargo
-      pkgs.rustc
+      # pkgs.rustc
       #
       pkgs.atuin
       pkgs.yazi

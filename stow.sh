@@ -4,6 +4,8 @@ stow .
 cd zhell
 stow .
 
+
+# ln -s ~/.config/nushell `~/Library/Application Support/`
 # stow -t ~ tmux 
 # stow -t ~ zshrc
 # stow -t ~/config starship.toml

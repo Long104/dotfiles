@@ -128,6 +128,7 @@ alias s="NVIM_APPNAME=Shoshinvim nvim"
 alias start="time ZSH_DEBUGRC=1 zsh -i -c exit"
 alias la="eza -a"
 alias dr="darwin-rebuild switch --flake ~/dotfiles/nix-darwin"
+alias cat="bat"
 
 # Git
 alias gc="git commit -m"

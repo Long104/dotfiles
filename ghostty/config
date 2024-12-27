@@ -77,3 +77,4 @@ keybind = super+j=text:\x01j
 keybind = super+l=text:\x01L
 keybind = super+h=text:\x01H
 keybind = super+r=text:\x01$
+keybind = super+f=text:\x01[
