@@ -77,7 +77,8 @@ require("lazy").setup {
     -- { import = 'storage.morePlugin.schemastore' },
     { import = "storage.morePlugin.my-note" },
     { import = "storage.morePlugin.render-markdown" },
-
+    { import = "storage.morePlugin.image-clip" },
+    { import = "storage.morePlugin.image" },
     -- extra storage for language
     -- go
     { import = "storage.language.go" },

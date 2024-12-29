@@ -9,7 +9,7 @@ return {
     -- this plugin needs to run before anything else
     -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    cmd = "Image",
+    cmd = "Img",
     -- priority = 1001,
     opts = {
       rocks = { 'magick' },

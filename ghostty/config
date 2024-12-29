@@ -1,4 +1,5 @@
 # theme = catppuccin-mocha
+# shell-integration = fish
 theme = Kanagawa Wave
 background-blur-radius = 20
 mouse-hide-while-typing = true
@@ -39,6 +40,7 @@ bold-is-bright= false
 font-style = Regular
 # font-style = Bold
 font-thicken = true
+# font-feature = -liga 
 
 
 # macos-titlebar-proxy-icon = visible

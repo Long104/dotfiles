@@ -3,11 +3,11 @@
     "logo": {
         "type": "kitty-direct",
         "source": "~/dotfiles/wallpaper/thumb-1920-1382261.png",
-        "height": 20,
-        "width": 25,
+        "height": 17,
+        "width": 35,
         "padding": {
-            "top": 5,
-            "left": 3
+        "top": 4,
+        "left": 2
         },
         "position": "left",
     },

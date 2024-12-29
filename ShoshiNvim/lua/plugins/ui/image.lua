@@ -18,8 +18,7 @@ return {
     '3rd/image.nvim',
     dependencies = { 'luarocks.nvim' },
     event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    config = function()
-      require('image').setup {
+    config = function() require('image').setup {
         backend = 'kitty',
         kitty_method = 'normal',
         integrations = {
