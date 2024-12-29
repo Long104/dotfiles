@@ -54,7 +54,6 @@
       pkgs.go
       pkgs.bat
       pkgs.python3
-      pkgs.luajit
       pkgs.pam-reattach
       pkgs.tmux
       pkgs.htop
