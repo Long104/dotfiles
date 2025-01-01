@@ -75,7 +75,8 @@ require("lazy").setup {
     { import = "storage.morePlugin.neo-clip" },
     -- { import = "storage.morePlugin.doing" },
     -- { import = 'storage.morePlugin.schemastore' },
-    { import = "storage.morePlugin.my-note" },
+    -- { import = "storage.morePlugin.my-note" },
+    { import = "storage.morePlugin.flote" },
     { import = "storage.morePlugin.render-markdown" },
     { import = "storage.morePlugin.image-clip" },
     { import = "storage.morePlugin.image" },
@@ -89,9 +90,9 @@ require("lazy").setup {
     -- { import = 'storage.language.typescript.debug' },
 
     { import = "storage.morePlugin.nvzone.minty" },
-    { import = "storage.morePlugin.nvzone.typr" },
+    -- { import = "storage.morePlugin.nvzone.typr" },
     -- { import = "storage.morePlugin.nvzone.showkey" },
-    { import = "storage.morePlugin.nvzone.timerly" },
+    -- { import = "storage.morePlugin.nvzone.timerly" },
   },
   checker = {
     notify = false,

@@ -59,3 +59,5 @@ abbr -a kl "kubectl logs -f"
 abbr -a ke "kubectl exec -it"
 abbr -a kv "kubectl config view --minify | grep namespace"
 abbr -a knd "kubectl config set-context --current --namespace=default"
+
+

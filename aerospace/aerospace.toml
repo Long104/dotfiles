@@ -190,7 +190,7 @@ alt-shift-l = ['join-with right', 'mode main']
 if.app-id = 'dev.vencord.vesktop'
 run = "move-node-to-workspace V"
 
-[[on-window-detected]]
+[[on-window-detected]] 
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace W"
 
@@ -211,6 +211,10 @@ if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace P"
 
 [[on-window-detected]]
+if.app-id = 'com.usebruno.app'
+run = "move-node-to-workspace P"
+
+[[on-window-detected]]
 if.app-id = 'md.obsidian'
 run = "move-node-to-workspace M"
 
@@ -219,17 +223,21 @@ if.app-id  = 'com.spotify.client'
 run = 'move-node-to-workspace S'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'finder'
-run = 'layout floating'
+if.app-id  = 'org.jkiss.dbeaver.core.product'
+run = 'move-node-to-workspace 1'
 
-[[on-window-detected]]
-if.app-id  = 'com.apple.ActivityMonitor'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'finder'
+# run = 'layout floating'
+
+# [[on-window-detected]]
+# if.app-id  = 'com.apple.ActivityMonitor'
+# run = 'layout floating'
 
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'Notes'
-run = 'layout floating'
+# [[on-window-detected]]
+# if.app-name-regex-substring = 'Notes'
+# run = 'layout floating'
 
 # alt-t = 'exec-and-forget open -a /Applications/Telegram.app'
 # alt-a = 'exec-and-forget open -a /Applications/Arc.app'

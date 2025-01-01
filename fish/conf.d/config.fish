@@ -1,9 +1,15 @@
 if not test -d "$HOME/.tmux/plugins/tpm"
     git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 end
-echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
+# echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
+# grep -qxF 'source (brew --prefix asdf)/libexec/asdf.fish' ~/.config/fish/config.fish || echo -e "\nsource (brew --prefix asdf)/libexec/asdf.fish" >> ~/.config/fish/config.fish
+# if not set -q ASDF_LOADED
+#     set -g ASDF_LOADED 1
+#     source /opt/homebrew/opt/asdf/libexec/asdf.fish
+# end
 function fish_user_key_bindings
-bind \cp history-search-backward bind \cn history-search-forward
+bind \cp history-search-backward 
+bind \cn history-search-forward
 end
 # set -U fish_vi_key_bindings fish_vi_key_bindings
 set -U fish_user_key_bindings 
@@ -22,6 +28,7 @@ function user_paths
     set -gx MANPATH /usr/local/man /usr/local/share/man /usr/man /usr/share/man
     set -gx NIX_PROFILES "/nix/var/nix/profiles/default $HOME/.nix-profile"
     set -gx NIX_PATH /nix/var/nix/profiles/per-user/$USER/channels
+    set -gx DYLD_LIBRARY_PATH /opt/homebrew/lib
 end
 user_paths
 

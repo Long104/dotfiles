@@ -41,4 +41,40 @@ source ~/.config/nushell/env.nu
 source ~/.zoxide.nu
 # source ~/.cache/carapace/init.nu
 source ~/.local/share/atuin/init.nu
+
+def gbs [] {
+  let branch = (
+    git branch |
+    split row "\n" |
+    str trim |
+    where ($it !~ '\*') |
+    where ($it != '') |
+    str join (char nl) |
+    fzf --no-multi
+  )
+  if $branch != '' {
+    git switch $branch
+  }
+}
+
+def gbd [] {
+  let branches = (
+    git branch |
+    split row "\n" |
+    str trim |
+    where ($it !~ '\*') |
+    where ($it != '') |
+    str join (char nl) |
+    fzf --multi |
+    split row "\n" |
+    where ($it != '')
+  )
+  if ($branches | length) > 0 {
+    $branches | each { |branch| git branch -d $branch }
+    ""
+  }
+}
+
+
 use ~/.cache/starship/init.nu
+
