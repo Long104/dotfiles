@@ -1,0 +1,26 @@
+aom                     fontconfig              kubernetes-cli          libsamplerate   libxext         openssl@3               svt-av1
+aria2                   freetype                lame                    libslirp        libxrender      opus                    tesseract
+aribb24                 frei0r                  leptonica               libsndfile      libyaml         p11-kit                 theora
+asdf                    fribidi                 libarchive              libsodium       lima            pango                   unbound
+autoconf                gettext                 libass                  libsoxr         little-cms2     pcre2                   unixodbc
+automake                ghostscript             libb2                   libssh          lua             pixman                  vde
+brotli                  giflib                  libbluray               libssh2         luajit          pkgconf                 webp
+ca-certificates         git-lfs                 libde265                libtasn1        luarocks        python-packaging        x264
+cairo                   glib                    libdeflate              libtiff         lz4             python@3.12             x265
+capstone                gmp                     libevent                libtool         lzo             python@3.13             xorgproto
+certifi                 gnutls                  libheif                 libunibreak     m4              qemu                    xvid
+cjson                   graphite2               libidn                  libunistring    mas             rav1e                   xz
+colima                  harfbuzz                libidn2                 libusb          mbedtls         readline                yt-dlp
+coreutils               highway                 liblqr                  libvidstab      mpdecimal       rubberband              zeromq
+dav1d                   icu4c@76                libmicrohttpd           libvmaf         mpg123          sdl2                    zimg
+docker                  imagemagick             libnghttp2              libvorbis       nasm            shared-mime-info        zstd
+docker-completion       imath                   libogg                  libvpx          ncurses         snappy
+docker-compose          jasper                  libomp                  libx11          nettle          speex
+dtc                     jbig2dec                libpng                  libxau          opencore-amr    sqlite
+ffmpeg                  jpeg-turbo              libraw                  libxcb          openexr         srt
+flac                    jpeg-xl                 librist                 libxdmcp        openjpeg        stow
+
+==> Casks
+aldente                 chatgpt                 iina                    postman         spotify         wezterm
+arc                     docker                  obsidian                raycast         visual-studio-code      whatsapp
+

@@ -1,0 +1,22 @@
+return {
+  'zbirenbaum/copilot.lua',
+  cmd = 'Copilot',
+  event = 'InsertEnter',
+  build = ':Copilot auth',
+  config = function()
+    require('copilot').setup {
+      suggestion = {
+        -- enabled = true,
+        enabled = false,
+        -- suggestion = { enabled = true, auto_trigger = true,
+      },
+      panel = { enabled = true, auto_refresh = false },
+      filetypes = {
+        yaml = true,
+        markdown = true,
+        javascript = true, -- allow specific filetype
+        typescript = true, -- allow specific filetype
+      },
+    }
+  end,
+}

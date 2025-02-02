@@ -1,0 +1,10 @@
+-- If you are using Packer
+return {
+  'shaunsingh/nord.nvim',
+  config = function()
+    require 'nord'
+    --Lua:
+    vim.cmd [[colorscheme nord]]
+  end,
+}
+

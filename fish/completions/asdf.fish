@@ -1,0 +1,1 @@
+/Users/pantornchuavallee/.asdf/completions/asdf.fish
