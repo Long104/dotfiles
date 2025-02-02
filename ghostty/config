@@ -1,0 +1,120 @@
+# theme = catppuccin-mocha
+# shell-integration = fish 
+theme = Kanagawa Wave
+# theme = catppuccin-mocha
+background-blur-radius = 20
+mouse-hide-while-typing = true
+window-decoration = false
+macos-option-as-alt = true
+background-opacity = 0.95
+# background-blur-radius = 20 
+clipboard-read = allow
+clipboard-write = allow
+
+#window-padding-y = 6,0
+# config-file = ghostty-theme
+
+# Some shaders can be found in this repo, they're usually uploaded to discord
+# https://github.com/hackrmomo/ghostty-shaders
+# custom-shader = shaders/anime.glsl
+# custom-shader = shaders/animated-gradient-shader.glsl
+# custom-shader = shaders/bettercrt.glsl
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/crt.glsl
+# custom-shader = shaders/cubes.glsl
+# custom-shader = shaders/dither.glsl
+# custom-shader = shaders/drunkard.glsl
+# custom-shader = shaders/fireworks-rockets.glsl
+# custom-shader = shaders/fireworks.glsl
+# custom-shader = shaders/gears-and-belts.glsl
+# custom-shader = shaders/glitchy.glsl
+# custom-shader = shaders/glow-rgbsplit-twitchy.glsl
+# custom-shader = shaders/gradient-background.glsl
+# custom-shader = shaders/inside-the-matrix.glsl
+# custom-shader = shaders/just-snow.glsl
+# custom-shader = shaders/matrix-hallway.glsl
+# custom-shader = shaders/negative.glsl
+# custom-shader = shaders/rain.glsl
+# custom-shader = shaders/retro-terminal.glsl
+# custom-shader = shaders/smoke-and-ghost.glsl
+# custom-shader = shaders/sparks-from-fire.glsl
+# custom-shader = shaders/spotlight.glsl
+# custom-shader = shaders/starfield-colors.glsl
+# custom-shader = shaders/starfield.glsl
+# custom-shader = shaders/tft.glsl
+# custom-shader = shaders/underwater.glsl
+# custom-shader = shaders/water.glsl
+
+# custom-shader-animation = true
+# command = zsh --login -c "if command -v tmux >/dev/null 2>&1; then tmux attach || tmux; else zsh; fi"
+
+
+# font-family = JetBrainsMono Nerd Font
+font-family = "JetBrainsMono Nerd Font Mono"
+# font-family = FiraCode Nerd Font
+# font-family-bold = FiraCode Nerd Font
+font-size = 13.5
+# bold-is-bright= true 
+bold-is-bright= false
+font-style = Regular
+# font-style = Bold
+font-thicken = true
+# font-feature = -liga 
+
+
+# macos-titlebar-proxy-icon = visible
+macos-titlebar-style = hidden
+# macos-titlebar-style = transparent
+# macos-window-shadow = true
+
+
+# keybind = global:cmd+s=toggle_quick_terminal
+
+
+
+
+# This doesn't work when in tmux, if outside tmux the regular ctrl+l works
+# keybind = super+k=clear_screen
+confirm-close-surface = false
+
+
+image-storage-limit = 320000000
+
+# keybind
+macos-option-as-alt = left
+keybind = alt+left=unbind
+keybind = alt+right=unbind
+keybind = global:cmd+g=toggle_quick_terminal
+# quick-terminal-position = top
+quick-terminal-position = right
+quick-terminal-animation-duration = 0.02
+keybind = super+/=inspector:toggle
+keybind = super+r=reload_config
+
+# tmux key bindings
+keybind = super+i=text:\x01i
+keybind = super+u=text:\x01u
+keybind = super+x=text:\x01x
+keybind = super+k=text:\x01K
+keybind = super+m=text:\x01m
+keybind = super+o=text:\x01O
+keybind = super+j=text:\x01j
+keybind = super+l=text:\x01L
+keybind = super+h=text:\x01H
+keybind = super+r=text:\x01$
+keybind = super+f=text:\x01[
+keybind = ctrl+\=text:\x01\\
+# keybind = alt+i=text:\x01a
+# keybind = ctrl+k=text:\x01\x1b[A
+# keybind = ctrl+j=text:\x01\x1b[B
+# keybind = ctrl+l=text:\x01\x1b[C
+# keybind = ctrl+h=text:\x01\x1b[D
