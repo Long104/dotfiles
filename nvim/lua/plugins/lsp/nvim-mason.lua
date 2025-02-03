@@ -73,7 +73,6 @@ return {
         -- 'cargo-edit',
         "bacon",
         "shfmt",
-        "oxlint",
         -- 'pint',
         "phpcs",
         "php-cs-fixer",

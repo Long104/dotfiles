@@ -21,10 +21,10 @@ return {
       -- php = { 'phpcs' },
       -- javascript = { "eslint_d" },
       -- typescript = { "eslint_d" },
-      javascript = { "oxlint" },
-      typescript = { "oxlint" },
-      javascriptreact = { "oxlint" },
-      typescriptreact = { "oxlint" },
+      javascript = { "biome" },
+      typescript = { "biome" },
+      javascriptreact = { "biome" },
+      typescriptreact = { "biome" },
       python = { "flake8" },
       go = { "golangcilint" },
       Dockerfile = { "hadolint" },
@@ -66,8 +66,8 @@ return {
       --   -- },
       -- },
       ---@diagnostic disable-next-line: missing-fields
-      oxlint = {
-        cmd = vim.fn.stdpath "data" .. "/mason/bin/oxlint",
+      biome = {
+        cmd = vim.fn.stdpath "data" .. "/mason/bin/biome",
         stdin = false, -- Disable stdin if oxlint reads files directly
         args = {
           "--no-warn-ignored",
