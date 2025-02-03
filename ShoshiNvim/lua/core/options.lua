@@ -27,7 +27,7 @@ vim.opt.inccommand = 'nosplit'
 vim.opt.hlsearch = true
 vim.opt.spelllang = 'en_us'
 vim.opt.smoothscroll = true
--- vim.opt.spelllang = { 'en' }
+-- vim.opt.spelllang = { 'en' } 
 
 vim.opt.backup = false
 vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
@@ -125,8 +125,8 @@ vim.o.textwidth = 80
 -- vim.g.autoformat = true
 -- Set format program (optional, adjust as needed)
 
--- vim.opt.formatoptions = 'jcroqlnta' -- tcqj
-vim.opt.formatoptions = 'jcroqlnt' -- tcqj
+vim.opt.formatoptions = 'jcroqlnta' -- tcqj
+-- vim.opt.formatoptions = 'jcroqlnt' -- tcqj
 
 -- vim.opt.grepformat = '%f:%l:%c:%m'
 vim.opt.grepformat = '%f:%l:%c:%m'
