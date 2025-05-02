@@ -29,7 +29,14 @@ return {
     -- { mode = 'n', '<leader><leader>', 'Telescope resume', desc = '[S]earch [R]esume' },
     -- { mode = 'n', '<leader>fb', ':Telescope file_browser<cr>', desc = 'in path' },
     -- { mode = 'n', '<leader>fp', ':Telescope file_browser path=%:p:h select_buffer=true<cr>', desc = 'current' },
-    { mode = "n", "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "fuzzy find files in cwd" },
+    -- { mode = "n", "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "fuzzy find files in cwd" },
+    {
+      mode = "n",
+      "<leader>ff",
+      "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+      desc = "fuzzy find files in cwd",
+    },
+
     { mode = "n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "fuzzy find recent files" },
     { mode = "n", "<leader>fl", "<cmd>Telescope live_grep<cr>", desc = "find string in cwd", silent = true },
     { mode = { "n", "x" }, "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "find string under cursor in cwd" },
@@ -171,7 +178,16 @@ return {
       },
 
       defaults = {
-
+        vimgrep_arguments = {
+        	"rg",
+        	"--color=never",
+        	"--no-heading",
+        	"--with-filename",
+        	"--line-number",
+        	"--column",
+        	"--hidden",
+        	"--smart-case",
+		},
         sorting_strategy = "ascending",
         prompt_prefix = "  ",
         selection_caret = "  ",

@@ -16,7 +16,7 @@ keymap("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- keymap("n", "wd", "<cmd>q!<CR>", opts "Close current split")
 keymap("n", "du", "<cmd>q!<CR>", opts "Close current split")
 keymap("n", "dl", "<cmd>q!<CR>", opts "Close current split")
-keymap("n", "qa", "<cmd>wqa!<CR>", opts "Close current split")
+-- keymap("n", "qa", "<cmd>wqa!<CR>", opts "Close current split")
 keymap("n", "r", "<C-r>", opts "Redo")
 keymap("n", "e", "<cmd>e!<cr>", opts "Reload")
 keymap("n", "<leader>qa", "<cmd>wqa!<cr>", opts "close everything")
@@ -31,7 +31,7 @@ vim.api.nvim_set_keymap("x", "<leader>cr", 'c{/*<C-r>"*/}<Esc>', { noremap = tru
 vim.api.nvim_set_keymap("n", "<leader>cr", "I{/* <Esc>A */}<Esc>", { noremap = true, silent = true })
 
 -- diagostic
-keymap("n", "ql", vim.diagnostic.setloclist, opts "Open diagnostic [Q]uickfix list")
+keymap("n", "Q", vim.diagnostic.setloclist, opts "Open diagnostic [Q]uickfix list")
 -- git
 
 --resize

@@ -1,5 +1,10 @@
 
 abbr -a r "R_AUTO_START=true nvim"
+abbr -a zen "nvim"
+abbr -a s "NVIM_APPNAME=Shoshinvim nvim"
+abbr -a n "nvim"
+abbr -a f "nvim -c ':Telescope find_files'"
+
 abbr -a ls "eza --color always --icons=always"
 # abbr -a ls "eza --color always --icons=always"
 # abbr -aes
@@ -19,11 +24,8 @@ abbr -a docker_clean_ps 'docker rm $(docker ps --filter=status=exited --filter=s
 abbr -a docker_clean_cache_x 'docker buildx prune -f'
 abbr -a docker_clear_cache 'docker builder prune'
 abbr -a git-bare "git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-abbr -a n "nvim"
-abbr -a f "nvim -c ':Telescope find_files'"
 abbr -a py-activate "source ~/myenv/bin/activate.fish"
 abbr -a py-deactivate "deactivate"
-abbr -a s "NVIM_APPNAME=Shoshinvim nvim"
 abbr -a start "time ZSH_DEBUGRC=1 zsh -i -c exit"
 abbr -a la "eza -a"
 abbr -a dr "darwin-rebuild switch --flake ~/dotfiles/nix-darwin"

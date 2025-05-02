@@ -1,52 +1,55 @@
 return {
-  'stevearc/oil.nvim',
+  "stevearc/oil.nvim",
   keys = {
-    { mode = 'n', '<leader>-', '<CMD>Oil<CR>', desc = 'Open parent  directory' },
+    { mode = "n", "<leader>-", "<CMD>Oil<CR>", desc = "Open parent  directory" },
     {
-      mode = 'n',
-      '-',
+      mode = "n",
+      "-",
       function()
-        require('oil').open_float '.'
+        require("oil").open_float "."
       end,
-      desc = 'Open float parent directory',
+      desc = "Open float parent directory",
     },
   },
   config = function()
-    require('oil').setup {
+    require("oil").setup {
       -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
       -- Set to false if you want some other plugin (e.g. netrw) to open when you edit directories.
       default_file_explorer = true,
       -- Id is automatically added at the beginning, and name at the end
       -- See :help oil-columns
       columns = {
-        'icon',
+        "icon",
         -- "permissions",
         -- "size",
         -- "mtime",
       },
       -- Buffer-local options to use for oil buffers
       buf_options = {
-        buflisted = false,
-        bufhidden = 'hide',
+        buflisted = true,
+        bufhidden = "hide",
       },
       -- Window-local options to use for oil buffers
       win_options = {
         wrap = false,
-        signcolumn = 'no',
+        signcolumn = "no",
         cursorcolumn = false,
-        foldcolumn = '0',
+        foldcolumn = "0",
         spell = false,
         list = false,
         conceallevel = 3,
-        concealcursor = 'nvic',
+        concealcursor = "nvic",
       },
       -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
       delete_to_trash = false,
+      -- delete_to_trash = true,
       -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
-      skip_confirm_for_simple_edits = false,
+      -- skip_confirm_for_simple_edits = false,
+      skip_confirm_for_simple_edits = true,
       -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
       -- (:help prompt_save_on_select_new_entry)
-      prompt_save_on_select_new_entry = true,
+      -- prompt_save_on_select_new_entry = true,
+      -- prompt_save_on_select_new_entry = false,
       -- Oil will automatically delete hidden buffers after this delay
       -- You can set the delay to false to disable cleanup entirely
       -- Note that the cleanup process only starts when none of the oil buffers are currently displayed
@@ -62,7 +65,7 @@ return {
       },
       -- Constrain the cursor to the editable parts of the oil buffer
       -- Set to `false` to disable, or "name" to keep it on the file names
-      constrain_cursor = 'editable',
+      constrain_cursor = "editable",
       -- Set to true to watch the filesystem for changes and reload oil
       watch_for_changes = false,
       -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
@@ -72,31 +75,32 @@ return {
       -- Set to `false` to remove a keymap
       -- See :help oil-actions for a list of all available actions
       keymaps = {
-        ['g?'] = 'actions.show_help',
-        ['<CR>'] = 'actions.select',
-        ['<C-s>'] = { 'actions.select', opts = { vertical = true }, desc = 'Open the entry in a vertical split' },
-        ['<C-h>'] = { 'actions.select', opts = { horizontal = true }, desc = 'Open the entry in a horizontal split' },
-        ['<C-t>'] = { 'actions.select', opts = { tab = true }, desc = 'Open the entry in new tab' },
-        ['<C-p>'] = 'actions.preview',
-        ['<C-c>'] = 'actions.close',
-        ['<C-l>'] = 'actions.refresh',
-        ['-'] = 'actions.parent',
-        ['_'] = 'actions.open_cwd',
-        ['`'] = 'actions.cd',
-        ['~'] = { 'actions.cd', opts = { scope = 'tab' }, desc = ':tcd to the current oil directory' },
-        ['gs'] = 'actions.change_sort',
-        ['gx'] = 'actions.open_external',
-        ['g.'] = 'actions.toggle_hidden',
-        ['g\\'] = 'actions.toggle_trash',
+        ["g?"] = "actions.show_help",
+        ["<CR>"] = "actions.select",
+        ["<C-s>"] = { "actions.select", opts = { vertical = true }, desc = "Open the entry in a vertical split" },
+        ["<C-h>"] = { "actions.select", opts = { horizontal = true }, desc = "Open the entry in a horizontal split" },
+        ["<C-t>"] = { "actions.select", opts = { tab = true }, desc = "Open the entry in new tab" },
+        ["<C-p>"] = "actions.preview",
+        -- ["<C-c>"] = "actions.close",
+        ["q"] = "actions.close",
+        ["<C-l>"] = "actions.refresh",
+        ["-"] = "actions.parent",
+        ["_"] = "actions.open_cwd",
+        ["`"] = "actions.cd",
+        ["~"] = { "actions.cd", opts = { scope = "tab" }, desc = ":tcd to the current oil directory" },
+        ["gs"] = "actions.change_sort",
+        ["gx"] = "actions.open_external",
+        ["g."] = "actions.toggle_hidden",
+        ["g\\"] = "actions.toggle_trash",
       },
       -- Set to false to disable all of the above keymaps
       use_default_keymaps = true,
       view_options = {
         -- Show files and directories that start with "."
-        show_hidden = false,
+        show_hidden = true,
         -- This function defines what is considered a "hidden" file
         is_hidden_file = function(name, bufnr)
-          return vim.startswith(name, '.')
+          return vim.startswith(name, ".")
         end,
         -- This function defines what will never be shown, even when `show_hidden` is set
         is_always_hidden = function(name, bufnr)
@@ -110,8 +114,8 @@ return {
         sort = {
           -- sort order can be "asc" or "desc"
           -- see :help oil-columns to see which columns are sortable
-          { 'type', 'asc' },
-          { 'name', 'asc' },
+          { "type", "asc" },
+          { "name", "asc" },
         },
       },
       -- Extra arguments to pass to SCP when moving/copying files over SSH
@@ -135,13 +139,14 @@ return {
         padding = 2,
         max_width = 70,
         max_height = 28,
-        border = 'rounded',
+        border = "rounded",
         win_options = {
           winblend = 0,
         },
         -- preview_split:
         -- Split direction: "auto", "left", "right", "above", "below".
-        preview_split = 'auto',
+        -- preview_split = "auto",
+        preview_split = "auto",
         -- This is the config that will be passed to nvim_open_win.
         -- Change values here to customize the layout
         override = function(conf)
@@ -150,6 +155,8 @@ return {
       },
       -- Configuration for the actions floating preview window
       preview = {
+        -- How to open the preview window "load"|"scratch"|"fast_scratch"
+        preview_method = "fast_scratch",
         -- Width dimensions can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
         -- min_width and max_width can be a single value or a list of mixed integer/float types.
         -- max_width = {100, 0.8} means "the lesser of 100 columns or 80% of total"
@@ -166,7 +173,7 @@ return {
         min_height = { 5, 0.1 },
         -- optionally define an integer/float for the exact height of the preview window
         height = nil,
-        border = 'rounded',
+        border = "rounded",
         win_options = {
           winblend = 0,
         },
@@ -181,20 +188,30 @@ return {
         max_height = { 10, 0.9 },
         min_height = { 5, 0.1 },
         height = nil,
-        border = 'rounded',
-        minimized_border = 'none',
+        border = "rounded",
+        minimized_border = "none",
         win_options = {
           winblend = 0,
         },
       },
       -- Configuration for the floating SSH window
       ssh = {
-        border = 'rounded',
+        border = "rounded",
       },
       -- Configuration for the floating keymaps help window
       keymaps_help = {
-        border = 'rounded',
+        border = "rounded",
       },
+
+      -- vim.api.nvim_create_autocmd("User", {
+      --   pattern = "OilEnter",
+      --   callback = vim.schedule_wrap(function(args)
+      --     local oil = require "oil"
+      --     if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+      --       oil.open_preview()
+      --     end
+      --   end),
+      -- }),
     }
   end,
 }

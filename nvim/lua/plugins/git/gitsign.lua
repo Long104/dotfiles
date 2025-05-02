@@ -61,6 +61,11 @@ return {
         -- Toggles
         map("n", "gtb", gitsigns.toggle_current_line_blame, { desc = "[T]oggle git show [b]lame line" })
         map("n", "gtD", gitsigns.toggle_deleted, { desc = "[T]oggle git show [D]eleted" })
+        map("n", "ghc", function()
+        local commit = vim.fn.input("Enter commit hash: ")
+        gitsigns.diffthis(commit)
+        end, { desc = "git diff against custom commit" })
+
       end,
     },
   },

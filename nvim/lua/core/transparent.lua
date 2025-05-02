@@ -19,10 +19,10 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrwSettings = 1
 
--- #16161E
--- #21222E
--- #2A2A38
--- transaprent background
+-- -- #16161E
+-- -- #21222E
+-- -- #2A2A38
+-- -- transaprent background
 vim.api.nvim_set_hl(0, "Normal", { fg = "none", bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { fg = "none", bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { fg = "none", bg = "none" })
@@ -47,4 +47,13 @@ vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#282833", bg = "none" })
 vim.api.nvim_set_hl(0, "TabLineFill", { fg = "none", bg = "none" })
 vim.api.nvim_set_hl(0, "TabLine", { fg = "none", bg = "none" })
 -- vim.api.nvim_set_hl(0, 'CursorLine', { fg = 'none', bg = 'none' })
+
+-- vim.cmd [[
+--   highlight TreesitterContext guibg=NONE ctermbg=NONE
+--   highlight TreesitterContextBottom guibg=NONE ctermbg=NONE
+--   highlight TreesitterContextSeparator guibg=NONE ctermbg=NONE
+--   highlight TreesitterContextLineNumber guibg=NONE ctermbg=NONE
+--   highlight TreesitterContextLineNumberBottom guibg=NONE ctermbg=NONE
+-- ]]
+
 

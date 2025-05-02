@@ -43,6 +43,7 @@ return {
         -- 'jdtls'
         "rust_analyzer",
         "html",
+        "clangd",
         "emmet_language_server",
         "cssls",
         "tailwindcss",
@@ -50,7 +51,7 @@ return {
         "phpactor",
         "graphql",
         "prismals",
-        "pyright",
+        -- "pyright",
         "lua_ls",
         "docker_compose_language_service",
         "dockerls",
@@ -63,6 +64,7 @@ return {
         "biome",
         "helm_ls",
         "r_language_server",
+        "pbls"
       },
     }
 

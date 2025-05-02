@@ -1,17 +1,23 @@
 return {
-  'sho-87/kanagawa-paper.nvim',
-  keys = {{
-    "<leader>ff","<cmd>Telescope find_files<cr>"
-  }},
-  ft = {'NvimTree'},
+  "sho-87/kanagawa-paper.nvim",
+  keys = {
+
+    {
+      mode = "n",
+      "<leader>ff",
+      "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+      desc = "fuzzy find files in cwd",
+    },
+  },
+  ft = { "NvimTree" },
   priority = 1000,
   -- opts = {},
   config = function()
     -- Get the colors for the current theme
-    local colors = require('kanagawa-paper.colors').setup()
+    local colors = require("kanagawa-paper.colors").setup()
     -- local palette_colors = colors.palette
     -- local theme_colors = colors.theme
-    require('kanagawa-paper').setup {
+    require("kanagawa-paper").setup {
       undercurl = true,
       transparent = false,
       gutter = false,
@@ -42,9 +48,9 @@ return {
           -- String = { fg = colors.palette.carpYellow, italic = true },
           --           -- theme colors will update dynamically when you change theme!
           --           SomePluginHl = { fg = colors.theme.syn.type, bold = true },
-          NormalFloat = { bg = 'none' },
-          FloatBorder = { bg = 'none' },
-          FloatTitle = { bg = 'none' },
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          FloatTitle = { bg = "none" },
 
           -- Save a hlgroup with dark background and dimmed foreground
           -- so that you can use it where you still want darker windows.
@@ -56,7 +62,7 @@ return {
           LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
-          PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
+          PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
           PmenuSbar = { bg = theme.ui.bg_m1 },
           PmenuThumb = { bg = theme.ui.bg_p2 },
         }
@@ -64,6 +70,6 @@ return {
     }
 
     -- setup must be called before loading
-    vim.cmd 'colorscheme kanagawa-paper'
+    vim.cmd "colorscheme kanagawa-paper"
   end,
 }

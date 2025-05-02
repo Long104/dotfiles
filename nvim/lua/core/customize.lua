@@ -101,3 +101,28 @@ let dir = substitute(dir, "^.*\/src\/.\\{-}\/", "", "")
   let result = append(4, "}")
 endfunction
   ]]
+
+
+
+vim.keymap.set('n', '<leader>gx', function()
+  vim.defer_fn(function()
+    vim.cmd('normal K')
+  end, 0)
+
+  vim.defer_fn(function()
+    vim.cmd('normal K')
+  end, 100)
+
+  vim.defer_fn(function()
+    vim.cmd('normal G')
+  end, 200)
+
+  vim.defer_fn(function()
+    vim.cmd('normal gx')
+  end, 300)
+
+  vim.defer_fn(function()
+    vim.cmd('normal q')
+  end, 400)
+end)
+

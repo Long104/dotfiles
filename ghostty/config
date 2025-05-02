@@ -1,17 +1,20 @@
 # theme = catppuccin-mocha
 # shell-integration = fish 
 theme = Kanagawa Wave
+# theme = Everforest Dark - Hard
 # theme = catppuccin-mocha
 background-blur-radius = 20
 mouse-hide-while-typing = true
 window-decoration = false
 macos-option-as-alt = true
-background-opacity = 0.95
+background-opacity = 0.75
+# background-opacity = 0.95
 # background-blur-radius = 20 
 clipboard-read = allow
 clipboard-write = allow
 
-#window-padding-y = 6,0
+# window-padding-y = 8,0
+# window-padding-y = 8,0
 # config-file = ghostty-theme
 
 # Some shaders can be found in this repo, they're usually uploaded to discord
@@ -86,7 +89,6 @@ macos-titlebar-style = hidden
 # keybind = super+k=clear_screen
 confirm-close-surface = false
 
-
 image-storage-limit = 320000000
 
 # keybind
@@ -106,13 +108,11 @@ keybind = super+u=text:\x01u
 keybind = super+x=text:\x01x
 keybind = super+k=text:\x01K
 keybind = super+m=text:\x01m
-keybind = super+o=text:\x01O
-keybind = super+j=text:\x01j
 keybind = super+l=text:\x01L
-keybind = super+h=text:\x01H
 keybind = super+r=text:\x01$
-keybind = super+f=text:\x01[
+keybind = super+j=text:\x01[
 keybind = ctrl+\=text:\x01\\
+# keybind = super+shift+l=text:\x01O
 # keybind = alt+i=text:\x01a
 # keybind = ctrl+k=text:\x01\x1b[A
 # keybind = ctrl+j=text:\x01\x1b[B

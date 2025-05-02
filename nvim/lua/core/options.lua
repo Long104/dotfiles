@@ -6,25 +6,27 @@ local opt = vim.opt
 -- vim.g.loaded_perl_provider = 0
 -- vim.g.loaded_ruby_provider = 0
 -- vim.opt.shadafile = "NONE"
-opt.conceallevel=2
-opt.concealcursor=''
+-- vim.o.shell = "/opt/homebrew/bin/fish"
+opt.diffopt = "internal,filler,closeoff,linematch:60,algorithm:histogram,context:5"
+opt.conceallevel = 2
+opt.concealcursor = ""
 opt.hidden = true
 -- customize
-opt.sessionoptions = { 'terminal', 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+opt.sessionoptions = { "terminal", "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 --tab
 -- vim.o.showtabline = 2
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- opt.laststatus = 3
 opt.laststatus = 0
 opt.showmode = false
 
-opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus'
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 opt.cursorline = true
 -- opt.cursorlineopt = 'number' -- only number
 -- opt.cursorlineopt = 'line' -- only line
-opt.cursorlineopt = 'both' -- or 'both' if you want both number and line
+opt.cursorlineopt = "both" -- or 'both' if you want both number and line
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2
@@ -35,8 +37,8 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 opt.fillchars = {
-  diff = '╱',
-  eob = ' ',
+  diff = "╱",
+  eob = " ",
 }
 opt.ignorecase = true
 opt.smartcase = true
@@ -68,7 +70,7 @@ opt.shortmess:append {
   q = true,
 }
 
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 opt.splitright = true
 opt.splitbelow = true
 opt.timeoutlen = 300
@@ -79,12 +81,12 @@ opt.undofile = true
 vim.opt.updatetime = 200
 
 -- lazy
-vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
+vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 vim.g.lazygit_config = true
 vim.g.deprecation_warnings = false
 
-opt.grepformat = '%m'
-opt.grepprg = 'rg --vimgrep'
+opt.grepformat = "%m"
+opt.grepprg = "rg --vimgrep"
 opt.linebreak = true
 
 opt.autowrite = false
@@ -95,14 +97,14 @@ opt.termguicolors = true
 opt.wrap = false
 
 --primega
-opt.guicursor = ''
+-- opt.guicursor = ''
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
+opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 opt.cmdheight = 1
 
 -- vim.opt.formatoptions:remove { 'r', 'o' }
 opt.breakindent = true
 opt.hlsearch = true
-opt.jumpoptions = 'view'
+opt.jumpoptions = "view"
 -- vim.opt.isfname:append("@-@")
