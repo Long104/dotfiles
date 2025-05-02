@@ -25,7 +25,7 @@ return {
       typescript = { "biome" },
       javascriptreact = { "biome" },
       typescriptreact = { "biome" },
-      python = { "flake8" },
+      -- python = { "ruff" },
       go = { "golangcilint" },
       Dockerfile = { "hadolint" },
       rust = { "bacon" },
@@ -41,11 +41,19 @@ return {
       },
       -- test
       -- python
+      ------@diagnostic disable-next-line: missing-fields
+      ---flake8 = {
+      ---  cmd = vim.fn.stdpath "data" .. "/mason/bin/flake8",
+      ---  stdin = false,
+      ---  args = {}, -- add any necessary arguments if needed
+      ---},
       ---@diagnostic disable-next-line: missing-fields
-      flake8 = {
-        cmd = vim.fn.stdpath "data" .. "/mason/bin/flake8",
-        stdin = true,
-        args = {}, -- add any necessary arguments if needed
+      ruff = {
+        cmd = vim.fn.stdpath "data" .. "/mason/bin/ruff",
+        stdin = false,
+        args = { "check", vim.api.nvim_buf_get_name(0) }, -- Run check on current file
+        stream = "stdout",
+        ignore_exitcode = true,
       },
       -- typescript
       ---@diagnostic disable-next-line: missing-fields

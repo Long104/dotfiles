@@ -39,8 +39,8 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
+          init_selection = "<C-c>",
+          node_incremental = "<C-c>",
           scope_incremental = "<leader>si",
           node_decremental = "<bs>",
         },
@@ -50,7 +50,7 @@ return {
         "rust",
         "zig",
         "helm",
-        -- 'c',
+        "cpp",
         -- 'java',
         "nix",
         "blade",

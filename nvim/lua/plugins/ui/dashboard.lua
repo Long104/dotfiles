@@ -8,8 +8,7 @@ return {
     -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#708e9c', bold = true })
     -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#5d7987', bold = true })
     vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#638191", bold = true })
-    -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#dad2ba', bold = true })
-    -- vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#FFFFFF', bg = '#000000', italic = true })
+    -- vim.api.nvim_set_hl(0, 'DashboardHeader', { fg = '#dad2ba', bold = true }) -- vim.api.nvim_set_hl(0, 'DashboardFooter', { fg = '#FFFFFF', bg = '#000000', italic = true })
 
     --
     -- -- Hyper theme

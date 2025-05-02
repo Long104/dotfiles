@@ -139,9 +139,9 @@ return {
     mason_lspconfig.setup_handlers {
       -- default handler for installed servers
       function(server_name)
-        -- if server_name == 'tsserver' then
-        --   server_name = 'ts_ls'
-        -- end
+        if server_name == "ts_ls" then
+          return
+        end
         -- server_name = server_name == 'tsserver' and 'ts_ls' or server_name
         lspconfig[server_name].setup {
           capabilities = capabilities,
@@ -199,43 +199,43 @@ return {
         }
       end,
 
-      ["ts_ls"] = function()
-        require("lspconfig").ts_ls.setup {
-          capabilities = capabilities,
-          cmd = { "typescript-language-server", "--stdio" },
-          settings = {
-            completions = {
-              completeFunctionCalls = true,
-            },
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-          },
-
-          root_dir = function(filename, bufnr)
-            local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename)
-            if denoRootDir then
-              -- print('this seems to be a deno project; returning nil so that tsserver does not attach');
-              return nil
-              -- else
-              -- print('this seems to be a ts project; return root dir based on package.json')
-            end
-
-            return lspconfig.util.root_pattern "package.json"(filename)
-          end,
-          filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
-          single_file_support = false,
-        }
-      end,
+      -- ["ts_ls"] = function()
+      --   require("lspconfig").ts_ls.setup {
+      --     capabilities = capabilities,
+      --     cmd = { "typescript-language-server", "--stdio" },
+      --     settings = {
+      --       completions = {
+      --         completeFunctionCalls = true,
+      --       },
+      --       typescript = {
+      --         inlayHints = {
+      --           includeInlayParameterNameHints = "all",
+      --           includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+      --           includeInlayFunctionParameterTypeHints = true,
+      --           includeInlayVariableTypeHints = true,
+      --           includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+      --           includeInlayPropertyDeclarationTypeHints = true,
+      --           includeInlayFunctionLikeReturnTypeHints = true,
+      --           includeInlayEnumMemberValueHints = true,
+      --         },
+      --       },
+      --     },
+      --
+      --     root_dir = function(filename, bufnr)
+      --       local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename)
+      --       if denoRootDir then
+      --         -- print('this seems to be a deno project; returning nil so that tsserver does not attach');
+      --         return nil
+      --         -- else
+      --         -- print('this seems to be a ts project; return root dir based on package.json')
+      --       end
+      --
+      --       return lspconfig.util.root_pattern "package.json"(filename)
+      --     end,
+      --     filetypes = { "typescriptreact", "javascriptreact", "typescript", "javascript" },
+      --     single_file_support = false,
+      --   }
+      -- end,
 
       -- ["denols"] = function()
       --   require("lspconfig").denols.setup {

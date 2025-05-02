@@ -8,6 +8,7 @@ return {
       { "<leader>lt", "<cmd>EcologShelterToggle<cr>", desc = "Ecolog shelter toggle" },
       { "<leader>le", "<cmd>EcologGenerateExample<cr>", desc = "Ecolog shelter toggle" },
     },
+    ft = "env",
     dependencies = { "nvim-telescope/telescope.nvim" },
     -- lazy = false,
     opts = {

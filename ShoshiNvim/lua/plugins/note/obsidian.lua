@@ -28,6 +28,10 @@ return {
         path = '~/satori/note/shoshin',
       },
       {
+        name = 'last term lockin please',
+        path = '~/satori/note/stamford/term_3_2024',
+      },
+      {
         name = 'todo',
         path = '~/satori/note/todo',
       },

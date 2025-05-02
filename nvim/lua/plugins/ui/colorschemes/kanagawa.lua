@@ -1,13 +1,20 @@
 return {
-  'rebelot/kanagawa.nvim',
+  "rebelot/kanagawa.nvim",
   -- Default options:
-  keys = {{
-    "<leader>ff","<cmd>Telescope find_files<cr>"
-  }},
-  ft = {'NvimTree'},
-  event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+  keys = {
+
+    {
+      mode = "n",
+      "<leader>ff",
+      "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+      desc = "fuzzy find files in cwd",
+    },
+  },
+
+  ft = { "NvimTree" },
+  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   config = function()
-    require('kanagawa').setup {
+    require("kanagawa").setup {
       compile = false, -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
@@ -26,7 +33,7 @@ return {
           lotus = {},
           dragon = {
             syn = {
-              parameter = 'yellow',
+              parameter = "yellow",
             },
           },
           all = {
@@ -39,11 +46,15 @@ return {
       },
       overrides = function(colors) -- add/modify highlights
         local theme = colors.theme
+        local makeDiagnosticColor = function(color)
+          local c = require "kanagawa.lib.color"
+          return { fg = color, bg = c(color):blend(theme.ui.bg, 0.95):to_hex() }
+        end
         return {
           --This will make floating windows look nicer with default borders.
-          NormalFloat = { bg = 'none' },
-          FloatBorder = { bg = 'none' },
-          FloatTitle = { bg = 'none' },
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          FloatTitle = { bg = "none" },
           -- { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
 
           -- Save an hlgroup with dark background and dimmed foreground
@@ -64,35 +75,42 @@ return {
           TelescopePreviewNormal = { bg = theme.ui.bg_dim },
           TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
 
-
-          -- for cool
-          --  SignColumn = { fg = 'none', bg = 'none' },
+          -- here
+          -- SignColumn = { fg = "none", bg = "none" },
           -- -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-          -- EndOfBuffer= { fg = 'none', bg = 'none' },
-          -- FoldColumn = { fg = 'none', bg = 'none' },
-          -- ColorColumn = { fg = '#808080', bg = 'none' },
-          -- WinSeparator =  { fg ='#2A2A38', bg = 'none' },
-          -- LineNr ={ fg = '#808080', bg = 'none' },
-          -- Folded ={ fg = 'none', bg = 'none' },
-          -- Conceal ={ fg = 'none', bg = 'none' },
+          -- -- EndOfBuffer = { fg = 'none', bg = 'none' },
+          -- -- FoldColumn = { fg = 'none', bg = 'none' },
+          -- -- ColorColumn = { fg = '#808080', bg = 'none' },
+          -- WinSeparator = { fg = "#282833", bg = "none" },
+          -- -- WinSeparator =  { fg ='#2A2A38', bg = '#2A2A38' },
+          -- LineNr = { fg = "#808080", bg = "none" },
+          -- -- Folded = { fg = 'none', bg = 'none' },
+          -- -- Conceal = { fg = 'none', bg = 'none' },
           --
-          -- WinBar = { fg = '#808080', bg = 'none' },
+          -- WinBar = { fg = "#808080", bg = "none" },
+          -- here
+
           -- pop up
           Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
-          PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
+          PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
           PmenuSbar = { bg = theme.ui.bg_m1 },
           PmenuThumb = { bg = theme.ui.bg_p2 },
+
+          DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
+          DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
+          DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
+          DiagnosticVirtualTextError = makeDiagnosticColor(theme.diag.error),
         }
       end,
-      theme = 'wave', -- Load "wave" theme when 'background' option is not set
+      theme = "wave", -- Load "wave" theme when 'background' option is not set
       background = { -- map the value of 'background' option to a theme
-        dark = 'wave', -- try "dragon" !
-        light = 'lotus',
+        dark = "wave", -- try "dragon" !
+        light = "lotus",
       },
     }
     -- setup must be called before loading
     -- vim.cmd 'colorscheme kanagawa'
-    vim.cmd 'colorscheme kanagawa-wave'
+    vim.cmd "colorscheme kanagawa-wave"
     -- vim.cmd 'colorscheme kanagawa-dragon'
     -- vim.cmd 'colorscheme kanagawa-lotus'
   end,

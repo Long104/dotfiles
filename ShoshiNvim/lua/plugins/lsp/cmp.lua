@@ -6,7 +6,7 @@ return {
   -- event = { 'InsertEnter' },
   dependencies = {
     -- lua
-    'folke/lazydev.nvim',
+    -- 'folke/lazydev.nvim',
     -- { "Bilal2453/luvit-meta", lazy = true } require('lazydev').find_workspace(buf?)
     --
     -- serious
@@ -17,13 +17,13 @@ return {
     'saadparwaiz1/cmp_luasnip', -- source
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
-    'rafamadriz/friendly-snippets',
+    -- 'rafamadriz/friendly-snippets',
     'hrsh7th/cmp-cmdline',
     -- for markdown
     --
     'f3fora/cmp-spell',
     'octaltree/cmp-look',
-    'hrsh7th/cmp-emoji',
+    -- 'hrsh7th/cmp-emoji',
     'uga-rosa/cmp-dictionary',
     --
     -- customize
@@ -276,8 +276,8 @@ return {
         --     disable_omnifuncs = { 'v:lua.vim.lsp.omnifunc' },
         --   },
         -- },
-        { name = 'emoji' },
-        { name = 'lazydev' },
+        -- { name = 'emoji' },
+        -- { name = 'lazydev' },
       },
       matching = { disallow_symbol_nonprefix_matching = false }, -- to use . and / in urls
 

@@ -79,7 +79,7 @@ return {
           prev = '[x',
         },
         suggestion = {
-          accept = '<M-l>',
+          accept = '<c-s>',
           next = '<M-]>',
           prev = '<M-[>',
           dismiss = '<C-]>',

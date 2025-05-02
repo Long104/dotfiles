@@ -133,10 +133,10 @@ return {
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-u>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-c>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-y>"] = cmp.mapping.confirm { select = true },
         ["<CR>"] = cmp.mapping.confirm { select = true },
-        ["<C-f>"] = cmp.mapping.confirm { select = true },
       },
 
       sources = cmp.config.sources {

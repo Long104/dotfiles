@@ -17,17 +17,23 @@ set -U fish_user_key_bindings
 set -U fish_greeting # disable fish greeting
 bind \cs 'nvim_selectors'
 
+ulimit -n 65535
 
 function user_paths
     fish_add_path --path /usr/local/bin /bin /usr/bin /sbin /usr/sbin
+    # fish_add_path --path /opt/homebrew/opt/openjdk/bin 
+    fish_add_path --path /opt/homebrew/bin
+    fish_add_path --path /opt/homebrew/sbin
     fish_add_path --path /run/current-system/sw/bin fish_add_path --path $HOME/.nix-profile/bin fish_add_path --path $HOME/.local/share/nvim/mason/bin
     fish_add_path --path $HOME/.deno/bin
     fish_add_path --path $HOME/.spicetify
     fish_add_path --path $HOME/.cargo/bin
     fish_add_path --path $HOME/.local/bin
-    fish_add_path --path /opt/homebrew/bin
+    fish_add_path --path $HOME/go/bin
     fish_add_path --path /Users/pantornchuavallee/Library/Python/3.9/bin
-    set -gx JAVA_HOME "/opt/homebrew/Cellar/openjdk/23.0.1/libexec/openjdk.jdk/Contents/Home"
+    fish_add_path --path /opt/homebrew/anaconda3/bin
+    # set -gx JAVA_HOME "/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home"
+    set -gx JAVA_HOME "/opt/homebrew/opt/java"
     set -gx MANPATH /usr/local/man /usr/local/share/man /usr/man /usr/share/man
     set -gx NIX_PROFILES "/nix/var/nix/profiles/default $HOME/.nix-profile"
     set -gx NIX_PATH /nix/var/nix/profiles/per-user/$USER/channels
@@ -80,5 +86,6 @@ set -gx ATUIN_NOBIND "true"
 atuin init fish | source
 bind \cr _atuin_search
 bind -M insert \cr _atuin_search
+# bind -M normal \cr _atuin_search
 
 

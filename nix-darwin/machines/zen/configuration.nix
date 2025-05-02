@@ -29,11 +29,9 @@
       pkgs.neovim
       # git
       pkgs.lazygit
-      pkgs.meld
       # cli
       pkgs.ani-cli
       pkgs.atac
-      pkgs.vesktop
       pkgs.ollama
       pkgs.starship
       pkgs.pipx
