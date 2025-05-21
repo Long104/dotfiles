@@ -51,7 +51,7 @@
       nixpkgs.hostPlatform = "x86_64-darwin";
       # nixpkgs.hostPlatform = "aarch64-darwin";
 
-      nix.configureBuildUsers = true;
+      # nix.configureBuildUsers = true;
     };
   in {
     darwinConfigurations."Pantorns-MacBook-Air" = darwin.lib.darwinSystem {
@@ -63,7 +63,7 @@
 
         configuration
 
-        home-manager.darwinModule
+        home-manager.darwinModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;

@@ -61,9 +61,10 @@
     ];
     pathsToLink = ["/Applications"];
   };
-  services = {
-    nix-daemon.enable = true;
-  };
+  # services = {
+  #   nix-daemon.enable = true;
+  # };
+  system.primaryUser = "pantornchuavallee";
 
   # programs = {
   #   zsh = {

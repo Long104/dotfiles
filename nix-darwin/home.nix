@@ -9,7 +9,6 @@
 }: {
   # imports = [ inputs.spicetify-nix.homeManagerModules.default
   #   # ./spicetify.nix ];
-
   nixpkgs.config = {
     allowUnfree = true;
   };
