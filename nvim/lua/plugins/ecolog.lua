@@ -2,8 +2,8 @@ return {
     "philosofonusus/ecolog.nvim",
     -- dir = "~/projects/ecolog.nvim",
     keys = {
-      { "<leader>fe", "<cmd>Telescope ecolog env<cr>", desc = "Go to env file" },
-      { "<leader>ge", "<cmd>EcologGoto<cr>", desc = "Go to env file" },
+      { "<leader>fe", "<cmd>Telescope ecolog env<cr>", desc = "Go to env file ecolog" },
+      { "<leader>ge", "<cmd>EcologGoto<cr>", desc = "Go to env file ecolog" },
       { "<leader>lS", "<cmd>EcologSelect<cr>", desc = "Switch env file" },
       { "<leader>lt", "<cmd>EcologShelterToggle<cr>", desc = "Ecolog shelter toggle" },
       { "<leader>le", "<cmd>EcologGenerateExample<cr>", desc = "Ecolog shelter toggle" },

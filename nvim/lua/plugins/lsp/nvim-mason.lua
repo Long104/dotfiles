@@ -6,8 +6,7 @@ return {
     { "<leader>msi", "<cmd>:MasonToolsInstall<cr>", desc = "Mason install" },
     { "<leader>msc", "<cmd>:MasonToolsClean<cr>", desc = "Mason clean" },
   },
-  cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-  build = ":MasonUpdate",
+  cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" }, build = ":MasonUpdate",
 
   -- lsp server
   dependencies = {
@@ -51,7 +50,7 @@ return {
         "phpactor",
         "graphql",
         "prismals",
-        -- "pyright",
+        "pyright",
         "lua_ls",
         "docker_compose_language_service",
         "dockerls",
