@@ -17,7 +17,7 @@ return {
     'saadparwaiz1/cmp_luasnip', -- source
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
-    -- 'rafamadriz/friendly-snippets',
+    'rafamadriz/friendly-snippets',
     'hrsh7th/cmp-cmdline',
     -- for markdown
     --

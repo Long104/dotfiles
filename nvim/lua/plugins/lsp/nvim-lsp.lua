@@ -337,6 +337,21 @@ return {
           filetypes = { "sh", "zsh", "bash" },
         }
       end,
+
+
+      ["ruff"] = function()
+        lspconfig["ruff"].setup {
+          capabilities = capabilities,
+          filetypes = { "python" },
+        }
+      end,
+
+      ["pyright"] = function()
+        lspconfig["pyright"].setup {
+          capabilities = capabilities,
+          filetypes = { "python" },
+        }
+      end,
       --
       -- ["rust_analyzer"] = function()
       --   lspconfig["rust_analyzer"].setup {

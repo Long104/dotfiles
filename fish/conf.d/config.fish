@@ -30,8 +30,9 @@ function user_paths
     fish_add_path --path $HOME/.cargo/bin
     fish_add_path --path $HOME/.local/bin
     fish_add_path --path $HOME/go/bin
-    fish_add_path --path /Users/pantornchuavallee/Library/Python/3.9/bin
-    fish_add_path --path /opt/homebrew/anaconda3/bin
+    fish_add_path --path /opt/homebrew/bin/python3.13
+    # fish_add_path --path /Users/pantornchuavallee/Library/Python/3.9/bin
+    # fish_add_path --path /opt/homebrew/anaconda3/bin
     # set -gx JAVA_HOME "/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home"
     set -gx JAVA_HOME "/opt/homebrew/opt/java"
     set -gx MANPATH /usr/local/man /usr/local/share/man /usr/man /usr/share/man

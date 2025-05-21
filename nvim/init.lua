@@ -29,9 +29,9 @@ require("lazy").setup {
     { import = "plugins.ui" },
 
     -- colorschemes
+    -- { import = "plugins.ui.colorschemes.kanso" },
     -- { import = 'plugins.ui.colorschemes.kanagawa-paper' },
     -- { import = "plugins.ui.colorschemes.kanagawa" },
-
     { import = "plugins.ui.colorschemes.kanagawa-transparent" },
     -- { import = 'plugins.ui.colorschemes.catppuccin' }, { import = 'plugins.ui.colorschemes.primepuccin' },
     -- { import = 'plugins.ui.colorschemes.oxocarbon' },
@@ -78,13 +78,14 @@ require("lazy").setup {
     { import = "storage.morePlugin.namu" },
     -- { import = "storage.morePlugin.code-snap" },
     { import = "storage.morePlugin.oil" },
-    { import = "storage.morePlugin.snipe" },
+    -- { import = "storage.morePlugin.snipe" },
     { import = "storage.morePlugin.flash" },
     { import = "storage.morePlugin.grapple" },
     -- { import = "storage.morePlugin.grug" },
     { import = "storage.morePlugin.todo-comment" },
     { import = "storage.morePlugin.bookmark" },
     { import = "storage.morePlugin.treesj" },
+    -- { import = "storage.morePlugin.hardtime" },
     -- { import = 'storage.morePlugin.outline' },
     -- { import = 'storage.morePlugin.glance' },
     -- { import = "storage.morePlugin.neo-clip" },
