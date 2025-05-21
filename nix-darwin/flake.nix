@@ -5,7 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     darwin = {
       url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs"; };
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,8 +48,8 @@
       };
 
       system.configurationRevision = self.rev or self.dirtyRev or null;
-      # system.stateVersion = 5;
-      system.stateVersion = "24.11";
+      system.stateVersion = 5;
+      # system.stateVersion = "24.11";
       # nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.hostPlatform = "aarch64-darwin";
 
