@@ -48,7 +48,7 @@
       };
 
       system.configurationRevision = self.rev or self.dirtyRev or null;
-      system.stateVersion = 5;
+      # system.stateVersion = 5;
       # system.stateVersion = "24.11";
       # nixpkgs.hostPlatform = "x86_64-darwin";
       nixpkgs.hostPlatform = "aarch64-darwin";

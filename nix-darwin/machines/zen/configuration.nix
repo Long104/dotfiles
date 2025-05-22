@@ -10,6 +10,7 @@
   environment = {
     systemPackages = [
       pkgs.fastfetch
+      # pkgs.rmpc
       # shell
       pkgs.nushell
       # Linting
