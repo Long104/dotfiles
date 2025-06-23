@@ -8,7 +8,20 @@ return {
     'vhyrro/luarocks.nvim',
     -- this plugin needs to run before anything else
     -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    cmd = "I",
+    cmd = "Img",
+
+  keys = {
+    {
+      mode = 'n',
+      '<leader>hc',
+      '<cmd>HideColumn<cr>',
+    },
+    {
+      mode = 'n',
+      '<leader>fm',
+      '<cmd>FormatOpts<cr>',
+    },
+  },
     priority = 1001,
     opts = {
       rocks = { 'magick' },
@@ -19,7 +32,7 @@ return {
     enabled = true,
     dependencies = { 'luarocks.nvim' },
     -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
-    cmd = "I",
+    cmd = "Img",
     config = function()
       require('image').setup {
         backend = 'kitty',

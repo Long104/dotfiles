@@ -30,3 +30,5 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # Added by Windsurf
 fish_add_path /Users/pantornchuavallee/.codeium/windsurf/bin
+/opt/homebrew/opt/mise/bin/mise activate fish | source
+/opt/homebrew/opt/mise/bin/mise activate fish | source

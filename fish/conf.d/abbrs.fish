@@ -5,6 +5,8 @@ abbr -a s "NVIM_APPNAME=Shoshinvim nvim"
 abbr -a n "nvim"
 abbr -a f "nvim -c ':Telescope find_files'"
 
+abbr -a  disableenv "mv .env.local .env.local.bak"
+abbr -a  enableenv "mv .env.local.bak .env.local"
 abbr -a ls "eza --color always --icons=always"
 # abbr -a ls "eza --color always --icons=always"
 # abbr -aes
