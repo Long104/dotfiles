@@ -97,7 +97,7 @@ opt.termguicolors = true
 opt.wrap = false
 
 --primega
--- opt.guicursor = ''
+opt.guicursor = ''
 opt.swapfile = false
 opt.backup = false
 opt.undodir = os.getenv "HOME" .. "/.vim/undodir"

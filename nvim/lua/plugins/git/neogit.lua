@@ -25,8 +25,14 @@ return {
     },
     {
       mode = "n",
+      "<leader>gC",
+      ":NeogitCommit<CR>",
+      desc = "Neogit Commit gui",
+    },
+    {
+      mode = "n",
       "<leader>gp",
-      ":Neogit pull<CR>",
+      ":Neogit pull --rebase<CR>",
       desc = "Neogit Pull",
     },
     {

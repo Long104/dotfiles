@@ -78,6 +78,8 @@ end
 
 direnv hook fish | source
 zoxide init fish | source
+mise activate fish | source
+
 
 # fzf --fish | source
 # set -U FZF_COMPLETE = 1, 2, 3

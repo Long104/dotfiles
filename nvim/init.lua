@@ -78,7 +78,7 @@ require("lazy").setup {
     { import = "storage.morePlugin.namu" },
     -- { import = "storage.morePlugin.code-snap" },
     { import = "storage.morePlugin.oil" },
-    -- { import = "storage.morePlugin.snipe" },
+    { import = "storage.morePlugin.snipe" },
     { import = "storage.morePlugin.flash" },
     { import = "storage.morePlugin.grapple" },
     -- { import = "storage.morePlugin.grug" },

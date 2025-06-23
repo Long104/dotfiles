@@ -23,11 +23,12 @@ return {
     overrides = function(colors) -- add/modify highlights
         return {}
     end,
-    theme = "zen",              -- Load "zen" theme
-    -- theme = "ink",              -- Load "zen" theme
+    -- theme = "zen",              -- Load "zen" theme
+    theme = "ink",              -- Load "zen" theme
     -- theme = "pearl",              -- Load "zen" theme
     background = {               -- map the value of 'background' option to a theme
-        dark = "zen",           -- try "ink" !
+        -- dark = "zen",           -- try "ink" !
+        dark = "ink",           -- try "ink" !
         light = "pearl"
     },
 })

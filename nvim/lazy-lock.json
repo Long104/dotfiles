@@ -27,7 +27,6 @@
   "goimpl.nvim": { "branch": "main", "commit": "2548d42c4db0645dea14f27e67c4b19b7030f1cf" },
   "gopher.nvim": { "branch": "main", "commit": "847c79ab76184a18757c601d939f7417b99081f7" },
   "grapple.nvim": { "branch": "main", "commit": "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7" },
-  "hardtime.nvim": { "branch": "main", "commit": "882e62292ac9fc0ab764253a16d9387ed995ad94" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
   "kanagawa.nvim": { "branch": "master", "commit": "709018d5af92d2e5780bfb8a6d36e9cad01a6402" },
   "kubectl.nvim": { "branch": "main", "commit": "47e8d739c5016809a16eb760a02812eddee9f763" },

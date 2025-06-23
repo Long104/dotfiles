@@ -17,17 +17,13 @@
       pkgs.alejandra
       pkgs.hadolint
       # javascript runtime
-      pkgs.bun
-      pkgs.deno
       # rust
       # pkgs.cargo
       # pkgs.rustc
       #
       pkgs.atuin
       pkgs.yazi
-      pkgs.sesh
       pkgs.gum
-      pkgs.neovim
       # git
       pkgs.lazygit
       # cli
