@@ -7,8 +7,7 @@
 # If the key is missing in your config, "default-config.toml" will serve as a fallback
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
-# Available commands: https://nikitabobko.github.io/AeroSpace/commands
-after-login-command = []
+# Available commands: https://nikitabobko.github.io/AeroSpace/commands after-login-command = []
 
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command' Available commands : https://nikitabobko.github.io/AeroSpace/commands
@@ -89,14 +88,17 @@ outer.bottom =     6
 outer.top =        6
 outer.right =      6
 
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
 
 # cmd-shift-x = 'exec-and-forget warpd --hint'
-cmd-shift-x = 'exec-and-forget /usr/local/bin/warpd --hint'
-cmd-shift-c = 'exec-and-forget /usr/local/bin/warpd --normal'
+# cmd-shift-x = 'exec-and-forget /usr/local/bin/warpd --hint'
+# cmd-shift-c = 'exec-and-forget /usr/local/bin/warpd --normal'
+alt-esc = 'exec-and-forget /usr/local/bin/warpd --hint'
+cmd-esc = 'exec-and-forget /usr/local/bin/warpd --normal'
 # cmd-shift-g = 'exec-and-forget /usr/local/bin/warpd --grid'
 
 
@@ -141,7 +143,7 @@ cmd-5 = 'workspace 5'
 cmd-6 = 'workspace 6'
 cmd-7 = 'workspace 7'
 cmd-8 = 'workspace 8'
-cmd-9 = 'workspace 9'
+# cmd-9 = 'workspace 9'
 # alt-a = 'workspace A'
 # alt-w = 'workspace W'
 # alt-b = 'workspace B'
@@ -159,7 +161,7 @@ alt-shift-5 = 'move-node-to-workspace 5'
 alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
-alt-shift-9 = 'move-node-to-workspace 9'
+# alt-shift-9 = 'move-node-to-workspace 9'
 # alt-shift-a = 'move-node-to-workspace A'
 # alt-shift-w = 'move-node-to-workspace W'
 # alt-shift-b = 'move-node-to-workspace B'

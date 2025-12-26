@@ -210,10 +210,10 @@ return {
             ltex = {
               language = 'en-US', -- Set your desired language
               -- disabledLanguages = { 'ja', 'km' }, -- Disable Japanese and Khmer
-              additionalRules = {
-                languageModel = '~/models/ngrams/', -- Optional: specify path to language models
-                enablePickyRules = false,
-              },
+              -- additionalRules = {
+                -- languageModel = '~/models/ngrams/', -- Optional: specify path to language models
+                -- enablePickyRules = false,
+              -- },
               disabledRules = {},
               -- dictionary = {
               --   ['en-US'] = { 'customword1', 'customword2' }, -- Optional custom words

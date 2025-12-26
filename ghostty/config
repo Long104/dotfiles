@@ -1,17 +1,31 @@
-# theme = catppuccin-mocha
+# theme = catppuccin Mocha
 # shell-integration = fish 
 theme = Kanagawa Wave
+# theme = Gruvbox Light
+# theme = catppuccin Latte
 # theme = Everforest Dark - Hard
 # theme = catppuccin-mocha
-background-blur-radius = 20
+# background-blur = macos-glass-regular
+background-blur-radius = 30
 mouse-hide-while-typing = true
-window-decoration = false
 macos-option-as-alt = true
-background-opacity = 0.75
+macos-titlebar-style = "tabs"
+# background-opacity = 0.90
+background-opacity = 0.65
 # background-opacity = 0.95
 # background-blur-radius = 20 
 clipboard-read = allow
 clipboard-write = allow
+
+# this is for window show close and all
+# window-decoration = true 
+window-decoration = false 
+# macos-titlebar-proxy-icon = visible
+# macos-titlebar-style = hidden
+# macos-titlebar-style = transparent
+# macos-window-shadow = true
+
+
 
 # window-padding-y = 8,0
 # window-padding-y = 8,0
@@ -65,23 +79,17 @@ clipboard-write = allow
 font-family = "JetBrainsMono Nerd Font Mono"
 # font-family = FiraCode Nerd Font
 # font-family-bold = FiraCode Nerd Font
-font-size = 13.5
+font-size = 15
 # bold-is-bright= true 
 bold-is-bright= false
 font-style = Regular
 # font-style = Bold
 font-thicken = true
-# font-feature = -liga 
+font-feature = -liga 
 
-
-# macos-titlebar-proxy-icon = visible
-macos-titlebar-style = hidden
-# macos-titlebar-style = transparent
-# macos-window-shadow = true
 
 
 # keybind = global:cmd+s=toggle_quick_terminal
-
 
 
 
@@ -96,9 +104,6 @@ macos-option-as-alt = left
 keybind = alt+left=unbind
 keybind = alt+right=unbind
 keybind = global:cmd+g=toggle_quick_terminal
-# quick-terminal-position = top
-quick-terminal-position = right
-quick-terminal-animation-duration = 0.02
 keybind = super+/=inspector:toggle
 keybind = super+r=reload_config
 
@@ -118,3 +123,13 @@ keybind = ctrl+\=text:\x01\\
 # keybind = ctrl+j=text:\x01\x1b[B
 # keybind = ctrl+l=text:\x01\x1b[C
 # keybind = ctrl+h=text:\x01\x1b[D
+
+# quick terminal
+# quick-terminal-position = top
+# quick-terminal-position = center
+quick-terminal-position = right
+quick-terminal-animation-duration = 0.00
+quick-terminal-space-behavior = move
+quick-terminal-size = 620px, 100%
+
+

@@ -217,3 +217,6 @@ fi
 export PATH="$PATH:/Users/pantornchuavallee/.lmstudio/bin"
 
 . "$HOME/.local/bin/env"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+export NODE_OPTIONS="--no-experimental-warning"
