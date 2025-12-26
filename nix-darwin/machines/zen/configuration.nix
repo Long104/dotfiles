@@ -13,6 +13,7 @@
       # pkgs.rmpc
       # shell
       pkgs.nushell
+      pkgs.calcure
       # Linting
       pkgs.alejandra
       pkgs.hadolint

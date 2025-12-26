@@ -11,7 +11,6 @@ vim.g.have_nerd_font = true
 
 -- vim.opt.shadafile = 'NONE'
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
 vim.opt.wrap = false
 vim.opt.smartindent = true

@@ -2,21 +2,27 @@
 abbr -a r "R_AUTO_START=true nvim"
 abbr -a zen "nvim"
 abbr -a s "NVIM_APPNAME=Shoshinvim nvim"
+abbr -a basu "NVIM_APPNAME=nvim-basu nvim"
 abbr -a n "nvim"
 abbr -a f "nvim -c ':Telescope find_files'"
 
+abbr -a l 'eza --icons=always'
+abbr -a ls "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+abbr -a ll 'eza -lg --icons=always'
+abbr -a la 'eza -lag --icons=always'
+abbr -a lt 'eza -lTg --icons=always'
+abbr -a lt2 'eza -lTg --level=2 --icons=always'
+abbr -a lt3 'eza -lTg --level=3 --icons=always'
+abbr -a lt4 'eza -lTg --level=4 --icons=always'
+
 abbr -a  disableenv "mv .env.local .env.local.bak"
 abbr -a  enableenv "mv .env.local.bak .env.local"
-abbr -a ls "eza --color always --icons=always"
 # abbr -a ls "eza --color always --icons=always"
 # abbr -aes
 abbr -a own "sudo chown -R pantornchuavallee:staff ."
 abbr -a ff "clear;wezterm imgcat ~/dotfiles/fastfetch/logos/zen.png --width 26 --height 10 --position 0,9 | fastfetch --raw - --logo-width 20 --logo-height 8"
 abbr -a c 'clear'
 abbr -a cd 'z'
-abbr -a ls "eza --color=always --icons=always"
-abbr -a lt "eza --color=always --icons=always -T "
-# abbr -a ls "eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 abbr -a nf "clear && neofetch"
 abbr -a apprun "osascript -e 'tell application \"System Events\" to return name of processes whose background only is false'"
 abbr -a psrun 'ps ux -p $(osascript -e "tell application \"System Events\" to return unix id of processes whose background only is false")'

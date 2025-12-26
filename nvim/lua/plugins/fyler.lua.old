@@ -1,9 +1,0 @@
-return {
-  "A7Lavinraj/fyler.nvim",
-  dependencies = { "echasnovski/mini.icons" },
-  keys = { -- load the plugin only when using it's keybinding:
-    { '<leader>e', "<cmd>lua require('undotree').toggle()<cr>" },
-  },
-  opts = {}
-  
-}
