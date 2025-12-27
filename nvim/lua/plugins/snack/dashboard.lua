@@ -1,12 +1,66 @@
 return {
+  -- lazy.nvim
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  -- event = "VeryLazy",
   opts = {
     dashboard = {
-      -- your dashboard configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+
+      preset = {
+
+        header = table.concat({
+          "   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣤⣀⣀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+          "   ⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣤⣄⠀⠀⠀⠀⠀",
+          "   ⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀",
+          "   ⠀⠀⢀⣶⣿⣿⣿⣿⣿⣿⠍⠉⠀⠀⠀⠀⠉⠉⠛⠿⣿⣿⣿⣿⣿⣦⡀⠀",
+          "   ⠀⢠⣿⣿⣿⣿⣿⣿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⢿⣿⣿⣿⣿⠀",
+          "   ⢀⣿⣿⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⡀",
+          "   ⣼⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣷",
+          "   ⠸⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿",
+          "   ⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿",
+          "   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⡟",
+          "   ⠀⠰⣦⣄⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣼⣿⣿⣿⡿⠀",
+          "   ⠀⠀⠙⣿⣷⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣿⣿⣿⠏⠁⠀",
+          "   ⠀⠀⠀⠀⠙⢿⣿⣿⣶⣤⣀⡀⠀⠀⠀⣀⣠⣤⣶⣿⣿⣿⣿⡿⠃⠀⠀⠀",
+          "   ⠀⠀⠀⠀⠀⠀⠘⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠉⠀⠀⠀⠀⠀",
+          "   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠙⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀",
+          "   ███████╗ ███████╗███╗   ██╗ ",
+          "   ╚══███╔╝ ██╔════╝████╗  ██║ ",
+          "     ███╔╝  █████╗  ██╔██╗ ██║ ",
+          "    ███╔╝   ██╔══╝  ██║╚██╗██║ ",
+          "   ████████╗███████╗██║ ╚████║ ",
+          "   ╚═══════╝╚══════╝╚═╝  ╚═══╝ ",
+          "",
+        }, "\n"),
+      },
+
+      sections = {
+        { section = "header" },
+        -- {
+        --   pane = 2,
+        --   section = "terminal",
+        --   cmd = "cbonsai --seed 119 --live",
+        --   height = 25,
+        --   padding = 3,
+        -- },
+        -- { section = "keys", gap = 1, padding = 1 },
+        {
+          pane = 1,
+          icon = " ",
+          title = "Git Status",
+          section = "terminal",
+          enabled = function()
+            return require("snacks").git.get_root() ~= nil
+          end,
+          cmd = "git --no-pager diff --stat -B -M -C",
+          height = 5,
+          padding = 1,
+          ttl = 5 * 60,
+          indent = 3,
+        },
+        { section = "startup" },
+      },
     },
   },
 }

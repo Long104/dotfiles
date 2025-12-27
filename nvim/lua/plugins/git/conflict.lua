@@ -1,4 +1,10 @@
-return { "akinsho/git-conflict.nvim", version = "*", config = true }
+return {
+  "akinsho/git-conflict.nvim",
+  version = "*",
+  -- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+  event = { "VeryLazy" },
+  config = true,
+}
 
 -- GitConflictChooseOurs — Select the current changes.
 -- GitConflictChooseTheirs — Select the incoming changes.

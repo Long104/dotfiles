@@ -1,6 +1,7 @@
 return {
   "nvim-mini/mini.pairs",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   opts = {
     modes = { insert = true, command = true, terminal = false },
     -- skip autopair when next character is one of these

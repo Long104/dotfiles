@@ -1,5 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  event = { "VeryLazy" },
+  -- event = {"BufReadPost", "BufWritePost", "BufNewFile"},
   dependencies = {
     {
       "nvim-treesitter/nvim-treesitter-context",
@@ -7,9 +9,15 @@ return {
         max_lines = 4,
         multiline_threshold = 2,
       },
+      config = function()
+        vim.keymap.set({"n","v"}, "sk", function()
+          require("treesitter-context").go_to_context(vim.v.count1)
+        end, { desc = "go to the context", silent = true })
+      end,
     },
   },
-  lazy = false,
+  -- lazy = false,
+  -- event = {"BufReadPost", "BufWritePost", "BufNewFile"},
   branch = "main",
   build = ":TSUpdate",
   config = function()
@@ -67,7 +75,7 @@ return {
           "nix",
           "proto",
           "vue",
-          "yaml"
+          "yaml",
         }, {
           max_jobs = 8,
         })

@@ -1,6 +1,5 @@
 return {
-  "folke/ts-comments.nvim",
-  -- event = "VeryLazy",
+  "windwp/nvim-ts-autotag",
   event = {"BufReadPost", "BufWritePost", "BufNewFile"},
   opts = {},
 }
