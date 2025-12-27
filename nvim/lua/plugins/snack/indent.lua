@@ -1,7 +1,8 @@
 return {
   "folke/snacks.nvim",
-  event =
-    {"BufReadPost", "BufWritePost", "BufNewFile"},
+  -- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+  event = { "VeryLazy" },
+  -- event = {"BufReadPost", "BufWritePost", "BufNewFile"},
   opts = {
     indent = {
       -- your indent configuration comes here

@@ -1,6 +1,8 @@
 return {
   {
     "williamboman/mason-lspconfig.nvim",
+    event = "VeryLazy",
+    -- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     opts = {
       -- list of servers for mason to install
       ensure_installed = {
@@ -33,6 +35,7 @@ return {
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    event = "VeryLazy",
     opts = {
       ensure_installed = {
         "prettier", -- prettier formatter

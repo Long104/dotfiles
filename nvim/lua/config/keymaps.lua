@@ -41,8 +41,8 @@ keymap("n", "<leader>wa", "<cmd>only<CR>", opts "Close all tab only the one not"
 keymap("n", "<leader>wd", "<cmd>close<cr>", opts "close")
 
 -- give permission
-keymap("n", "<leader>f+x", '<cmd>!chmod +x "%"<CR>', opts "Make file executable")
-keymap("n", "<leader>f-x", '<cmd>!chmod -x "%"<CR>', opts "Remove executable flag")
+keymap("n", "<leader>+x", '<cmd>!chmod +x "%"<CR>', opts "Make file executable")
+keymap("n", "<leader>-x", '<cmd>!chmod -x "%"<CR>', opts "Remove executable flag")
 keymap("n", "<leader>cp", [[<cmd>let @+ = expand("%")<CR><Left>]], opts "Copy current file path to clipboard")
 
 

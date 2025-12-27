@@ -1,22 +1,96 @@
 return {
-  'NickvanDyke/opencode.nvim',
-  ---@type opencode.Config
-  opts = {
-    -- Set these according to https://models.dev/
-    provider_id = "github-copilot", -- Provider to use for opencode requests
-    model_id = "gpt-4.1",
+  "NickvanDyke/opencode.nvim",
+  dependencies = {
+    -- Recommended for `ask()` and `select()`.
+    -- Required for `snacks` provider.
+    ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+    { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
   },
-  -- stylua: ignore
   keys = {
-    -- opencode.nvim exposes a general, flexible API — customize it to your workflow!
-    -- But here are some examples to get you started :)
-    { '<leader>oa', function() require('opencode').ask() end,                                                         desc = 'Ask opencode',                    mode = { 'n', 'v' }, },
-    { '<leader>oA', function() require('opencode').ask('@file ') end,                                                 desc = 'Ask opencode about current file', mode = { 'n', 'v' }, },
-    { '<leader>oe', function() require('opencode').prompt('Explain @cursor and its context') end,                     desc = 'opencode Explain code near cursor' },
-    { '<leader>or', function() require('opencode').prompt('Review @file for correctness and readability') end,        desc = 'opencode Review file', },
-    { '<leader>of', function() require('opencode').prompt('Fix these @diagnostics') end,                              desc = 'opencode Fix errors', },
-    { '<leader>oo', function() require('opencode').prompt('Optimize @selection for performance and readability') end, desc = 'opencode Optimize selection',              mode = 'v', },
-    { '<leader>od', function() require('opencode').prompt('Add documentation comments for @selection') end,           desc = 'opencode Document selection',              mode = 'v', },
-    { '<leader>ot', function() require('opencode').prompt('Add tests for @selection') end,                            desc = 'opencode Test selection',                  mode = 'v', },
+    {
+      mode = { "n", "x" },
+      "<C-;>",
+      function()
+        require("opencode").ask("@this: ", { submit = true })
+      end,
+      desc = "Ask opencode",
+    },
+    {
+      mode = { "n", "x" },
+      "<C-m>",
+      function()
+        require("opencode").select()
+      end,
+      desc = "Execute opencode action…",
+    },
+    {
+      mode = { "n", "t" },
+      "<C-.>",
+      function()
+        wharequire("opencode").toggle()
+      end,
+      desc = "Toggle opencode",
+    },
+    {
+      mode = { "n", "x" },
+      "go",
+      function()
+        return require("opencode").operator "@this "
+      end,
+      expr = true,
+      desc = "Add range to opencode",
+    },
+    {
+      mode = { "n" },
+      "goo",
+      function()
+        return require("opencode").operator "@this " .. "_"
+      end,
+      expr = true,
+      desc = "Add line to opencode",
+    },
+    {
+      mode = { "n" },
+      "<S-C-u>",
+      function()
+        require("opencode").command "session.half.page.up"
+      end,
+      desc = "opencode half page up",
+    },
+    {
+      mode = { "n" },
+      "<S-C-d>",
+      function()
+        require("opencode").command "session.half.page.down"
+      end,
+      desc = "opencode half page down",
+    },
+    -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
+    -- { mode = { "n" }, "+", "<C-a>", desc = "Increment", noremap = true },
+    -- { mode = { "n" }, "-", "<C-x>", desc = "Decrement", noremap = true },
   },
+  config = function()
+    ---@type opencode.Opts
+    vim.g.opencode_opts = {
+      -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
+      -- provider = {
+      --   enabled = "snacks",
+      --   snacks = {},
+      -- },
+    }
+
+    -- Required for `opts.events.reload`.
+    vim.o.autoread = true
+  end,
 }
+
+-- Name	Prompt
+-- diagnostics	Explain @diagnostics
+-- diff	Review the following git diff for correctness and readability: @diff
+-- document	Add comments documenting @this
+-- explain	Explain @this and its context
+-- fix	Fix @diagnostics
+-- implement	Implement @this
+-- optimize	Optimize @this for performance and readability
+-- review	Review @this for correctness and readability
+-- test	Add tests for @this

@@ -1,9 +1,10 @@
 return {
   "saghen/blink.cmp",
   event = "VeryLazy",
+  -- event = {"BufReadPost", "BufWritePost", "BufNewFile"},
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "fang2hou/blink-copilot",
+    -- "fang2hou/blink-copilot",
     { "mikavilpas/blink-ripgrep.nvim", version = "*" },
     {
       "folke/lazydev.nvim",
@@ -63,7 +64,7 @@ return {
       ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
       ["<C-e>"] = { "hide", "fallback" },
       ["<C-y>"] = { "select_and_accept", "fallback" },
-      ["<CR>"] = { "accept", "fallback" },
+      -- ["<CR>"] = { "accept", "fallback" },
 
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
@@ -102,6 +103,7 @@ return {
           },
         },
       },
+
     },
 
     -- snippets = { preset = "default" | "luasnip" | "mini_snippets" | "vsnip" },
@@ -114,7 +116,7 @@ return {
     sources = {
       default = {
         "lazydev",
-        "copilot",
+        -- "copilot",
         "lsp",
         "path",
         "snippets",
@@ -122,12 +124,12 @@ return {
         "ripgrep",
       },
       providers = {
-        copilot = {
-          name = "copilot",
-          module = "blink-copilot",
-          score_offset = 100,
-          async = true,
-        },
+        -- copilot = {
+        --   name = "copilot",
+        --   module = "blink-copilot",
+        --   score_offset = 100,
+        --   async = true,
+        -- },
         ripgrep = {
           module = "blink-ripgrep",
           name = "Ripgrep",
@@ -169,7 +171,6 @@ return {
         ["<Left>"] = { "select_prev", "fallback" },
 
         ["<C-y>"] = { "select_and_accept", "fallback" },
-        ["<CR>"] = { "accept_and_enter", "fallback" },
         ["<C-e>"] = { "cancel", "fallback" },
       },
       completion = { menu = { auto_show = true }, ghost_text = { enabled = true } },

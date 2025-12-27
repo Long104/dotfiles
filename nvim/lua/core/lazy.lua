@@ -15,9 +15,9 @@ require("lazy").setup {
     { import = "plugins.snack" },
 
     -- theme
-    -- { import = "plugins.ui.theme.github" },
+    -- { import = "plugins.theme.github" },
     { import = "plugins.theme.kanagawa" },
-
+    -- { import = "plugins.theme.kanagawa-transparent" },
   },
   checker = {
     notify = false,
@@ -26,16 +26,11 @@ require("lazy").setup {
   change_detect = {
     notify = false,
   },
-  -- defaults = {
-  --   lazy = false,
-  --   version = true, -- always use the latest git commit
-  -- },
-  -- install = { colorscheme = { "tokyonight", "habamax" } },
   performance = {
     rtp = {
       disabled_plugins = {
         "gzip",
-        "matchit",
+        -- "matchit",
         -- "matchparen",
         "netrwPlugin",
         "rplugin",
