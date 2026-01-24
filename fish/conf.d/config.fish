@@ -24,7 +24,9 @@ function user_paths
     # fish_add_path --path /opt/homebrew/opt/openjdk/bin 
     fish_add_path --path /opt/homebrew/bin
     fish_add_path --path /opt/homebrew/sbin
-    fish_add_path --path /run/current-system/sw/bin fish_add_path --path $HOME/.nix-profile/bin fish_add_path --path $HOME/.local/share/nvim/mason/bin
+    fish_add_path --path /run/current-system/sw/bin fish_add_path 
+    fish_add_path --path $HOME/.nix-profile/bin fish_add_path 
+    fish_add_path --path $HOME/.local/share/nvim/mason/bin
     fish_add_path --path $HOME/.deno/bin
     fish_add_path --path $HOME/.spicetify
     fish_add_path --path $HOME/.cargo/bin

@@ -1,9 +1,8 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
   -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
-  dependencies = { 'nvim-treesitter/nvim-treesitter' },
-
-  ft = { 'markdown', 'Avante' },
+  -- ft = { 'markdown', 'Avante' },
+  event = 'VeryLazy',
   -- event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   -- Moved highlight creation out of opts as suggested by plugin maintainer
   -- There was no issue, but it was creating unnecessary noise when ran
@@ -50,7 +49,7 @@ return {
   opts = {
     file_types = { 'markdown', 'quatro', 'vimwiki', 'Avante' },
 
-    -- anti_conceal = { enabled = false },
+    anti_conceal = { enabled = false },
     render_modes = { 'n', 'v', 'V', 'i', 'c' },
     -- default
     -- render_modes = { 'n', 'c' }

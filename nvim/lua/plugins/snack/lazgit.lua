@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   keys = {
     {
-      "<leader>gl",
+      "<leader>lg",
       function()
         require("snacks").lazygit()
       end,

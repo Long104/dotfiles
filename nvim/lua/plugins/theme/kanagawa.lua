@@ -2,9 +2,9 @@ return {
   "rebelot/kanagawa.nvim",
   -- Default options:
   -- ft = { "NvimTree" },
-  event = "VeryLazy",
-  -- lazy = false,
-  -- priority = 1000,
+  -- event = "VeryLazy",
+  lazy = false,
+  priority = 1000,
   config = function()
     require("kanagawa").setup {
       compile = false, -- enable compiling the colorscheme
@@ -69,13 +69,6 @@ return {
           SnacksPickerTitl = { fg = theme.ui.special, bold = true },
           SnacksPickerPrompt = { bg = theme.ui.bg_p1 },
           SnacksPickerBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 }, 
-          SnacksPickerSelected = { bg = "none" },
-          SnacksPickerPickWinCurren = { fg = "none", bg = "none" },
-          SnacksPickerBoxCursorLine = { fg = "none", bg = "none" },
-          SnacksPickerInputCursorLine = { fg = "none", bg = "none"},
-          SnacksPickerCursorLine = { fg = "none", bg = "none" },
-          SnacksPickerPreviewCursorLine = { fg = "none", bg = "none" },
-          SnacksPickerListCursorLine = { fg = "none", bg = "none" },
           -- SignColumn = { fg = "none", bg = "none" },
           -- -- vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
           -- -- EndOfBuffer = { fg = 'none', bg = 'none' },

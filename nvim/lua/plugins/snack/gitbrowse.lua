@@ -2,7 +2,7 @@ return {
   "folke/snacks.nvim",
   keys = {
     {
-      "<leader>gB",
+      "gb",
       function()
         require("snacks").gitbrowse()
       end,

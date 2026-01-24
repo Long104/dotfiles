@@ -41,13 +41,14 @@ return {
         end, "Prev Hunk")
 
         -- visual mode
-        map("v", "<leader>hs", function()
-          gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
-        end, "stage git hunk" )
-        map("v", "<leader>hr", function()
-          gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
-        end,  "reset git hunk" )
+        -- map("v", "<leader>hs", function()
+        --   gs.stage_hunk { vim.fn.line ".", vim.fn.line "v" }
+        -- end, "stage git hunk" )
+        -- map("v", "<leader>hr", function()
+        --   gs.reset_hunk { vim.fn.line ".", vim.fn.line "v" }
+        -- end,  "reset git hunk" )
 
+        -- normal mode
         map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
         map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
         map({ "n", "x" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
@@ -55,13 +56,15 @@ return {
         map("n", "<leader>ghS", gs.stage_buffer, "Stage Buffer")
         map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")
         map("n", "<leader>ghR", gs.reset_buffer, "Reset Buffer")
-        map("n", "ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
+        map("n", "<leader>ghp", gs.preview_hunk_inline, "Preview Hunk Inline")
+        map({ "n","x","v" }, "ghp", gs.preview_hunk, "Preview Hunk Inline")
         map("n", "<leader>ghb", function() gs.blame_line({ full = true }) end, "Blame Line")
         map("n", "<leader>ghB", function() gs.blame() end, "Blame Buffer")
         map("n", "<leader>ghd", gs.diffthis, "Diff This")
         map("n", "<leader>ghD", function() gs.diffthis("~") end, "Diff This ~")
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "GitSigns Select Hunk")
 
+      -- toggles
         map("n", "gtb", gs.toggle_current_line_blame,  "[T]oggle git show [b]lame line" )
         map("n", "gtd", gs.toggle_deleted,  "[T]oggle git show [D]eleted" )
         map("n", "ghc", function()

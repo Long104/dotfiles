@@ -4,7 +4,21 @@ return {
     {
       "<leader>th",
       function()
-        require("snacks").terminal()
+        require("snacks").terminal (({ vim.o.shell }),{
+          win = {
+            position = "bottom",
+            style = "terminal",
+            relative = "editor",
+            border = "rounded",
+            width = 0.8, -- 80% of editor width
+            height = 0.3, -- LOWER HEIGHT: 40% of editor height (try 0.3–0.5)
+            row = 0.5,
+            col = 0.5,
+            wo = {
+              winbar = "",
+            },
+          },
+        })
       end,
       desc = "Open terminal",
     },
@@ -13,6 +27,7 @@ return {
       function()
         Snacks.terminal.open({ vim.o.shell }, {
           win = {
+            position = "float",
             style = "terminal",
             relative = "editor",
             border = "rounded",
@@ -28,19 +43,19 @@ return {
   },
   opts = {
     terminal = {
-      win = {
-        -- position = "float",
-        style = "terminal",
-        relative = "editor",
-        border = "rounded",
-        width = 0.8, -- 80% of editor width
-        height = 0.3, -- LOWER HEIGHT: 40% of editor height (try 0.3–0.5)
-        row = 0.5,
-        col = 0.5,
-        wo = {
-          winbar = "",
-        }
-      },
+      -- win = {
+      --   -- position = "float",
+      --   style = "terminal",
+      --   relative = "editor",
+      --   border = "rounded",
+      --   width = 0.8, -- 80% of editor width
+      --   height = 0.3, -- LOWER HEIGHT: 40% of editor height (try 0.3–0.5)
+      --   row = 0.5,
+      --   col = 0.5,
+      --   wo = {
+      --     winbar = "",
+      --   }
+      -- },
       keys = {
         term_normal = {
           "<esc>",

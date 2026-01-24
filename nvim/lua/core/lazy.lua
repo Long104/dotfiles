@@ -18,6 +18,9 @@ require("lazy").setup {
     -- { import = "plugins.theme.github" },
     { import = "plugins.theme.kanagawa" },
     -- { import = "plugins.theme.kanagawa-transparent" },
+
+    -- note
+    -- { import = "plugins.note" },
   },
   checker = {
     notify = false,

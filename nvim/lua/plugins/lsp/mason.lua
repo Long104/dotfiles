@@ -14,7 +14,9 @@ return {
         "graphql",
         "prismals",
         "pyright",
-        "eslint",
+        "biome",
+        "gopls",
+        -- "harper_ls",
       },
     },
     dependencies = {
@@ -43,7 +45,7 @@ return {
         "isort", -- python formatter
         "black", -- python formatter
         "pylint",
-        "eslint_d",
+        "golangci-lint",
       },
     },
     dependencies = {

@@ -1,6 +1,44 @@
 return {
   "folke/snacks.nvim",
   keys = {
+    -- todo-comment
+    {
+      "<leader>st",
+      function()
+        Snacks.picker.todo_comments()
+      end,
+      desc = "Todo",
+    },
+    {
+      "<leader>yh",
+      function()
+        Snacks.picker.cliphist()
+      end,
+      desc = "Clipboard History",
+    },
+    -- {
+    --   "<leader>sT",
+    --   function()
+    --     Snacks.picker.todo_comments { keywords = { "TODO", "FIX", "FIXME" } }
+    --   end,
+    --   desc = "Todo/Fix/Fixme",
+    -- },
+    {
+      "]]",
+      function()
+        require("snacks").words.jump(vim.v.count1)
+      end,
+      desc = "Next Reference",
+      mode = { "n", "t" },
+    },
+    {
+      "[[",
+      function()
+        require("snacks").words.jump(-vim.v.count1)
+      end,
+      desc = "Prev Reference",
+      mode = { "n", "t" },
+    },
     -- explorer
     {
       "<leader>e",
@@ -128,12 +166,12 @@ return {
     },
     {
       "<leader>dg",
-      "<cmd>lua require(snacks).gh_diff({pr = })" ,
+      ":lua require(snacks).gh_diff({pr = })",
       desc = "GitHub Pull Requests (open)",
     },
     {
       "<leader>gP",
-      "<cmd>lua require(snacks).gh_open({ type = 'issue', number = 123, repo = 'owner/repo' })" ,
+      ":lua require(snacks).gh_open({ type = 'issue', number = 123, repo = 'owner/repo' })",
       desc = "GitHub Pull Requests (all)",
     },
     -- git
@@ -191,11 +229,11 @@ return {
       function()
         Snacks.git.blame_line()
       end,
-      desc = "Git Log File",
+      desc = "Git blame line",
     },
     -- search
     {
-      '<leader>s"',
+      "<leader>sg",
       function()
         Snacks.picker.registers()
       end,
@@ -214,13 +252,6 @@ return {
         Snacks.picker.autocmds()
       end,
       desc = "Autocmds",
-    },
-    {
-      "<leader>sc",
-      function()
-        Snacks.picker.command_history()
-      end,
-      desc = "Command History",
     },
     {
       "<leader>sC",
@@ -265,13 +296,6 @@ return {
       desc = "Keymaps",
     },
     {
-      "<leader>sl",
-      function()
-        Snacks.picker.loclist()
-      end,
-      desc = "Location List",
-    },
-    {
       "<leader>sm",
       function()
         Snacks.picker.marks()
@@ -291,20 +315,6 @@ return {
         Snacks.picker.lazy()
       end,
       desc = "Search for Plugin Spec",
-    },
-    {
-      "<leader>sq",
-      function()
-        Snacks.picker.qflist()
-      end,
-      desc = "Quickfix List",
-    },
-    {
-      "<leader>sR",
-      function()
-        Snacks.picker.resume()
-      end,
-      desc = "Resume",
     },
     {
       "<leader>uC",
@@ -409,8 +419,6 @@ return {
       end,
       desc = "Rename File",
     },
-
-
   },
   opts = {
     explorer = {
@@ -427,10 +435,11 @@ return {
         explorer = {
           -- your explorer picker configuration comes here
           -- or leave it empty to use the default settings
+          hidden = true,
+          ignored = true,
           git_status = true,
           diagnostics = true,
           layout = { preset = "sidebar", preview = false, layout = { width = 35 } },
-          hidden = true,
         },
         gh_issue = {
           -- your gh_issue picker configuration comes here
@@ -439,6 +448,15 @@ return {
         gh_pr = {
           -- your gh_pr picker configuration comes here
           -- or leave it empty to use the default settings
+        },
+      },
+      win = {
+        -- input window
+        input = {
+          keys = {
+
+            ["<C-y>"] = { "confirm", mode = { "i", "n" } },
+          },
         },
       },
     },

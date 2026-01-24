@@ -7,10 +7,11 @@ return {
       function()
         require("conform").format {
           lsp_fallback = true,
-          async = true,
-          timeout_ms = 500,
+          -- async = true,
+          async = false,
+          -- timeout_ms = 500,
         }
-        -- vim.cmd "wa"
+        vim.cmd "wa"
       end,
       mode = { "n", "v", "x" },
       desc = "Format Langs",

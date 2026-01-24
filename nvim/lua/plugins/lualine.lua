@@ -81,23 +81,15 @@ return {
           { "branch", separator = { left = "", right = "" } },
           { "diagnostics", separator = { left = "", right = "" }, color = { gui = "bold" } },
         },
-        -- lualine_b = { { 'branch', separator = { left = '', right = '' } }, { 'diagnostics', separator = { left = '', right = '' } } },
-        -- lualine_c = {
-        --   {
-        --     "grapple",
-        --     -- separator = { left = '', right = '' },
-        --     separator = { left = "", right = "" },
-        --     -- icon = { '', align = 'left' },
-        --   },
-        -- },
-        -- lualine_b = { { 'mode', icon = { '', align = 'right', color = { fg = 'green' } } } },
+        lualine_c = {
+          require("opencode").statusline,
+          {
+            "grapple",
+            separator = { left = "", right = "" },
+          },
+        },
 
         lualine_x = {
-
-          -- {
-          --   require("doing.api").status,
-          --   separator = { left = "", right = "" },
-          -- },
 
           {
             function()

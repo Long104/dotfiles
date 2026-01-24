@@ -1,0 +1,7 @@
+require 'config.options'
+require 'config.keymaps'
+require 'config.keymaptest'
+require 'config.custom'
+require 'config.markdown'
+require 'config.mac_os'
+require 'config.workflows'

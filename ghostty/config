@@ -130,6 +130,6 @@ keybind = ctrl+\=text:\x01\\
 quick-terminal-position = right
 quick-terminal-animation-duration = 0.00
 quick-terminal-space-behavior = move
-quick-terminal-size = 620px, 100%
+quick-terminal-size = 645px, 100%
 
 
