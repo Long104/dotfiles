@@ -1,0 +1,428 @@
+ln -s ~/.config/nushell `~/Library/Application Support/`
+tmux
+c
+clear
+l
+clear
+ls
+clear
+ps
+clear
+cd .config
+cd config
+nvim
+source config.nu
+ls
+cd
+z
+clear
+cd dot
+cd dotfiles
+cd
+cd dot
+cd dotfiles
+lc
+ls
+cd .config
+nvim
+cd config
+cd
+cd .config
+ls
+mv nushell ~/dotfiles/
+clear
+ls
+nvim
+cd
+clear
+nvim
+cd config
+cd dotfiles
+nvim
+stow .
+cd config
+cd
+cd .config
+clear
+nvim
+cd
+nvim
+cd .config
+❯ ln -s ~/.config/nushell `~/Library/Application Support/`<\n>
+ls
+nvim
+❯ ln -s ~/.config/nushell `~/Library/Application Support/`<\n>
+ln -s ~/.config/nushell `~/Library/Application Support/`<\n>
+nvim
+tmux
+clear
+l
+clear
+cd dotfiles
+cd
+cd dotfiles
+nvim
+e
+clear
+e
+nvim
+e
+clear
+e
+nvim
+eza
+ls
+cd
+clear
+eza
+clear
+ls
+cd
+z
+cd
+nvi
+nvim
+z
+cd
+clear
+cd
+z
+cd shell
+cd nu
+nvim
+cd
+nvim
+zoxide
+z
+zoxide 
+zoxide ../
+zoxide --help
+zoxide add $(pwd)
+zoxide add pwd
+cd
+z
+clear
+ls
+nvim
+cd
+clear
+zoxide add .config
+z .config
+cd
+z dotfiles
+cd
+zoxide add .
+z nushell
+nvim
+clear
+cd nu
+cd nushell
+cd dotfiles
+nvim
+cd
+z
+clear
+cd ~
+z ~
+nvim
+z
+z nushell
+cd
+z sh
+nvim
+clear
+cd
+z
+nvim
+plugin list
+nvim
+ls
+nvim
+which cargo
+cargo
+clear
+nvim
+cargo --version
+cargo init
+ls
+cargo install nu_plugin_audio_hook --features=all-decoders
+yrustc --version
+rustc --version
+clear
+cd
+nim
+nvim
+$USER
+$env.USER
+nvim
+$env.pwd
+$env.HOME
+nvim
+clear
+cargo
+cargo init
+nvim
+clear
+cargo
+cargo install nu_plugin_audio_hook --features=all-decoders
+nvim
+$env
+env
+clear
+$env
+nvim
+clear
+cargo install nu_plugin_audio_hook --features=all-decoders
+cargo install
+clear
+clea
+ls
+cargo
+c
+clear
+cargo
+cargo install nu_plugin_audio_hook --features=all-decoders
+clear
+$env.PATH = ($env.PATH | append '/Users/pantornchuavallee/.cargo/bin')
+clear
+cargo
+cargo install
+cargo --help
+nvim
+cargo new project_name
+nvim
+chsh -s /bin/zsh
+claer
+ls
+clear
+ls
+which $SHELL
+clear
+cargo new project_name
+ls
+clear
+ls
+clear
+tmux
+clear
+source config.nu
+cd
+clear
+z
+clear
+ls
+l
+a
+c
+clear
+chsh -s /opt/homebrew/bin/nu
+clear
+ls
+l
+clear
+ls
+cd
+z
+ls
+clear
+nu
+config nu
+nvim
+vim
+cd .config
+cd nushell
+source config.nu
+vim
+nu
+l
+clear
+exec nu
+l
+clear
+cargo --version
+clear
+ls
+which $SHELL
+which $env.SHELL
+clear
+nvim
+clear
+cd config
+z config
+z nushell
+tmux
+nvim
+clear
+ls
+nvim
+cd config
+cd .config
+cd nushell
+nvim
+clear
+nvim
+clear
+n
+nvim
+clear
+n
+clear
+env
+clear
+$env.Path
+$env
+nvim
+clear
+tmux
+clear
+$env
+env
+$env
+clear
+$env.TMUX
+$env.SHELL
+nvim
+z nushell
+nvim
+clear
+null
+nvim
+clear
+nvim
+clear
+clea
+clear
+nvim
+clear
+tmux
+clear
+nvim
+z nushell
+nvim
+clear
+nvim
+clear
+nvim
+clear
+nvim
+clear
+nvim
+clear
+nvim
+cler
+nclear
+clear
+nvim
+clear
+clar
+clear
+ls
+claer
+clear
+nvim
+sesh
+gum
+clear
+nvim
+cd nushell
+nvim
+nvim
+cd
+which sesh
+which gum
+nvim
+which sesh
+sesh
+clear
+nvim
+clear
+nvim
+clear
+ollama
+plugin add ai
+plugin add ai.nu
+cargo install https://github.com/nushell/awesome-nu?tab=readme-ov-file
+clear
+ls
+cd sesh
+z config
+nvim
+ls
+sesh
+fzf
+clear
+fzf
+ls
+clear
+sesh
+sesh list
+clear
+sesh
+bind-key "K" display-popup -E -w 40% "sesh connect \"$(<\n>	sesh list -i | gum filter --limit 1 --placeholder 'Pick a sesh' --height 50 --prompt='⚡'<\n>)\""<\n>
+display-popup
+clear
+display-popup
+display-popup -E "sesh connect \$(sesh list | zf --height 24)"<\n>
+gum
+nvim
+tmux source-file ~/.tmux.conf
+sesh connect $(sesh list | fzf)
+clear
+sesh connect $(sesh list | fzf)
+gum
+display-popup
+ls
+clear
+nvim
+start
+star
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+clear
+ls
+grep hello
+clear
+ls
+cd test
+whic fish
+ls
+clear
+which fishh
+which fis
+which fish
+chsh -s /opt/homebrew/bin/fish
+clear
+ls
+clear
+ls
+clear
+ssh root@192.168.1.30
+ssh zen@192.168.1.125
+ssh root@192.168.1.30
+ssh zen@192.168.1.125
+clear
+ssh zen@192.168.1.125
+ssh zen@192.168.1.30
+ssh zen@192.168.1.300
+ssh tailscale@192.168.1.30
+ssh root@192.168.1.300
+ssh root@192.168.1.30
+clear
+cd .config
+nvim
+cd ghostyy
+cd ghostty
+clear
+cd 
+clear
+cd .config
+nvim
+which $SHELL
+clear
+ls

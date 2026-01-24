@@ -118,6 +118,17 @@ return {
         optimize = { prompt = "Optimize @this for performance and readability", submit = true },
         review = { prompt = "Review @this for correctness and readability", submit = true },
         test = { prompt = "Add tests for @this", submit = true },
+        grapple_review = {
+          -- This text is sent to opencode
+          prompt = table.concat({
+            "You are an AI assistant helping me work across my current working set.",
+            "",
+            "Here are the files I've tagged with grapple (`@grapple`).",
+            "Review them together, summarize their purpose, and suggest improvements.",
+            "",
+            "@grapple",
+          }, "\n"),
+        },
       },
       ask = {
         prompt = "Ask opencode: ",
@@ -148,4 +159,4 @@ return {
 -- implement	Implement @this
 -- optimize	Optimize @this for performance and readability
 -- review	Review @this for correctness and readability
--- test	Add tests for @this
+-- t=31337;OKest	Add tests for @this
