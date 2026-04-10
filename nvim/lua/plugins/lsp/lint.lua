@@ -6,7 +6,7 @@ return {
     local lint = require "lint"
 
     lint.linters_by_ft = {
-      python = { "pylint" },
+      python = { "ruff" },
       javascript = { "biome" },
       typescript = { "biome" },
       javascriptreact = { "biome" },
@@ -28,6 +28,26 @@ return {
         },
         stream = "stdout", -- Use stdout only since oxlint doesn't report on stderr
         ignore_exitcode = true, -- Ignore non-zero exit codes
+      },
+
+      ---@diagnostic disable-next-line: missing-fields
+      ruff = {
+        stdin = false,
+        cmd = vim.fn.stdpath "data" .. "/mason/bin/ruff",
+        args = { "check" },
+        stream = "stdout",
+        ignore_exitcode = true,
+      },
+
+      ---@diagnostic disable-next-line: missing-fields
+      ["golangci-lint"] = {
+        cmd = vim.fn.stdpath "data" .. "/mason/bin/golangci-lint",
+        stdin = false,
+        args = {
+          "run",
+        },
+        stream = "stdout",
+        ignore_exitcode = true,
       },
     }
 

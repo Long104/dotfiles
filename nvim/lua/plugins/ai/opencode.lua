@@ -88,8 +88,8 @@ return {
     ---@type opencode.Opts
     vim.g.opencode_opts = {
       -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
-      provider = {
-        enabled = "tmux",
+      -- provider = {
+      --   enabled = "tmux",
         -- enabled = "terminal",
         -- cmd = "opencode",
         -- enabled = "snacks",
@@ -101,11 +101,11 @@ return {
         --   split = "right",
         --   width = 55,
         -- },
-        tmux = {
-          split = "right",
-          width = 54,
-        },
-      },
+      --   tmux = {
+      --     split = "right",
+      --     width = 54,
+      --   },
+      -- },
       prompts = {
         ask_append = { prompt = "", ask = true }, -- Handy to insert context mid-prompt. Simpler than exposing every context as a prompt by default.
         ask_this = { prompt = "@this: ", ask = true, submit = true },

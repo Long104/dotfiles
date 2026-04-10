@@ -34,7 +34,7 @@ return {
         yaml = { "prettier" },
         yml = { "prettier" },
         lua = { "stylua" },
-        python = { "isort", "black" },
+        python = { "ruff" },
         nix = { "alejandra" },
         bash = { "shfmt" },
         zsh = { "shfmt" },

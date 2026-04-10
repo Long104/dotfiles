@@ -86,3 +86,7 @@ vim.keymap.set("n", "<leader><leader>jx", "<cmd>!bun %<cr>")
 -- go
 vim.keymap.set("n", "<leader><leader>gx", "<cmd>!go run .<cr>")
 vim.keymap.set("n", "<leader><leader>gox", "<cmd>!go run %<cr>")
+
+-- py
+
+vim.keymap.set("n", "<leader><leader>px", "<cmd>!python3 %<cr>")

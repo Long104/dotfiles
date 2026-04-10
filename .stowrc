@@ -7,3 +7,5 @@
 --ignore=zhell/*
 --ignore=atuin/*
 --ignore=wallpaper/*
+--ignore=stow.sh
+

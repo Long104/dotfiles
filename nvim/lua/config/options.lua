@@ -1,5 +1,7 @@
 -- options
 local opt = vim.opt
+vim.g.python3_host_prog = vim.fn.expand "~/.venvs/nvim/bin/python"
+vim.env.PATH = vim.fn.stdpath "data" .. "/mason/bin:" .. vim.env.PATH
 opt.diffopt = "internal,filler,closeoff,linematch:60,algorithm:histogram,context:5"
 opt.conceallevel = 2
 opt.concealcursor = ""

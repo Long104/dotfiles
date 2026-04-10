@@ -1,6 +1,7 @@
 --
 -- vim.g.loaded_matchparen = 1
 -- vim.api.nvim_set_keymap('i', '(', '()<Left>', { noremap = true, silent = true })
+vim.g.python3_host_prog = vim.fn.expand("~/.venvs/nvim/bin/python")
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true

@@ -13,6 +13,8 @@ require("lazy").setup {
     { import = "plugins.lsp" },
     { import = "plugins.mini" },
     { import = "plugins.snack" },
+    -- // incomeing feature
+    { import = "plugins.note" },
 
     -- theme
     -- { import = "plugins.theme.github" },
