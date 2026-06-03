@@ -6,6 +6,7 @@ local opts = function(desc)
 end
 local keymap = vim.keymap.set
 -- normal
+keymap("n", "<leader>cm", "<cmd>!cmux markdown open %<cr><cr>", opts "exit insert mode")
 keymap("n", "<CR>", "<Esc>", opts "exit insert mode")
 keymap({ "i", "t" }, "fj", "<Esc>", opts "exit insert mode")
 keymap("n", "<Esc>", "<cmd>nohlsearch<CR>")

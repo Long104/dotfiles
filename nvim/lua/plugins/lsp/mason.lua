@@ -16,7 +16,9 @@ return {
         "pyright",
         "biome",
         "gopls",
-        -- "harper_ls",
+        "harper_ls",
+        "terraformls",
+        "jsonls"
       },
     },
     dependencies = {
@@ -41,7 +43,7 @@ return {
     opts = {
       ensure_installed = {
         "prettier", -- prettier formatter
-        "stylua", -- lua formatter
+        "stylua",   -- lua formatter
         "golangci-lint",
         "ruff",
       },

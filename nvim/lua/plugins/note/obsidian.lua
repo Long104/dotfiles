@@ -14,6 +14,10 @@ return {
         path = "~/satori/note/shoshin",
       },
       {
+        name = "work_space",
+        path = "~/satori/note/wiki/project",
+      },
+      {
         name = "note",
         path = "~/satori/note/dailyNote/",
       },
