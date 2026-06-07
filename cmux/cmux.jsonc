@@ -1,0 +1,118 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  // Keyboard Shortcuts
+  "shortcuts": {
+    "bindings": {
+
+      // ─── App ──────────────────────────────
+      "openSettings": "cmd+,",
+      "reloadConfiguration": "shift+cmd+,",
+      "globalSearch": "opt+cmd+f",
+      "newWindow": "shift+cmd+n",
+      "closeWindow": "ctrl+cmd+w",
+      "toggleFullScreen": "ctrl+cmd+f",
+      "quit": "cmd+q",
+
+      // ─── Workspace ────────────────────────
+      "toggleSidebar": "cmd+b",
+      "toggleFileExplorer": "opt+cmd+b",
+      "newTab": "cmd+n",
+      "openFolder": "cmd+o",
+      "reopenPreviousSession": "shift+cmd+o",
+      "goToWorkspace": "cmd+p",
+      "selectWorkspaceByNumber": "ctrl+1",
+      "nextSidebarTab": "ctrl+cmd+]",
+      "prevSidebarTab": "ctrl+cmd+[",
+      "focusHistoryBack": "cmd+[",
+      "focusHistoryForward": "cmd+]",
+      "renameWorkspace": "shift+cmd+r",
+      "editWorkspaceDescription": "opt+cmd+e",
+      "focusRightSidebar": "shift+cmd+e",
+      "closeWorkspace": "shift+cmd+w",
+
+      // ─── Surface (tabs) ──────────────────
+      "newSurface": "cmd+t",
+      "nextSurface": "shift+cmd+]",
+      "prevSurface": "shift+cmd+[",
+      "selectSurfaceByNumber": "opt+1",
+      "renameTab": "cmd+r",
+      "closeTab": "cmd+w",
+      "closeOtherTabsInPane": "opt+cmd+t",
+      "reopenClosedBrowserPanel": "shift+cmd+t",
+      "toggleTerminalCopyMode": "shift+cmd+m",
+      "focusTextBoxInput": "shift+cmd+a",
+      "attachTextBoxFile": "opt+shift+cmd+a",
+      "saveFilePreview": "cmd+s",
+
+      // ─── Split Panes ─────────────────────
+      "focusLeft": "cmd+h",
+      "focusRight": "cmd+l",
+      "focusUp": "cmd+k",
+      "focusDown": "cmd+j",
+      "splitRight": "cmd+i",
+      "splitDown": "cmd+j",
+      "toggleSplitZoom": "cmd+m",
+      "equalizeSplits": "ctrl+cmd+=",
+      "splitBrowserRight": "opt+cmd+d",
+      "splitBrowserDown": "opt+shift+cmd+d",
+
+      // ─── Browser ─────────────────────────
+      "openBrowser": "shift+cmd+l",
+      "focusBrowserAddressBar": "cmd+l",
+      "browserBack": "cmd+[",
+      "browserForward": "cmd+]",
+      "browserReload": "cmd+r",
+      "browserZoomIn": "cmd+=",
+      "browserZoomOut": "cmd+-",
+      "browserZoomReset": "cmd+0",
+      "toggleBrowserDeveloperTools": "opt+cmd+i",
+      "showBrowserJavaScriptConsole": null,
+      "toggleBrowserFocusMode": "opt+cmd+return",
+      "toggleReactGrab": "shift+cmd+g",
+
+      // ─── Markdown Viewer ─────────────────
+      "markdownZoomIn": "cmd+=",
+      "markdownZoomOut": "cmd+-",
+      "markdownZoomReset": "cmd+0",
+
+      // ─── Find ─────────────────────────────
+      "find": "cmd+f",
+      "findInDirectory": "shift+cmd+f",
+      "findNext": "cmd+g",
+      "findPrevious": "opt+cmd+g",
+      "hideFind": "opt+shift+cmd+f",
+      "useSelectionForFind": "cmd+e",
+
+      // ─── Notifications ────────────────────
+      "showNotifications": "cmd+y",
+      "jumpToUnread": "shift+cmd+u",
+      "toggleUnread": "opt+cmd+u",
+      "markOldestUnreadAndJumpNext": "ctrl+cmd+u",
+      "triggerFlash": "shift+cmd+h",
+
+      // ─── Command Palette ─────────────────
+      "commandPalette": "shift+cmd+p",
+      "commandPaletteNext": "ctrl+n",
+      "commandPalettePrevious": "ctrl+p",
+      "sendFeedback": null,
+
+      // ─── Right Sidebar Tabs ──────────────
+      // ctrl+shift+1–5 to avoid conflict with selectWorkspaceByNumber (ctrl+1)
+      "switchRightSidebarToFiles": "ctrl+shift+1",
+      "switchRightSidebarToFind": "ctrl+shift+2",
+      "switchRightSidebarToSessions": "ctrl+shift+3",
+      "switchRightSidebarToFeed": "ctrl+shift+4",
+      "switchRightSidebarToDock": "ctrl+shift+5",
+
+      // ─── Diff Viewer (when focused) ──────
+      // Bare keys accepted for diff viewer context
+      "diffViewerScrollDown": "j",
+      "diffViewerScrollUp": "k",
+      "diffViewerScrollToBottom": "shift+g",
+      "diffViewerScrollToTop": "g",
+      "diffViewerOpenFileSearch": "/"
+    }
+  }
+}

@@ -1,6 +1,13 @@
-if [ -n "${ZSH_DEBUGRC+1}" ]; then
-    zmodload zsh/zprof 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# if [ -n "${ZSH_DEBUGRC+1}" ]; then
+#     zmodload zsh/zprof 
+# fi
 
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   # If you're using macOS, you'll want this enabled
@@ -17,9 +24,14 @@ export PATH="/usr/local/bin:/usr/bin:$PATH"
 # export $(grep -v '^#' ~/dotzen/.env | xargs)
 export PATH="$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.spicetify:$PATH"
+# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$HOME/.local/bin:$PATH"
+
 export PATH="/Users/pantornchuavallee/.cargo/bin:$PATH"
 
 export JAVA_HOME="/opt/homebrew/Cellar/openjdk/23.0.1/libexec/openjdk.jdk/Contents/Home"
+export VISUAL="nvim"
+export EDITOR="nvim"
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -61,6 +73,7 @@ autoload -Uz _zinit
 # zinit light zsh-users/zsh-completions
 # zinit light zsh-users/zsh-autosuggestions
 
+zi ice depth=1; zi light romkatv/powerlevel10k
 zinit wait lucid for \
     light-mode blockf atpull'zinit creinstall -q .' \
     atinit"
@@ -165,58 +178,55 @@ alias knd="kubectl config set-context --current --namespace=default"
 
 # switcher
 
-function nvims() {
-  items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
-  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layo
-ut=reverse --border --exit-0)
-  if [[ -z $config ]]; then
-    echo "Nothing selected"
-    return 0
-  elif [[ $config == "default" ]]; then
-    config=""
-  fi
-  NVIM_APPNAME=$config nvim $@
-}
+# function nvims() {
+#   items=("default" "kickstart" "LazyVim" "NvChad" "AstroNvim")
+#   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layo
+# ut=reverse --border --exit-0)
+#   if [[ -z $config ]]; then
+#     echo "Nothing selected"
+#     return 0
+#   elif [[ $config == "default" ]]; then
+#     config=""
+#   fi
+#   NVIM_APPNAME=$config nvim $@
+# }
+#
+# bindkey -s ^a "nvims\n"
 
-bindkey -s ^a "nvims\n"
 
-
-if [ -z "$TMUX" ]; then
-    # Check if the tmux session 'code' exists
-    if tmux has-session -t code💻 2>/dev/null; then
-        tmux attach -t code💻
-    else
-        tmux new-session -s code💻
-    fi
-fi
+# if [ -z "$TMUX" ]; then
+#     # Check if the tmux session 'code' exists
+#     if tmux has-session -t code💻 2>/dev/null; then
+#         tmux attach -t code💻
+#     else
+#         tmux new-session -s code💻
+#     fi
+# fi
 
  # Nix
 
-export PATH=/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH
-export NIX_CONF_DIR=$HOME/.config/nix
- if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-	 . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
- fi
+# export PATH=/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH
+# export NIX_CONF_DIR=$HOME/.config/nix
+#  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+# 	 . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+#  fi
  # End Nix
 
 
 # Shell integrations
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
+eval "$(mise activate zsh)"
+bindkey '^F' autosuggest-accept
 
-if [ -n "${ZSH_DEBUGRC+1}" ]; then
-    zprof
-fi
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# if [ -n "${ZSH_DEBUGRC+1}" ]; then
+#     zprof
+# fi
 
+# . "$HOME/.local/bin/env"
 
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/pantornchuavallee/.lmstudio/bin"
-
-. "$HOME/.local/bin/env"
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-export NODE_OPTIONS="--no-experimental-warning"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

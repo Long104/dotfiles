@@ -1,5 +1,13 @@
 --target=~/.config
 --ignore=.stowrc
+--ignore=nix
+--ignore=nix-darwin
+--ignore=ubersicht1
+--ignore=wallpaper
+--ignore=qutebrowser 00.42.27
+--ignore=brew.txt
+--ignore=sketchybar
+--ignore=ShoshiNvim
 --ignore=DS_Store
 --ignore=gitignore
 --ignore=README.md
@@ -8,4 +16,3 @@
 --ignore=atuin/*
 --ignore=wallpaper/*
 --ignore=stow.sh
-
