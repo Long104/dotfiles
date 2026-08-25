@@ -7,6 +7,10 @@ return {
     { noremap = true, mode = "n", "<leader>p", "<cmd>PastifyAfter<CR>" },
     { noremap = true, mode = "n", "<leader>P", "<cmd>Pastify<CR>" },
   },
+  init = function()
+    -- Add python3 module to runtimepath for vim python3 commands
+    vim.opt.runtimepath:prepend(vim.fn.stdpath "data" .. "/lazy/pastify.nvim/python3")
+  end,
 
   config = function()
     require("pastify").setup {

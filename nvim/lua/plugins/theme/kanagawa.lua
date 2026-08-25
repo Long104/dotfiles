@@ -66,7 +66,7 @@ return {
           TelescopePreviewNormal = { bg = theme.ui.bg_dim },
           TelescopePreviewBorder = { bg = theme.ui.bg_dim, fg = theme.ui.bg_dim },
 
-          SnacksPickerTitl = { fg = theme.ui.special, bold = true },
+          SnacksPickerTitl = {bg = theme.ui.bg_p1, fg = theme.ui.special, bold = true },
           SnacksPickerPrompt = { bg = theme.ui.bg_p1 },
           SnacksPickerBorder = { fg = theme.ui.bg_p1, bg = theme.ui.bg_p1 }, 
           -- SignColumn = { fg = "none", bg = "none" },

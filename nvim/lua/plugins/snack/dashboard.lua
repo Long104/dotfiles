@@ -8,7 +8,6 @@ return {
     dashboard = {
 
       preset = {
-
         header = table.concat({
           "   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣤⣀⣀⡀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀",
           "   ⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣤⣄⠀⠀⠀⠀⠀",
@@ -33,20 +32,21 @@ return {
           "   ╚═══════╝╚══════╝╚═╝  ╚═══╝ ",
           "",
         }, "\n"),
+        -- These keys are rendered by the `keys` section below
+        keys = {
+          { icon = "󰙰", key = "r", desc = "Restore Session", action = ':lua require("persistence").load()' },
+          { icon = "", key = "c", desc = "leetocde", action = ':Leet' },
+          { icon = " ", key = "s", desc = "Select Session",  action = ':lua require("persistence").select()' },
+          { icon = " ", key = "l", desc = "Latest Session",  action = ':lua require("persistence").load({last = true})' },
+          { icon = " ", key = "q", desc = "Quit",            action = ":qa" },
+        },
       },
 
       sections = {
         { section = "header" },
-        -- {
-        --   pane = 2,
-        --   section = "terminal",
-        --   cmd = "cbonsai --seed 119 --live",
-        --   height = 25,
-        --   padding = 3,
-        -- },
-        -- { section = "keys", gap = 1, padding = 1 },
+        { section = "keys", pane = 1, gap = 1, padding = 1 },
         {
-          pane = 1,
+          pane = 2,
           icon = " ",
           title = "Git Status",
           section = "terminal",
@@ -59,7 +59,7 @@ return {
           ttl = 5 * 60,
           indent = 3,
         },
-        { section = "startup" },
+        { section = "startup", pane = 1 },
       },
     },
   },

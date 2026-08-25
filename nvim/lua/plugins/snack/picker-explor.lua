@@ -1,9 +1,39 @@
 return {
   "folke/snacks.nvim",
   keys = {
-    -- todo-comment
+    -- tldr pages
     {
       "<leader>st",
+      function()
+        Snacks.picker.pick {
+          finder = function()
+            local pages = vim.fn.systemlist "tldr --list"
+            return vim.tbl_map(function(p)
+              return { text = p, cmd = p }
+            end, pages)
+          end,
+          format = "text",
+          confirm = function(picker, item)
+            picker:close()
+            local out = vim.fn.systemlist("tldr " .. item.cmd)
+            Snacks.win {
+              text = out,
+              width = 0.6,
+              height = 0.6,
+              border = "rounded",
+              title = " tldr " .. item.cmd .. " ",
+              ft = "markdown",
+              wo = { wrap = true },
+              keys = { q = "close" },
+            }
+          end,
+        }
+      end,
+      desc = "Tldr",
+    },
+    -- todo-comment
+    {
+      "<leader>sc",
       function()
         Snacks.picker.todo_comments()
       end,
@@ -303,9 +333,10 @@ return {
       desc = "Marks",
     },
     {
-      "<leader>sM",
+      "<leader>mp",
       function()
-        Snacks.picker.man()
+        Snacks.picker.man(
+)
       end,
       desc = "Man Pages",
     },
@@ -449,14 +480,30 @@ return {
           -- your gh_pr picker configuration comes here
           -- or leave it empty to use the default settings
         },
-      },
-      win = {
-        -- input window
-        input = {
-          keys = {
-
-            ["<C-y>"] = { "confirm", mode = { "i", "n" } },
+        man = {
+          -- override only what you need, e.g. a custom layout:
+          layout = { preset = "vertical" },
+          -- or add extra keymaps:
+          win = {
+            input = {
+              keys = {
+                ["<c-o>"] = { "jump", mode = { "n", "i" } },
+              },
+            },
           },
+        },
+      },
+      -- the man preview pager lives at the top level, not under the source:
+      previewers = {
+        man_pager = "col -bx",
+      },
+    },
+    win = {
+      -- input window
+      input = {
+        keys = {
+
+          ["<C-y>"] = { "confirm", mode = { "i", "n" } },
         },
       },
     },

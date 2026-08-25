@@ -31,10 +31,10 @@ return {
             style = "terminal",
             relative = "editor",
             border = "rounded",
-            width = 0.8,
-            height = 0.4, -- lower height if you want
-            row = 0.5,
-            col = 0.5,
+            -- width = 0.8,
+            -- height = 0.8, -- lower height if you want
+            -- row = 0.5,
+            -- col = 0.5,
           },
         })
       end,

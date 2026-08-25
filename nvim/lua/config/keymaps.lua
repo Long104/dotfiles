@@ -36,10 +36,10 @@ keymap({ "n", "x" }, "<C-n>h", "<cmd>vertical resize -6<CR>", opts "window verti
 keymap({ "n", "x" }, "<C-n>m", "<C-w>=", opts "Make splits equal size")
 
 -- window
-keymap("n", "<leader>wi", "<C-w>v", opts "Split window vertically")
-keymap("n", "<leader>wu", "<C-w>s", opts "Split window horizontally")
-keymap("n", "<leader>wa", "<cmd>only<CR>", opts "Close all tab only the one not")
-keymap("n", "<leader>wd", "<cmd>close<cr>", opts "close")
+keymap("n", "wi", "<C-w>v", opts "Split window vertically")
+keymap("n", "wu", "<C-w>s", opts "Split window horizontally")
+keymap("n", "wa", "<cmd>only<CR>", opts "Close all tab only the one not")
+keymap("n", "wd", "<cmd>close<cr>", opts "close")
 
 -- give permission
 keymap("n", "<leader>+x", '<cmd>!chmod +x "%"<CR>', opts "Make file executable")

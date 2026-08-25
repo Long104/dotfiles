@@ -1,118 +1,250 @@
 {
-  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
-  "schemaVersion": 1,
+  "$schema" : "https:\/\/raw.githubusercontent.com\/manaflow-ai\/cmux\/main\/web\/data\/cmux.schema.json",
+  "app" : {
+    "appearance" : "system",
+    "appIcon" : "automatic",
+    "commandPaletteSearchesAllSurfaces" : false,
+    "confirmQuit" : "never",
+    "focusPaneOnFirstClick" : false,
+    "forkConversationDefaultDestination" : "right",
+    "hideTabCloseButton" : false,
+    "iMessageMode" : false,
+    "keepWorkspaceOpenWhenClosingLastSurface" : false,
+    "language" : "system",
+    "menuBarOnly" : false,
+    "minimalMode" : true,
+    "newWorkspacePlacement" : "afterCurrent",
+    "openMarkdownInCmuxViewer" : true,
+    "openSupportedFilesInCmux" : true,
+    "preferredEditor" : "",
+    "renameSelectsExistingName" : true,
+    "reorderOnNotification" : true,
+    "sendAnonymousTelemetry" : true,
+    "warnBeforeClosingTab" : false,
+    "warnBeforeClosingTabXButton" : false,
+    "workspaceInheritWorkingDirectory" : true
+  },
+  "automation" : {
+    "ampIntegration" : true,
+    "claudeBinaryPath" : "",
+    "claudeCodeIntegration" : true,
+    "cursorIntegration" : true,
+    "geminiIntegration" : true,
+    "kiroIntegration" : true,
+    "kiroNotificationLevel" : "standard",
+    "portBase" : 9100,
+    "portRange" : 10,
+    "ripgrepBinaryPath" : "",
+    "socketControlMode" : "cmuxOnly",
+    "suppressSubagentNotifications" : true
+  },
+  "browser" : {
+    "customSearchEngineName" : "",
+    "customSearchEngineURLTemplate" : "https:\/\/www.google.com\/search?q={query}",
+    "defaultSearchEngine" : "google",
+    "discardHiddenWebViews" : true,
+    "hiddenWebViewDiscardDelaySeconds" : 300,
+    "hostsToOpenInEmbeddedBrowser" : [
 
-  // Keyboard Shortcuts
-  "shortcuts": {
-    "bindings": {
+    ],
+    "insecureHttpHostsAllowedInEmbeddedBrowser" : [
+      "localhost",
+      "*.localhost",
+      "127.0.0.1",
+      "::1",
+      "0.0.0.0",
+      "*.localtest.me"
+    ],
+    "interceptTerminalOpenCommandInCmuxBrowser" : true,
+    "openTerminalLinksInCmuxBrowser" : true,
+    "reactGrabVersion" : "0.1.29",
+    "showImportHintOnBlankTabs" : true,
+    "showSearchSuggestions" : true,
+    "theme" : "system",
+    "urlsToAlwaysOpenExternally" : [
 
-      // ─── App ──────────────────────────────
-      "openSettings": "cmd+,",
-      "reloadConfiguration": "shift+cmd+,",
-      "globalSearch": "opt+cmd+f",
-      "newWindow": "shift+cmd+n",
-      "closeWindow": "ctrl+cmd+w",
-      "toggleFullScreen": "ctrl+cmd+f",
-      "quit": "cmd+q",
+    ]
+  },
+  "fileEditor" : {
+    "wordWrap" : false
+  },
+  "markdown" : {
+    "fontFamily" : "",
+    "fontSize" : 15,
+    "maxWidth" : 980
+  },
+  "notifications" : {
+    "command" : "",
+    "customSoundFilePath" : "",
+    "dockBadge" : true,
+    "hooks" : [
 
-      // ─── Workspace ────────────────────────
-      "toggleSidebar": "cmd+b",
-      "toggleFileExplorer": "opt+cmd+b",
-      "newTab": "cmd+n",
-      "openFolder": "cmd+o",
-      "reopenPreviousSession": "shift+cmd+o",
-      "goToWorkspace": "cmd+p",
-      "selectWorkspaceByNumber": "ctrl+1",
-      "nextSidebarTab": "ctrl+cmd+]",
-      "prevSidebarTab": "ctrl+cmd+[",
-      "focusHistoryBack": "cmd+[",
-      "focusHistoryForward": "cmd+]",
-      "renameWorkspace": "shift+cmd+r",
-      "editWorkspaceDescription": "opt+cmd+e",
-      "focusRightSidebar": "shift+cmd+e",
-      "closeWorkspace": "shift+cmd+w",
-
-      // ─── Surface (tabs) ──────────────────
-      "newSurface": "cmd+t",
-      "nextSurface": "shift+cmd+]",
-      "prevSurface": "shift+cmd+[",
-      "selectSurfaceByNumber": "opt+1",
-      "renameTab": "cmd+r",
-      "closeTab": "cmd+w",
-      "closeOtherTabsInPane": "opt+cmd+t",
-      "reopenClosedBrowserPanel": "shift+cmd+t",
-      "toggleTerminalCopyMode": "shift+cmd+m",
-      "focusTextBoxInput": "shift+cmd+a",
-      "attachTextBoxFile": "opt+shift+cmd+a",
-      "saveFilePreview": "cmd+s",
-
-      // ─── Split Panes ─────────────────────
-      "focusLeft": "cmd+h",
-      "focusRight": "cmd+l",
-      "focusUp": "cmd+k",
-      "focusDown": "cmd+j",
-      "splitRight": "cmd+i",
-      "splitDown": "cmd+j",
-      "toggleSplitZoom": "cmd+m",
-      "equalizeSplits": "ctrl+cmd+=",
-      "splitBrowserRight": "opt+cmd+d",
-      "splitBrowserDown": "opt+shift+cmd+d",
-
-      // ─── Browser ─────────────────────────
-      "openBrowser": "shift+cmd+l",
-      "focusBrowserAddressBar": "cmd+l",
-      "browserBack": "cmd+[",
-      "browserForward": "cmd+]",
-      "browserReload": "cmd+r",
-      "browserZoomIn": "cmd+=",
-      "browserZoomOut": "cmd+-",
-      "browserZoomReset": "cmd+0",
-      "toggleBrowserDeveloperTools": "opt+cmd+i",
-      "showBrowserJavaScriptConsole": null,
-      "toggleBrowserFocusMode": "opt+cmd+return",
-      "toggleReactGrab": "shift+cmd+g",
-
-      // ─── Markdown Viewer ─────────────────
-      "markdownZoomIn": "cmd+=",
-      "markdownZoomOut": "cmd+-",
-      "markdownZoomReset": "cmd+0",
-
-      // ─── Find ─────────────────────────────
-      "find": "cmd+f",
-      "findInDirectory": "shift+cmd+f",
-      "findNext": "cmd+g",
-      "findPrevious": "opt+cmd+g",
-      "hideFind": "opt+shift+cmd+f",
-      "useSelectionForFind": "cmd+e",
-
-      // ─── Notifications ────────────────────
-      "showNotifications": "cmd+y",
-      "jumpToUnread": "shift+cmd+u",
-      "toggleUnread": "opt+cmd+u",
-      "markOldestUnreadAndJumpNext": "ctrl+cmd+u",
-      "triggerFlash": "shift+cmd+h",
-
-      // ─── Command Palette ─────────────────
-      "commandPalette": "shift+cmd+p",
-      "commandPaletteNext": "ctrl+n",
-      "commandPalettePrevious": "ctrl+p",
-      "sendFeedback": null,
-
-      // ─── Right Sidebar Tabs ──────────────
-      // ctrl+shift+1–5 to avoid conflict with selectWorkspaceByNumber (ctrl+1)
-      "switchRightSidebarToFiles": "ctrl+shift+1",
-      "switchRightSidebarToFind": "ctrl+shift+2",
-      "switchRightSidebarToSessions": "ctrl+shift+3",
-      "switchRightSidebarToFeed": "ctrl+shift+4",
-      "switchRightSidebarToDock": "ctrl+shift+5",
-
-      // ─── Diff Viewer (when focused) ──────
-      // Bare keys accepted for diff viewer context
-      "diffViewerScrollDown": "j",
-      "diffViewerScrollUp": "k",
-      "diffViewerScrollToBottom": "shift+g",
-      "diffViewerScrollToTop": "g",
-      "diffViewerOpenFileSearch": "/"
+    ],
+    "hooksMode" : "append",
+    "paneFlash" : true,
+    "showInMenuBar" : true,
+    "sound" : "default",
+    "unreadPaneRing" : true
+  },
+  "schemaVersion" : 1,
+  "shortcuts" : {
+    "bindings" : {
+      "attachTextBoxFile" : "cmd+shift+opt+a",
+      "browserBack" : "cmd+[",
+      "browserForward" : "cmd+]",
+      "browserReload" : "cmd+r",
+      "browserZoomIn" : "cmd+=",
+      "browserZoomOut" : "cmd+-",
+      "browserZoomReset" : "cmd+0",
+      "closeOtherTabsInPane" : "cmd+opt+t",
+      "closeTab" : "cmd+w",
+      "closeWindow" : "cmd+ctrl+w",
+      "closeWorkspace" : "cmd+shift+w",
+      "commandPalette" : "cmd+shift+p",
+      "commandPaletteNext" : "ctrl+n",
+      "commandPalettePrevious" : "ctrl+p",
+      "diffViewerOpenFileSearch" : "\/",
+      "diffViewerScrollDown" : "j",
+      "diffViewerScrollToBottom" : "shift+g",
+      "diffViewerScrollToTop" : [
+        "g",
+        "g"
+      ],
+      "diffViewerScrollUp" : "k",
+      "editWorkspaceDescription" : "cmd+opt+e",
+      "equalizeSplits" : "cmd+ctrl+=",
+      "find" : "cmd+f",
+      "findInDirectory" : "cmd+shift+f",
+      "findNext" : "cmd+g",
+      "findPrevious" : "cmd+opt+g",
+      "focusBrowserAddressBar" : "cmd+l",
+      "focusDown" : "cmd+opt+↓",
+      "focusHistoryBack" : "cmd+[",
+      "focusHistoryForward" : "cmd+]",
+      "focusLeft" : "cmd+opt+←",
+      "focusRight" : "cmd+opt+→",
+      "focusRightSidebar" : "cmd+shift+e",
+      "focusTextBoxInput" : "cmd+shift+a",
+      "focusUp" : "cmd+opt+↑",
+      "globalSearch" : "cmd+opt+f",
+      "goToWorkspace" : "cmd+p",
+      "groupSelectedWorkspaces" : "cmd+shift+g",
+      "hideFind" : "cmd+shift+opt+f",
+      "jumpToUnread" : "cmd+shift+u",
+      "markdownZoomIn" : "cmd+=",
+      "markdownZoomOut" : "cmd+-",
+      "markdownZoomReset" : "cmd+0",
+      "markOldestUnreadAndJumpNext" : "cmd+ctrl+u",
+      "newSurface" : "cmd+t",
+      "newTab" : "cmd+n",
+      "newWindow" : "cmd+shift+n",
+      "nextSidebarTab" : "cmd+ctrl+]",
+      "nextSurface" : "cmd+shift+]",
+      "openBrowser" : "cmd+shift+l",
+      "openDiffViewer" : "cmd+shift+ctrl+d",
+      "openFolder" : "cmd+o",
+      "openSettings" : "cmd+,",
+      "prevSidebarTab" : "cmd+ctrl+[",
+      "prevSurface" : "cmd+shift+[",
+      "quit" : "cmd+q",
+      "reloadConfiguration" : "cmd+shift+,",
+      "renameTab" : "cmd+r",
+      "renameWorkspace" : "cmd+shift+r",
+      "reopenClosedBrowserPanel" : "cmd+shift+t",
+      "reopenPreviousSession" : "cmd+shift+o",
+      "saveFilePreview" : "cmd+s",
+      "selectSurfaceByNumber" : "opt+1",
+      "selectWorkspaceByNumber" : "ctrl+1",
+      "sendCtrlFToTerminal" : "",
+      "sendFeedback" : "",
+      "showBrowserJavaScriptConsole" : "cmd+opt+c",
+      "showHideAllWindows" : "cmd+opt+ctrl+.",
+      "showNotifications" : "cmd+i",
+      "splitBrowserDown" : "cmd+shift+opt+d",
+      "splitBrowserRight" : "cmd+opt+d",
+      "splitDown" : "cmd+shift+d",
+      "splitRight" : "cmd+d",
+      "toggleBrowserDeveloperTools" : "cmd+opt+i",
+      "toggleBrowserFocusMode" : "cmd+opt+\r",
+      "toggleFileExplorer" : "cmd+opt+b",
+      "toggleFocusedWorkspaceGroupCollapsed" : "cmd+ctrl+.",
+      "toggleFullScreen" : "cmd+ctrl+f",
+      "toggleReactGrab" : "cmd+shift+g",
+      "toggleSidebar" : "cmd+b",
+      "toggleSplitZoom" : "cmd+m",
+      "toggleTerminalCopyMode" : "cmd+shift+m",
+      "toggleUnread" : "cmd+opt+u",
+      "triggerFlash" : "cmd+shift+h",
+      "useSelectionForFind" : "cmd+e"
     }
+  },
+  "sidebar" : {
+    "branchLayout" : "vertical",
+    "hideAllDetails" : false,
+    "makePullRequestsClickable" : true,
+    "openPortLinksInCmuxBrowser" : true,
+    "openPullRequestLinksInCmuxBrowser" : true,
+    "pathLastSegmentOnly" : false,
+    "showBranchDirectory" : true,
+    "showCustomMetadata" : true,
+    "showLog" : true,
+    "showNotificationMessage" : true,
+    "showPorts" : true,
+    "showProgress" : true,
+    "showPullRequests" : true,
+    "showSSH" : true,
+    "showWorkspaceDescription" : true,
+    "stackBranchDirectory" : false,
+    "watchGitStatus" : true,
+    "wrapWorkspaceTitles" : false
+  },
+  "sidebarAppearance" : {
+    "darkModeTintColor" : null,
+    "lightModeTintColor" : null,
+    "matchTerminalBackground" : true,
+    "tintColor" : "#000000",
+    "tintOpacity" : 0.17999999999999999
+  },
+  "terminal" : {
+    "agentHibernation" : {
+      "enabled" : false,
+      "idleSeconds" : 5,
+      "maxLiveTerminals" : 12
+    },
+    "autoResumeAgentSessions" : true,
+    "copyOnSelect" : false,
+    "focusTextBoxOnNewTerminals" : false,
+    "resumeCommands" : [
+
+    ],
+    "showScrollBar" : true,
+    "showTextBoxOnNewTerminals" : false,
+    "textBoxMaxLines" : 10
+  },
+  "workspaceColors" : {
+    "colors" : {
+      "Amber" : "#7D6608",
+      "Aqua" : "#0E6B8C",
+      "Blue" : "#1565C0",
+      "Brown" : "#7B3F00",
+      "Charcoal" : "#3E4B5E",
+      "Crimson" : "#922B21",
+      "Green" : "#196F3D",
+      "Indigo" : "#283593",
+      "Magenta" : "#AD1457",
+      "Navy" : "#1A5276",
+      "Olive" : "#4A5C18",
+      "Orange" : "#A04000",
+      "Purple" : "#6A1B9A",
+      "Red" : "#C0392B",
+      "Rose" : "#880E4F",
+      "Teal" : "#006B6B"
+    },
+    "indicatorStyle" : "leftRail",
+    "notificationBadgeColor" : null,
+    "selectionColor" : null
+  },
+  "workspaceGroups" : {
+    "newWorkspacePlacement" : "afterCurrent"
   }
 }

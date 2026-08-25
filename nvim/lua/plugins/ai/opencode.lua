@@ -26,7 +26,7 @@ return {
       mode = { "n", "x" },
       "aib",
       function()
-        require("opencode").ask("@: ", { submit = false })
+        require("opencode").ask("@", { submit = false })
       end,
       desc = "Ask opencode",
     },
@@ -60,7 +60,52 @@ return {
       mode = { "n", "t" },
       "ait",
       function()
-        require("opencode").toggle()
+        require("snacks.terminal").toggle("opencode --port", {
+          -- win = {
+          --   position = "right",
+          --   enter = false,
+          -- },
+          { win = { position = "float", enter = false, width = 0.8, height = 0.8, border = "rounded" } },
+        })
+      end,
+      desc = "Toggle opencode",
+    },
+    {
+      mode = { "n", "t" },
+      "ais",
+      function()
+        require("snacks.terminal").toggle("opencode --port", {
+          win = {
+            position = "right",
+            enter = false,
+          },
+        })
+      end,
+      desc = "Toggle opencode",
+    },
+    {
+      mode = { "n", "t" },
+      "ai2",
+      function()
+        require("snacks.terminal").toggle("OPENCODE_CONFIG_CONTENT='{\"mcp\":{}}' opencode --port", {
+          win = { position = "right", enter = false },
+        })
+      end,
+      desc = "Toggle opencode",
+    },
+    {
+      mode = { "n", "t" },
+      "ai1",
+      function()
+        require("snacks.terminal").toggle(
+          table.concat({
+            "OPENCODE_CONFIG_CONTENT='{\"mcp\":{}}'",
+            "OPENCODE_DISABLE_DEFAULT_PLUGINS=true",
+            "OPENCODE_DISABLE_CLAUDE_CODE=true",
+            "opencode --port",
+          }, " "),
+          { win = { position = "right", enter = false } }
+        )
       end,
       desc = "Toggle opencode",
     },
@@ -85,22 +130,42 @@ return {
     -- { mode = { "n" }, "-", "<C-x>", desc = "Decrement", noremap = true },
   },
   config = function()
+    ---@type snacks.terminal.Opts
+    local snacks_terminal_opts = {
+      win = {
+        position = "float",
+        enter = false,
+        width = 0.8,
+        height = 0.8,
+        border = "rounded",
+      },
+    }
+
+    ---@type opencode.Opts
+    vim.g.opencode_opts = {
+      server = {
+        start = function()
+          require("snacks.terminal").open(opencode_cmd, snacks_terminal_opts)
+        end,
+      },
+    }
     ---@type opencode.Opts
     vim.g.opencode_opts = {
       -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
       -- provider = {
+      enabled = "snack",
       --   enabled = "tmux",
-        -- enabled = "terminal",
-        -- cmd = "opencode",
-        -- enabled = "snacks",
-        -- snacks = {
-        --   split = "right",
-        --   width = 55,
-        -- },
-        -- terminal = {
-        --   split = "right",
-        --   width = 55,
-        -- },
+      -- enabled = "terminal",
+      -- cmd = "opencode",
+      -- enabled = "snacks",
+      -- snacks = {
+      --   split = "right",
+      --   width = 55,
+      -- },
+      -- terminal = {
+      --   split = "right",
+      --   width = 55,
+      -- },
       --   tmux = {
       --     split = "right",
       --     width = 54,

@@ -1,3 +1,7 @@
+
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -19,6 +23,15 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 # else
     # echo "TPM is already installed."
 fi
+
+# pnpm global bin path for mise integration
+# export PNPM_HOME="$HOME/Library/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME/bin:"*) ;;
+#   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+# esac
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME/bin:$PATH"
 
 export PATH="/usr/local/bin:/usr/bin:$PATH"
 # export $(grep -v '^#' ~/dotzen/.env | xargs)
@@ -115,11 +128,16 @@ setopt hist_find_no_dups
 
 
 # Aliases
+alias awake='sudo pmset -a disablesleep 1 && echo "☕ Mac awake — lid close OK"'
+alias sleep-now='sudo pmset -a disablesleep 0 && echo "😴 Sleep restored"'
+alias p="pnpm"
+alias t="tldr"
+alias oc="opencode 2> >(grep -v 'unknown format' >&2)"
 alias own="sudo chown -R pantornchuavallee:staff ."
 alias ff="clear;wezterm imgcat ~/dotfiles/fastfetch/logos/zen.png --width 26 --height 10 --position 0,9 | fastfetch --raw - --logo-width 20 --logo-height 8"
 alias ls='ls --color'
 alias vim='nvim'
-alias c='clear'
+# alias c='clear'
 alias cd='z'
 alias ls="eza --color=always --icons=always"
 alias lt="eza --color=always --icons=always -T "
@@ -174,6 +192,24 @@ alias kl="kubectl logs -f"
 alias ke="kubectl exec -it"
 alias kv="kubectl config view --minify | grep namespace"
 alias knd="kubectl config set-context --current --namespace=default"
+
+ulimit -n 65536
+
+# Custom function to safely move files to macOS Trash
+trash() {
+  for file in "$@"; do
+    if [ -e "$file" ]; then
+      # Get absolute path
+      abs_path=$(abspath() { cd "$(dirname "$1")" && printf "%s/%s\n" "$PWD" "$(basename "$1")"; }; abspath "$file")
+      osascript -e "tell application \"Finder\" to move (POSIX file \"$abs_path\") to trash" > /dev/null
+    else
+      echo "trash: $file: No such file or directory"
+    fi
+  done
+}
+
+# Redirect the rm command to use the trash function instead
+alias rm='trash'
 
 
 # switcher
@@ -230,3 +266,37 @@ bindkey '^F' autosuggest-accept
 # . "$HOME/.local/bin/env"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+export PATH="$HOME/bin:$PATH"
+
+# libpq client for remote Postgres/Neon connections
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+
+# Headroom Context Optimization Proxy (Full Extras)
+headroom-start() {
+    if lsof -i :8787 -P 2>/dev/null | grep -q LISTEN; then
+        echo "Headroom is already running on :8787"
+        headroom doctor 2>/dev/null | grep -E "proxy|version|savings"
+        return 0
+    fi
+    echo "Starting Headroom proxy with full extras..."
+    /Users/pantorn/.local/share/uv/tools/headroom-ai/bin/python -c "
+import subprocess
+subprocess.Popen(
+    ['headroom', 'proxy', '--port', '8787', '--openai-api-url', 'http://127.0.0.1:20128/v1', '--code-aware', '--lossless', '--memory', '--memory-storage=project', '--learn'],
+    stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True
+)
+"
+    sleep 8
+    if lsof -i :8787 -P 2>/dev/null | grep -q LISTEN; then
+        echo "✅ Headroom running on :8787"
+    else
+        echo "❌ Headroom failed to start"
+    fi
+}
+alias headroom-stop="kill \$(lsof -t -i:8787 2>/dev/null) 2>/dev/null && echo 'Headroom stopped' || echo 'Headroom not running'"
+alias headroom-restart="headroom-stop && sleep 2 && headroom-start"
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
+export PATH="$HOME/.local/bin:$PATH"

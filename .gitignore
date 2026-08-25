@@ -1,2 +1,8 @@
 # env
 env*
+
+# worktrees & backups
+.worktrees/
+*.bak
+*.bak-*
+*.old

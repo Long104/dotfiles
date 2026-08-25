@@ -1,0 +1,26 @@
+{
+  "shortcuts" : {
+    "bindings" : {
+      "selectSurfaceByNumber" : {
+        "first" : {
+          "command" : false,
+          "control" : false,
+          "key" : "1",
+          "keyCode" : 19,
+          "option" : true,
+          "shift" : false
+        }
+      },
+      "selectWorkspaceByNumber" : {
+        "first" : {
+          "command" : false,
+          "control" : true,
+          "key" : "1",
+          "keyCode" : 18,
+          "option" : false,
+          "shift" : false
+        }
+      }
+    }
+  }
+}
